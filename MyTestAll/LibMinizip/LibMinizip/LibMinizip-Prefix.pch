@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'LibMinizip' target in the 'LibMinizip' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
