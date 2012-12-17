@@ -19,7 +19,8 @@
 
 
 @implementation GUVoiceRecordView
-@synthesize recodeDelegate;
+@synthesize recordDelegate;
+@synthesize recordDuration;
 
 -(id)initWithRecordFile:(NSString*) fullPathName
 {
@@ -192,8 +193,8 @@
     }
     [self hiddenAlert];
     
-    if (self.recodeDelegate != nil) {
-        [self.recodeDelegate recordDone:_recordFullPathName result:YES];
+    if (self.recordDelegate != nil) {
+        [self.recordDelegate recordDone:_recordFullPathName result:YES];
     }
 }
 

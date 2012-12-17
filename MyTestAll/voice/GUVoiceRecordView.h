@@ -31,7 +31,8 @@ typedef enum{
     UIButton *_saveBtn;
 }
 
-@property (assign, nonatomic) id<GUVoiceRecordDoneDelegate> recodeDelegate;
+@property (assign, nonatomic) id<GUVoiceRecordDoneDelegate> recordDelegate;
+@property (assign, nonatomic) int recordDuration;
 
 -(id)initWithRecordFile:(NSString*) fullPathName;
 
