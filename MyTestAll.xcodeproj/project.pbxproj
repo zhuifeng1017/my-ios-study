@@ -12,6 +12,8 @@
 		AA147C6B166D98A900983C7B /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA147C6A166D98A900983C7B /* CoreText.framework */; };
 		AA147C6E166D993C00983C7B /* CTView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA147C6D166D993C00983C7B /* CTView.m */; };
 		AA147C71166D9D6F00983C7B /* MarkupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA147C70166D9D6F00983C7B /* MarkupParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AA225493168C2F3700B540C2 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA225492168C2F3600B540C2 /* CoreImage.framework */; };
+		AA225495168C38FF00B540C2 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA225494168C38FF00B540C2 /* AssetsLibrary.framework */; };
 		AA2DEFEB16085D0D00840946 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2DEFEA16085D0D00840946 /* QuartzCore.framework */; };
 		AA5263C715AC48D7009F0297 /* MZSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5263C515AC48D7009F0297 /* MZSettingsViewController.m */; };
 		AA5263C815AC48D7009F0297 /* MZSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA5263C615AC48D7009F0297 /* MZSettingsViewController.xib */; };
@@ -109,6 +111,8 @@
 		AA147C6D166D993C00983C7B /* CTView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTView.m; sourceTree = "<group>"; };
 		AA147C6F166D9D6F00983C7B /* MarkupParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkupParser.h; sourceTree = "<group>"; };
 		AA147C70166D9D6F00983C7B /* MarkupParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkupParser.m; sourceTree = "<group>"; };
+		AA225492168C2F3600B540C2 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		AA225494168C38FF00B540C2 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		AA2DEFEA16085D0D00840946 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AA5263C415AC48D7009F0297 /* MZSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZSettingsViewController.h; sourceTree = "<group>"; };
 		AA5263C515AC48D7009F0297 /* MZSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZSettingsViewController.m; sourceTree = "<group>"; };
@@ -209,6 +213,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA225495168C38FF00B540C2 /* AssetsLibrary.framework in Frameworks */,
+				AA225493168C2F3700B540C2 /* CoreImage.framework in Frameworks */,
 				AAD4D36E1679B8B60091036E /* AVFoundation.framework in Frameworks */,
 				AA147C6B166D98A900983C7B /* CoreText.framework in Frameworks */,
 				AA7873091637DF23003EF57F /* libminizip.a in Frameworks */,
@@ -280,6 +286,8 @@
 		AAAC9BCF15A51D04008DE242 = {
 			isa = PBXGroup;
 			children = (
+				AA225494168C38FF00B540C2 /* AssetsLibrary.framework */,
+				AA225492168C2F3600B540C2 /* CoreImage.framework */,
 				AAD4D3B1167AD74C0091036E /* MyTestAll2.xcodeproj */,
 				AAD4D36D1679B8B60091036E /* AVFoundation.framework */,
 				AACD872216100E4B0046B720 /* LibMinizip.xcodeproj */,

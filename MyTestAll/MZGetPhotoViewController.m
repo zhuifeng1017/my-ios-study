@@ -7,6 +7,8 @@
 //
 
 #import "MZGetPhotoViewController.h"
+#import <AssetsLibrary/AssetsLibrary.h>
+
 
 @interface MZGetPhotoViewController ()
 
@@ -143,7 +145,7 @@
     // 裁剪图片
     UIImage *smallImage = [MZGetPhotoViewController imageWithImage:originalImage scaledToSize:CGSizeMake(originalImage.size.width*0.25f, originalImage.size.height*0.25f)];
     
-    NSURL *photoUrl = [info objectForKey:UIImagePickerControllerMediaURL];
+    NSURL *photoUrl = [info objectForKey:UIImagePickerControllerReferenceURL];
     NSLog(@"url %@", [photoUrl absoluteString]);
     
     // 将图片写入文件
@@ -157,6 +159,8 @@
     if (imgData != nil && imgData.length >0) {
         [imgData writeToFile:photoPath atomically:YES]; 
     }
+    
+    self.imgView.image = smallImage;
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
@@ -209,6 +213,38 @@ void UIImageFromURL( NSURL * URL, void (^imageBlock)(UIImage * image), void (^er
     return NO;
 }
 
+- (IBAction)doAssetURL:(id)sender {
+    [self findLargeImage];
+    
+}
 
+-(void)findLargeImage
+{
+    NSString *mediaurl = @"assets-library://asset/asset.JPG?id=BACCC75A-976E-46C2-832C-03CA694BE560&ext=JPG";
+    
+    ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *myasset)
+    {
+        ALAssetRepresentation *rep = [myasset defaultRepresentation];
+        CGImageRef iref = [rep fullResolutionImage];
+        if (iref) {
+            //largeimage = [UIImage imageWithCGImage:iref];
+            self.imgView.image = [UIImage imageWithCGImage:iref];
+        }
+    };
+    
+    ALAssetsLibraryAccessFailureBlock failureblock  = ^(NSError *myerror)
+    {
+        NSLog(@"booya, cant get image - %@",[myerror localizedDescription]);
+    };
+    
+    if(1)
+    {
+        NSURL *asseturl = [NSURL URLWithString:mediaurl];
+        ALAssetsLibrary* assetslibrary = [[ALAssetsLibrary alloc] init];
+        [assetslibrary assetForURL:asseturl
+                       resultBlock:resultblock
+                      failureBlock:failureblock];
+    }
+}
 
 @end

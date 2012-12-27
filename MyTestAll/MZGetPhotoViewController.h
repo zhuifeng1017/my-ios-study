@@ -15,4 +15,5 @@
 - (IBAction)doStartCamera:(id)sender;
 - (IBAction)doEnumPhotos:(id)sender;
 - (IBAction)doAsynchronous:(id)sender;
+- (IBAction)doAssetURL:(id)sender;
 @end
