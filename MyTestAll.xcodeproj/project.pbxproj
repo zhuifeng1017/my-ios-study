@@ -14,6 +14,7 @@
 		AA147C71166D9D6F00983C7B /* MarkupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA147C70166D9D6F00983C7B /* MarkupParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AA225493168C2F3700B540C2 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA225492168C2F3600B540C2 /* CoreImage.framework */; };
 		AA225495168C38FF00B540C2 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA225494168C38FF00B540C2 /* AssetsLibrary.framework */; };
+		AA29442B168D6B3000D5ECF6 /* MZAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA29442A168D6B3000D5ECF6 /* MZAlertView.m */; };
 		AA2DEFEB16085D0D00840946 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2DEFEA16085D0D00840946 /* QuartzCore.framework */; };
 		AA5263C715AC48D7009F0297 /* MZSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5263C515AC48D7009F0297 /* MZSettingsViewController.m */; };
 		AA5263C815AC48D7009F0297 /* MZSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA5263C615AC48D7009F0297 /* MZSettingsViewController.xib */; };
@@ -113,6 +114,8 @@
 		AA147C70166D9D6F00983C7B /* MarkupParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkupParser.m; sourceTree = "<group>"; };
 		AA225492168C2F3600B540C2 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		AA225494168C38FF00B540C2 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		AA294429168D6B3000D5ECF6 /* MZAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZAlertView.h; sourceTree = "<group>"; };
+		AA29442A168D6B3000D5ECF6 /* MZAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZAlertView.m; sourceTree = "<group>"; };
 		AA2DEFEA16085D0D00840946 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AA5263C415AC48D7009F0297 /* MZSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZSettingsViewController.h; sourceTree = "<group>"; };
 		AA5263C515AC48D7009F0297 /* MZSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZSettingsViewController.m; sourceTree = "<group>"; };
@@ -323,10 +326,6 @@
 			isa = PBXGroup;
 			children = (
 				AAD4D3681679B72B0091036E /* voice */,
-				AAD4D3621679B4880091036E /* New Group3 */,
-				AAD4D3611679B4680091036E /* New Group2 */,
-				AAD4D3601679B4620091036E /* New Group1 */,
-				AAD4D35F1679B4510091036E /* New Group */,
 				AAA0A95A1649009F00D96AA5 /* Moudle */,
 				AA7872FA1637D186003EF57F /* Old */,
 				AAE32E6015FF06BE00C44BDD /* resource */,
@@ -346,6 +345,8 @@
 				AAD4D35A1679B00A0091036E /* MZVoiceViewController.h */,
 				AAD4D35B1679B00A0091036E /* MZVoiceViewController.m */,
 				AAD4D35C1679B00A0091036E /* MZVoiceViewController.xib */,
+				AA294429168D6B3000D5ECF6 /* MZAlertView.h */,
+				AA29442A168D6B3000D5ECF6 /* MZAlertView.m */,
 			);
 			path = MyTestAll;
 			sourceTree = "<group>";
@@ -367,34 +368,6 @@
 				AACD873216100EAC0046B720 /* libminizip.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		AAD4D35F1679B4510091036E /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group";
-			sourceTree = "<group>";
-		};
-		AAD4D3601679B4620091036E /* New Group1 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group1";
-			sourceTree = "<group>";
-		};
-		AAD4D3611679B4680091036E /* New Group2 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group2";
-			sourceTree = "<group>";
-		};
-		AAD4D3621679B4880091036E /* New Group3 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group3";
 			sourceTree = "<group>";
 		};
 		AAD4D3681679B72B0091036E /* voice */ = {
@@ -611,6 +584,7 @@
 				AA147C71166D9D6F00983C7B /* MarkupParser.m in Sources */,
 				AAD4D35D1679B00A0091036E /* MZVoiceViewController.m in Sources */,
 				AAD4D36B1679B72B0091036E /* GUVoiceRecordView.m in Sources */,
+				AA29442B168D6B3000D5ECF6 /* MZAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

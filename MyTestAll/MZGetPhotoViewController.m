@@ -8,6 +8,7 @@
 
 #import "MZGetPhotoViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
+#import "MZAlertView.h"
 
 
 @interface MZGetPhotoViewController ()
@@ -216,6 +217,24 @@ void UIImageFromURL( NSURL * URL, void (^imageBlock)(UIImage * image), void (^er
 - (IBAction)doAssetURL:(id)sender {
     [self findLargeImage];
     
+}
+
+- (IBAction)doAlertView:(id)sender {
+    MZAlertView *alertView = [[MZAlertView alloc]
+                              initWithTitle:@"hello"
+                              message:nil
+                              delegate:self
+                              cancelButtonTitle:@"取消"
+                              otherButtonTitles:@"确定",
+                              nil];
+    [alertView addButtonWithTitle:@"录制1"];
+    [alertView addButtonWithTitle:@"录制2"];
+    [alertView show];
+}
+
+#pragma mark -- UIAlertViewDelegate method
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSLog(@"clickedButtonAtIndex");
 }
 
 -(void)findLargeImage
