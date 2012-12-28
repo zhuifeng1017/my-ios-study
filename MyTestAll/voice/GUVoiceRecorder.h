@@ -10,6 +10,12 @@
 #import <AVFoundation/AVFoundation.h>
 #include "VoiceDefine.h"
 
+@protocol GUVoiceRecorderDelegate <NSObject>
+@required
+- (void) recordTimeOver;
+
+@end
+
 @interface GUVoiceRecorder : NSObject<AVAudioRecorderDelegate,AVAudioSessionDelegate>
 {
 @private
@@ -25,6 +31,7 @@
 - (void) discardRecord;
 
 @property (assign, nonatomic) int recordDuration;
+@property (assign, nonatomic) id<GUVoiceRecorderDelegate> recordDelegate;
 
 -(id)initWithRecordFile:(NSString*) fullPathName;
 

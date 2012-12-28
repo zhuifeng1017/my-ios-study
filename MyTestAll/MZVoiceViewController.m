@@ -7,7 +7,6 @@
 //
 
 #import "MZVoiceViewController.h"
-#import "GUVoiceRecorder.h"
 
 #define kDocuments [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]
 
@@ -120,12 +119,15 @@
                               cancelButtonTitle:@"取消"
                               otherButtonTitles:@"保存",
                               nil];
-    //[alertView addButtonWithTitle:@"录制"];
-    UIButton *btnRecord = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    btnRecord.frame = CGRectZero;
-    [btnRecord setTitle:@"录音" forState:UIControlStateNormal];
-    [btnRecord addTarget:self action:@selector(doRecord:) forControlEvents:UIControlEventTouchUpInside];
-    [alertView addSubview:btnRecord];
+
+    if (_alertViewBtnRecord == nil) {
+        _alertViewBtnRecord = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        _alertViewBtnRecord.frame = CGRectZero;
+        [_alertViewBtnRecord addTarget:self action:@selector(doRecord:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    _alertViewBtnRecord.enabled = YES;
+    [_alertViewBtnRecord setTitle:@"录音" forState:UIControlStateNormal];
+    [alertView addSubview:_alertViewBtnRecord];
     [alertView show];
     _alertView  = alertView;
 }
@@ -135,7 +137,8 @@
     if (_recoder == nil) {
         NSString *fullPathName = [kDocuments stringByAppendingString:@"/record.caf"];
         _recoder = [[GUVoiceRecorder alloc] initWithRecordFile:fullPathName];
-        _recoder.recordDuration = 10;
+        _recoder.recordDuration = 5;
+        _recoder.recordDelegate = self;
     }
     enRecordState state = [_recoder actionRecord];
     switch (state) {
@@ -164,6 +167,11 @@
             }
         }
     }
+}
+
+- (void) recordTimeOver{
+    _alertViewBtnRecord.enabled = NO;
+    [_alertViewBtnRecord setTitle:@"已完成" forState:UIControlStateNormal];
 }
 
 #pragma mark -- UIAlertViewDelegate method
@@ -196,8 +204,7 @@
             }
         }
     }
-    
-    
+
     NSLog(@"willPresentAlertView");
 }
 

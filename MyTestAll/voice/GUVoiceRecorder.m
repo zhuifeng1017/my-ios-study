@@ -108,6 +108,10 @@
         _audioRecorder = nil;
     }
     _recordState = enRecordStateStop;
+    
+    if (self.recordDelegate != nil) {
+        [self.recordDelegate recordTimeOver];
+    }
 }
 
 -(void)levelTimerCallback:(NSTimer *)timer{
