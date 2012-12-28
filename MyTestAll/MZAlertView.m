@@ -24,8 +24,8 @@
     [super dismissWithClickedButtonIndex:buttonIndex animated:animated];
 }
 
-- (void) layoutSubviews{
-    NSLog(@" AlertView layoutSubviews");
+//- (void) layoutSubviews{
+//    NSLog(@" AlertView layoutSubviews");
 //    for (UIView *v in self.subviews) {
 //        if ([v isKindOfClass:NSClassFromString(@"UIAlertButton")]) {
 //            UIButton *button = (UIButton *)v;
@@ -37,8 +37,7 @@
 //            }
 //        }
 //    }
-
-}
+//}
 
 
 /*

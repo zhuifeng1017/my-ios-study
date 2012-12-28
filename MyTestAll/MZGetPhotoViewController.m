@@ -78,7 +78,7 @@
     NSString *thumbPath = NSHomeDirectory();
     NSError *err = [[NSError alloc] init];
     NSArray *arrFiles = [fileManager contentsOfDirectoryAtPath:thumbPath error:&err];
-   // NSLog(@"%@",[err localizedDescription]);
+    // NSLog(@"%@",[err localizedDescription]);
     
     if (arrFiles != nil) {
         for(id fileName in arrFiles){
@@ -137,7 +137,7 @@
     for (NSString *strKey in arr2) {
         NSLog(@"TIFF key: %@", strKey);
     }
-
+    
     // 可以获取经纬度添加gps到元数据
     
     // 存入图片库
@@ -158,7 +158,7 @@
     NSString *photoPath =  [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:photoName];
     NSData *imgData = UIImageJPEGRepresentation(smallImage, 1.0);
     if (imgData != nil && imgData.length >0) {
-        [imgData writeToFile:photoPath atomically:YES]; 
+        [imgData writeToFile:photoPath atomically:YES];
     }
     
     self.imgView.image = smallImage;
@@ -201,7 +201,7 @@ void UIImageFromURL( NSURL * URL, void (^imageBlock)(UIImage * image), void (^er
                    });
 }
 
-	
+
 
 - (void)viewDidUnload {
     [self setImgView:nil];
@@ -225,10 +225,19 @@ void UIImageFromURL( NSURL * URL, void (^imageBlock)(UIImage * image), void (^er
                               message:nil
                               delegate:self
                               cancelButtonTitle:@"取消"
-                              otherButtonTitles:@"确定",
+                              otherButtonTitles:@"保存",
                               nil];
     //[alertView addButtonWithTitle:@"录制"];
+    UIButton *btnRecord = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btnRecord.frame = CGRectZero;
+    [btnRecord setTitle:@"录音" forState:UIControlStateNormal];
+    [btnRecord addTarget:self action:@selector(doRecord:) forControlEvents:UIControlEventTouchUpInside];
+    [alertView addSubview:btnRecord];
     [alertView show];
+}
+
+- (IBAction)doRecord:(id)sender{
+    NSLog(@"Record....");
 }
 
 #pragma mark -- UIAlertViewDelegate method
@@ -238,24 +247,25 @@ void UIImageFromURL( NSURL * URL, void (^imageBlock)(UIImage * image), void (^er
 
 -(void)willPresentAlertView:(UIAlertView *)alertView{
     CGRect frame = alertView.frame;
-    frame.size.height += 50;
-    frame.origin.y -= 25;
+    frame.size.height = 170;
     alertView.frame = frame;
-    
+
     for (UIView *v in alertView.subviews) {
-        if ([v isKindOfClass:NSClassFromString(@"UIAlertButton")]) {
+        if ([v isKindOfClass:NSClassFromString(@"UIButton")]) {
             UIButton *button = (UIButton *)v;
             NSLog(@"btn tag : %d", button.tag);
-            if (button.tag != 1) {
+            if ([[button titleForState:UIControlStateNormal] compare:@"录音"] == NSOrderedSame) {
+                button.frame = CGRectMake(30,30, 60, 60);
+            }else if ([[button titleForState:UIControlStateNormal] compare:@"取消"] == NSOrderedSame){
+                button.frame = CGRectMake(11, 101, 127, 43);
+            }else if([[button titleForState:UIControlStateNormal] compare:@"保存"] == NSOrderedSame){
+                button.frame = CGRectMake(146, 101, 127, 43);
                 button.enabled = NO;
-            }else{
-                
             }
-        CGPoint ptCenter = button.center;
-        ptCenter.y += 50;
-        button.center = ptCenter;
         }
     }
+    
+    
     NSLog(@"willPresentAlertView");
 }
 
