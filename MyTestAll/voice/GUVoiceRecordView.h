@@ -8,12 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
-
+#import "VoiceDefine.h"
+/*
 typedef enum{
     enRecordStateStop = 0,
     enRecordStateRecord,
     enRecordStatePause,
 }enRecordState;
+*/
+
 
 @protocol GUVoiceRecordDoneDelegate <NSObject>
 @required

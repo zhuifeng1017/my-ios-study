@@ -10,17 +10,9 @@
 #import <QuartzCore/QuartzCore.h>
 # define showviewwidth 300
 
-#define kTitleCancel @"取消"
-#define kTitleDone @"保存"
-#define kTitlePause @"暂停"
-#define kTitleContine @"继续"
-#define kTitleRecord @"录制"
-#define kTitlePlay @"播放"
-
 
 @implementation GUVoiceRecordView
 @synthesize recordDelegate;
-@synthesize recordDuration;
 
 -(id)initWithRecordFile:(NSString*) fullPathName
 {
@@ -28,6 +20,7 @@
     if(self)
     {
         _recordFullPathName = [fullPathName copy];
+        self.recordDuration = 600;
         
         self.frame = CGRectMake(0, 0, 320, 480);
         self.backgroundColor = [UIColor clearColor];
@@ -129,6 +122,7 @@
         if (_audioRecorder) {
             [_audioRecorder prepareToRecord];
             _audioRecorder.meteringEnabled = YES;
+            [_audioRecorder recordForDuration:self.recordDuration];
             [_audioRecorder peakPowerForChannel:0];
             _levelTimer=[NSTimer scheduledTimerWithTimeInterval:0.03 target:self selector:@selector(levelTimerCallback:) userInfo:nil repeats:YES];
             [_audioRecorder record]; // 开始录制
@@ -174,10 +168,15 @@
     if (_recordState == enRecordStateRecord || _recordState == enRecordStatePause) {
         [_audioSession setActive: NO error: nil];
         [_audioRecorder stop]; // 停止录制
+        assert([_audioRecorder deleteRecording]);// 删除录制文件
         [_audioRecorder release];
         _audioRecorder = nil;
     }
     [self hiddenAlert];
+    
+    if (self.recordDelegate != nil) {
+        [self.recordDelegate recordDone:_recordFullPathName result:NO];
+    }
 }
 
 -(IBAction)savebtnClidk:(UIButton *)sender{

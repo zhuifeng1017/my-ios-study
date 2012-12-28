@@ -9,17 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "GUVoiceRecordView.h"
 
-typedef enum{
-    enPlayStateStop = 0,
-    enPlayStatePlay,
-    enPlayStatePause,
-}enPlayState;
+@class GUVoiceRecorder;
 
-@interface MZVoiceViewController : UIViewController <GUVoiceRecordDoneDelegate,AVAudioPlayerDelegate>
+@interface MZVoiceViewController : UIViewController </*GUVoiceRecordDoneDelegate,*/AVAudioPlayerDelegate, UIAlertViewDelegate>
 {
     NSString *_recordFileFullPathName;
     AVAudioPlayer * audioPlayer;
     enPlayState _playState;
+    GUVoiceRecorder *_recoder;
+    UIAlertView *_alertView;
 }
 @property (weak, nonatomic) IBOutlet UIButton *btnPlay;
 @property (weak, nonatomic) IBOutlet UIButton *btnRecord;

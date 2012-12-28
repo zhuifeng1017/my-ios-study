@@ -238,6 +238,7 @@ void UIImageFromURL( NSURL * URL, void (^imageBlock)(UIImage * image), void (^er
 
 - (IBAction)doRecord:(id)sender{
     NSLog(@"Record....");
+    [(UIButton*)sender setTitle:@"暂停" forState:UIControlStateNormal];
 }
 
 #pragma mark -- UIAlertViewDelegate method
