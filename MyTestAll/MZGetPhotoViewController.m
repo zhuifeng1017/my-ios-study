@@ -227,14 +227,36 @@ void UIImageFromURL( NSURL * URL, void (^imageBlock)(UIImage * image), void (^er
                               cancelButtonTitle:@"取消"
                               otherButtonTitles:@"确定",
                               nil];
-    [alertView addButtonWithTitle:@"录制1"];
-    [alertView addButtonWithTitle:@"录制2"];
+    //[alertView addButtonWithTitle:@"录制"];
     [alertView show];
 }
 
 #pragma mark -- UIAlertViewDelegate method
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     NSLog(@"clickedButtonAtIndex");
+}
+
+-(void)willPresentAlertView:(UIAlertView *)alertView{
+    CGRect frame = alertView.frame;
+    frame.size.height += 50;
+    frame.origin.y -= 25;
+    alertView.frame = frame;
+    
+    for (UIView *v in alertView.subviews) {
+        if ([v isKindOfClass:NSClassFromString(@"UIAlertButton")]) {
+            UIButton *button = (UIButton *)v;
+            NSLog(@"btn tag : %d", button.tag);
+            if (button.tag != 1) {
+                button.enabled = NO;
+            }else{
+                
+            }
+        CGPoint ptCenter = button.center;
+        ptCenter.y += 50;
+        button.center = ptCenter;
+        }
+    }
+    NSLog(@"willPresentAlertView");
 }
 
 -(void)findLargeImage

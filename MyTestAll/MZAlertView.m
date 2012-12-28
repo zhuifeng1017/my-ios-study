@@ -21,21 +21,23 @@
 
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated{
     NSLog(@"dismissWithClickedButtonIndex");
- //   [super dismissWithClickedButtonIndex:buttonIndex animated:animated];
+    [super dismissWithClickedButtonIndex:buttonIndex animated:animated];
 }
 
 - (void) layoutSubviews{
-    for (UIView *v in self.subviews) {
-        if ([v isKindOfClass:NSClassFromString(@"UIAlertButton")]) {
-            UIButton *button = (UIButton *)v;
-            NSLog(@"btn tag : %d", button.tag);
-            if (button.tag == 1) {
-                button.enabled = NO;
-            }else{
-                
-            }
-        }
-    }
+    NSLog(@" AlertView layoutSubviews");
+//    for (UIView *v in self.subviews) {
+//        if ([v isKindOfClass:NSClassFromString(@"UIAlertButton")]) {
+//            UIButton *button = (UIButton *)v;
+//            NSLog(@"btn tag : %d", button.tag);
+//            if (button.tag != 1) {
+//                button.enabled = NO;
+//            }else{
+//                
+//            }
+//        }
+//    }
+
 }
 
 
