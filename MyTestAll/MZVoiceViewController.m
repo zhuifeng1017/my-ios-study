@@ -97,6 +97,49 @@
     }
 }
 
+- (IBAction)actionThreadTest:(id)sender {
+    [self createAlertView];
+    [_processAlertView setTitle:@"正在运行中...."];
+    [_processAlertView show];
+    [NSThread detachNewThreadSelector:@selector(threadEntity:) toTarget:self withObject:nil];
+}
+
+- (void) threadEntity:(id) param{
+    int nCount = 3;
+    while (nCount--) {
+        NSLog(@"thread run : %d", nCount);
+        sleep(1);
+    }
+    
+    [self performSelectorOnMainThread:@selector(threadOver:) withObject:nil waitUntilDone:NO];
+}
+
+- (void) createAlertView{
+    if (_processAlertView == nil) {
+        _processAlertView = [[UIAlertView alloc]
+                             initWithTitle:@""
+                             message:nil
+                             delegate:nil
+                             cancelButtonTitle:nil
+                             otherButtonTitles:nil];
+        UIActivityIndicatorView *activity=[[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(130, 65, 20, 20)];
+        activity.tag = 0xFF;
+        [_processAlertView addSubview:activity];
+    }
+    UIActivityIndicatorView *activity = (UIActivityIndicatorView*)[_processAlertView viewWithTag:0xFF];
+    if (![activity isAnimating]) {
+        [activity startAnimating];
+    }
+}
+
+- (void) threadOver:(id) param{
+    UIActivityIndicatorView *activity = (UIActivityIndicatorView*)[_processAlertView viewWithTag:0xFF];
+    if ([activity isAnimating]) {
+        [activity stopAnimating];
+    }
+    [_processAlertView dismissWithClickedButtonIndex:0 animated:YES];
+}
+
 -(void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
     [audioPlayer stop];
     audioPlayer = nil;

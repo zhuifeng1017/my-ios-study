@@ -19,6 +19,8 @@
     GUVoiceRecorder *_recoder;
     UIAlertView *_alertView;
     UIButton *_alertViewBtnRecord;
+
+    UIAlertView *_processAlertView;
 }
 
 @property (weak, nonatomic) IBOutlet UIButton *btnPlay;
@@ -26,5 +28,6 @@
 
 - (IBAction)actionRecord:(id)sender;
 - (IBAction)actionPlay:(id)sender;
+- (IBAction)actionThreadTest:(id)sender;
 
 @end
