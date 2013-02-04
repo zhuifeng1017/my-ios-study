@@ -47,6 +47,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
  
+    NSLog(@"NSTemporaryDirectory : %@" , NSTemporaryDirectory());
 
 
     NSLog(@"xxxx: %d",  [[NSTimeZone localTimeZone] secondsFromGMT]);
