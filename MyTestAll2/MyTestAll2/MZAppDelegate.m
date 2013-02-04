@@ -24,12 +24,14 @@
     MZPerson *person = [[MZPerson alloc] init];
     NSString *strName = @"abc";
     person.name = strName;
-    [person release];
-    
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    self.viewController = [[[MZViewController alloc] initWithNibName:@"MZViewController" bundle:nil] autorelease];
+    
+    MZViewController *VC = [[MZViewController alloc] initWithNibName:@"MZViewController" bundle:nil];
+    self.viewController = VC;
+    [VC release];
+
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
