@@ -114,6 +114,7 @@
     
     // NSRunLoop
     while (_threadRunning) {
+        // 循环一秒钟
         [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:1]];
     }
     [self hideAlertView:nil];
@@ -127,6 +128,7 @@
             sleep(1);
         }
     }
+    
 #if 0
     [self performSelectorOnMainThread:@selector(threadOver:) withObject:nil waitUntilDone:NO];
 #endif
