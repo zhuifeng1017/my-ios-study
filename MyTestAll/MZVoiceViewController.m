@@ -101,17 +101,37 @@
     [self createAlertView];
     [_processAlertView setTitle:@"正在运行中...."];
     [_processAlertView show];
+    
+    _threadRunning = YES;
+#if 0
     [NSThread detachNewThreadSelector:@selector(threadEntity:) toTarget:self withObject:nil];
+#else
+    [self performSelectorInBackground:@selector(threadEntity:) withObject:nil];
+    
+//    NSThread *thr = [[NSThread alloc] initWithTarget:self selector:@selector(threadEntity:) object:nil];
+//    [thr start];
+#endif
+    
+    // NSRunLoop
+    while (_threadRunning) {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:1]];
+    }
+    [self hideAlertView:nil];
 }
 
 - (void) threadEntity:(id) param{
-    int nCount = 3;
-    while (nCount--) {
-        NSLog(@"thread run : %d", nCount);
-        sleep(1);
+    if (_threadRunning) {
+        int nCount = 5;
+        while (nCount--) {
+            NSLog(@"thread run : %d", nCount);
+            sleep(1);
+        }
     }
-    
+#if 0
     [self performSelectorOnMainThread:@selector(threadOver:) withObject:nil waitUntilDone:NO];
+#endif
+    
+    _threadRunning = NO;
 }
 
 - (void) createAlertView{
@@ -132,7 +152,7 @@
     }
 }
 
-- (void) threadOver:(id) param{
+- (void) hideAlertView:(id) param{
     UIActivityIndicatorView *activity = (UIActivityIndicatorView*)[_processAlertView viewWithTag:0xFF];
     if ([activity isAnimating]) {
         [activity stopAnimating];

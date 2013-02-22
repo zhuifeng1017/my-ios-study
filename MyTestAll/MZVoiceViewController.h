@@ -21,6 +21,7 @@
     UIButton *_alertViewBtnRecord;
 
     UIAlertView *_processAlertView;
+    BOOL _threadRunning;
 }
 
 @property (weak, nonatomic) IBOutlet UIButton *btnPlay;

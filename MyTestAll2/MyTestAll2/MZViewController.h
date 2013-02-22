@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface MZViewController : UIViewController
-
+{
+    NSThread *_thrProducer;
+    BOOL _thrProducerRunning;
+}
+- (IBAction)actionThread:(id)sender;
+- (IBAction) actionThreadStop:(id)sender;
 @end
