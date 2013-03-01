@@ -88,17 +88,26 @@
     if (_queue == nil) {
         _queue = [[NSOperationQueue alloc] init];
     }
+//    [_queue setMaxConcurrentOperationCount:2];
+    
     int ID = 0;
-    int nCount = 10;
+    int nCount = 15;
     while (nCount--) {
         NetMyOperation *oper = [[[NetMyOperation alloc] init] autorelease];
         oper.operationId = ID++;
+        
+#if 0
+        if (ID%2) {
+            [oper setQueuePriority:NSOperationQueuePriorityHigh];
+        }
+        
         if ([_queue operationCount] > 0) {
             NSOperation *beforTask = [[_queue operations] lastObject];
             [oper addDependency:beforTask];
         }
+#endif
         [_queue addOperation:oper];
-    }    
+    }
 }
 
 - (void) get:(int) type{
