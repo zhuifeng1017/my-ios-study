@@ -65,14 +65,16 @@
 
 - (IBAction)actionDownloadRange:(id)sender{
     NSURL *url = [NSURL URLWithString:@"http://192.168.108.1:8080/WebXX/dl/xx.zip"];
+    NSString *destPath = [kDocuments stringByAppendingPathComponent:@"xx.zip"];
+    NSString *tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"temp_xx.zip"];
     
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request addRequestHeader:@"User-Agent" value:@"ipod touch; min's ipod; zh_CN"];
-    NSString *destPath = [kDocuments stringByAppendingPathComponent:@"xx.zip"];
+    [request setDelegate:self];
+    
     [request setTimeOutSeconds:3.0];
     [request setShowAccurateProgress:YES];
-
-    NSString *tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"temp_xx.zip"];
+    [request setDownloadProgressDelegate:self];
     [request setTemporaryFileDownloadPath:tempPath];
     [request setDownloadDestinationPath:destPath];
     [request setAllowCompressedResponse:YES];
@@ -91,23 +93,43 @@
 //    [_queue setMaxConcurrentOperationCount:2];
     
     int ID = 0;
-    int nCount = 15;
+    int nCount = 10;
+#if 0
     while (nCount--) {
         NetMyOperation *oper = [[[NetMyOperation alloc] init] autorelease];
         oper.operationId = ID++;
         
-#if 0
-        if (ID%2) {
-            [oper setQueuePriority:NSOperationQueuePriorityHigh];
+        if (0) {
+            if (ID%2) {
+                [oper setQueuePriority:NSOperationQueuePriorityHigh];
+            }
+            
+            if ([_queue operationCount] > 0) {
+                NSOperation *beforTask = [[_queue operations] lastObject];
+                [oper addDependency:beforTask];
+            }
         }
-        
-        if ([_queue operationCount] > 0) {
-            NSOperation *beforTask = [[_queue operations] lastObject];
-            [oper addDependency:beforTask];
-        }
-#endif
         [_queue addOperation:oper];
     }
+#else
+    //NSInvocationOperation
+    while (nCount--) {
+        NSInvocationOperation *oper = [[[NSInvocationOperation alloc] initWithTarget:self selector:@selector(invocationOper:) object:[NSNumber numberWithInt:ID++]] autorelease];
+        if (0) {
+            if (ID%2) {
+                [oper setQueuePriority:NSOperationQueuePriorityHigh];
+            }
+        }
+        [_queue addOperation:oper];
+    }
+#endif
+
+}
+
+- (void) invocationOper:(id) arg{
+    NSLog(@"task %i run … ",[(NSNumber*)arg intValue]);
+    [NSThread sleepForTimeInterval:3];
+    NSLog(@"task %i is finished. ",[(NSNumber*)arg intValue]);
 }
 
 - (void) get:(int) type{
