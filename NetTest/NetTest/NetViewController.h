@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "ASIHTTPRequestDelegate.h"
+#import "ASIProgressDelegate.h"
 
 
-@interface NetViewController : UIViewController <ASIHTTPRequestDelegate>
+@interface NetViewController : UIViewController <ASIHTTPRequestDelegate, ASIProgressDelegate>
 {
     ASIHTTPRequest *_downloadRequest;
     NSOperationQueue *_queue;

@@ -12,6 +12,7 @@
 
 #define kDocuments [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]
 #define kCatches [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches"]
+#define kUsrInfo_DlType @"dl_type"
 
 @interface NetViewController ()
 
@@ -68,18 +69,29 @@
     NSString *destPath = [kDocuments stringByAppendingPathComponent:@"xx.zip"];
     NSString *tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"temp_xx.zip"];
     
-    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
-    [request addRequestHeader:@"User-Agent" value:@"ipod touch; min's ipod; zh_CN"];
-    [request setDelegate:self];
-    
-    [request setTimeOutSeconds:3.0];
-    [request setShowAccurateProgress:YES];
-    [request setDownloadProgressDelegate:self];
-    [request setTemporaryFileDownloadPath:tempPath];
-    [request setDownloadDestinationPath:destPath];
-    [request setAllowCompressedResponse:YES];
-    
-   [request startAsynchronous]; // 异步
+    if ([[self.btnDownload titleForState:UIControlStateNormal] compare:@"下载"] == NSOrderedSame ) {
+        _downloadRequest = [ASIHTTPRequest requestWithURL:url];
+        
+        [_downloadRequest addRequestHeader:@"User-Agent" value:@"ipod touch; min's ipod; zh_CN"];
+        // 设置用户数据
+        [_downloadRequest setUserInfo:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:1], kUsrInfo_DlType,nil]];
+        
+        [_downloadRequest setDelegate:self];
+        
+        [_downloadRequest setTimeOutSeconds:10.0];
+        [_downloadRequest setShowAccurateProgress:YES];
+        [_downloadRequest setDownloadProgressDelegate:self];
+        [_downloadRequest setTemporaryFileDownloadPath:tempPath];
+        [_downloadRequest setDownloadDestinationPath:destPath];
+        [_downloadRequest setAllowCompressedResponse:YES];
+        
+        [_downloadRequest startAsynchronous]; // 异步
+
+        [self.btnDownload setTitle:@"暂停" forState:UIControlStateNormal];
+    }else if ([[self.btnDownload titleForState:UIControlStateNormal] compare:@"暂停"] == NSOrderedSame ){
+        [_downloadRequest clearDelegatesAndCancel];
+        [self.btnDownload setTitle:@"下载" forState:UIControlStateNormal];
+    }
 }
 
 - (IBAction)actionDownloadRangeCancel:(id)sender{
@@ -187,6 +199,8 @@
     }
 }
 
+#pragma mark -- ASIHTTPRequestDelegate method
+
 - (void)requestFinished:(ASIHTTPRequest *)request{
     NSLog(@"requestFinished");
     NSLog(@"%@", [request responseHeaders]);
@@ -204,9 +218,29 @@
     NSLog(@"%@", error);
 }
 
+- (void)request:(ASIHTTPRequest *)request didReceiveResponseHeaders:(NSDictionary *)responseHeaders{
+    id obj = [[request userInfo] objectForKey:kUsrInfo_DlType];
+    if (obj != nil) {
+        if ([(NSNumber*)obj intValue] == 1) { // 断点下载
+            NSLog(@"didReceiveResponseHeaders-%@",[responseHeaders valueForKey:@"Content-Length"]);
+        }
+    }
+}
+
+#pragma mark -- ASIProgressDelegate method
+
+- (void)request:(ASIHTTPRequest *)request didReceiveBytes:(long long)bytes{
+    NSLog(@"didReceiveBytes: %lld", bytes);
+}
+
+- (void)setProgress:(float)newProgress{
+     NSLog(@"newProgress: %f", newProgress);
+}
+
 - (void)dealloc {
     [_queue release];
     [_btnDownload release];
     [super dealloc];
 }
+
 @end
