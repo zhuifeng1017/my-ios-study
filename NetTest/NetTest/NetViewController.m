@@ -93,7 +93,7 @@
 //    [_queue setMaxConcurrentOperationCount:2];
     
     int ID = 0;
-    int nCount = 10;
+    int nCount = 5;
 #if 0
     while (nCount--) {
         NetMyOperation *oper = [[[NetMyOperation alloc] init] autorelease];
@@ -121,7 +121,21 @@
             }
         }
         [_queue addOperation:oper];
+    
+        if (1) {
+            NSBlockOperation* blockOper = [NSBlockOperation blockOperationWithBlock:^{
+                NSLog(@"NSBlockOperation in block: %i", ID);
+            }];
+            
+            [blockOper addExecutionBlock:^{
+                NSLog(@"NSBlockOperation addExecutionBlock: %i", ID);
+            }];
+            
+            NSLog(@"NSBlockOperation blocks count : %i, %@", [[blockOper executionBlocks] count], [blockOper executionBlocks]);
+            [_queue addOperation:blockOper];
+        }
     }
+    //ID = 100;
 #endif
 
 }
