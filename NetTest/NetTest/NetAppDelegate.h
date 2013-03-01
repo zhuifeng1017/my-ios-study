@@ -16,4 +16,6 @@
 
 @property (strong, nonatomic) NetViewController *viewController;
 
+@property (strong, nonatomic) UITabBarController *tabBarViewController;
+
 @end

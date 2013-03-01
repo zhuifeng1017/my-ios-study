@@ -22,9 +22,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    self.tabBarViewController = [[UITabBarController alloc] init];
+    
     // Override point for customization after application launch.
-    self.viewController = [[[NetViewController alloc] initWithNibName:@"NetViewController" bundle:nil] autorelease];
-    self.window.rootViewController = self.viewController;
+    NetViewController *controller1 = [[[NetViewController alloc] initWithNibName:@"NetViewController" bundle:nil] autorelease];
+    controller1.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"下载" image:[UIImage imageNamed:@"second.png"] tag:0];
+    
+    NetViewController *controller2 = [[[NetViewController alloc] initWithNibName:@"NetViewController" bundle:nil] autorelease];
+    controller2.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"队列" image:[UIImage imageNamed:@"second.png"] tag:2];
+    
+    self.tabBarViewController.viewControllers = [NSArray arrayWithObjects:controller1, controller2, nil];
+    self.window.rootViewController = self.tabBarViewController;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
