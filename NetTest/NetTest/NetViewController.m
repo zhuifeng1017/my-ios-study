@@ -88,12 +88,17 @@
     if (_queue == nil) {
         _queue = [[NSOperationQueue alloc] init];
     }
-    
-    NetMyOperation *oper = [[[NetMyOperation alloc] init] autorelease];
     int ID = 0;
-    oper.operationId = ID++;
-    [_queue addOperation:oper];
-    
+    int nCount = 10;
+    while (nCount--) {
+        NetMyOperation *oper = [[[NetMyOperation alloc] init] autorelease];
+        oper.operationId = ID++;
+        if ([_queue operationCount] > 0) {
+            NSOperation *beforTask = [[_queue operations] lastObject];
+            [oper addDependency:beforTask];
+        }
+        [_queue addOperation:oper];
+    }    
 }
 
 - (void) get:(int) type{
@@ -155,6 +160,7 @@
 }
 
 - (void)dealloc {
+    [_queue release];
     [_btnDownload release];
     [super dealloc];
 }

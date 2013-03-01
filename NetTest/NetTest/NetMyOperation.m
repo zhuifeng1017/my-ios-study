@@ -13,7 +13,7 @@
 
 - (void)main{
     NSLog(@"task %i run … ",operationId);
-    [NSThread sleepForTimeInterval:5];
+    [NSThread sleepForTimeInterval:2];
     NSLog(@"task %i is finished. ",operationId);
 }
 
