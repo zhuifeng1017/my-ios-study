@@ -15,6 +15,8 @@
 		AA225493168C2F3700B540C2 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA225492168C2F3600B540C2 /* CoreImage.framework */; };
 		AA225495168C38FF00B540C2 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA225494168C38FF00B540C2 /* AssetsLibrary.framework */; };
 		AA29442B168D6B3000D5ECF6 /* MZAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA29442A168D6B3000D5ECF6 /* MZAlertView.m */; };
+		AA294432168D894E00D5ECF6 /* GUVoicePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AA294431168D894E00D5ECF6 /* GUVoicePlayer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AA294435168D89EC00D5ECF6 /* GUVoiceRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = AA294434168D89EC00D5ECF6 /* GUVoiceRecorder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AA2DEFEB16085D0D00840946 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2DEFEA16085D0D00840946 /* QuartzCore.framework */; };
 		AA5263C715AC48D7009F0297 /* MZSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5263C515AC48D7009F0297 /* MZSettingsViewController.m */; };
 		AA5263C815AC48D7009F0297 /* MZSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA5263C615AC48D7009F0297 /* MZSettingsViewController.xib */; };
@@ -87,6 +89,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		AA0C093116D7780C003B433C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA0C092B16D77808003B433C /* NetTest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AA0C090516D77807003B433C;
+			remoteInfo = NetTest;
+		};
 		AACD873116100EAC0046B720 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AACD872216100E4B0046B720 /* LibMinizip.xcodeproj */;
@@ -104,6 +113,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA0C092B16D77808003B433C /* NetTest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetTest.xcodeproj; path = NetTest/NetTest.xcodeproj; sourceTree = "<group>"; };
 		AA11122215DB8F17003DDAC6 /* MZTableXXViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTableXXViewController.h; sourceTree = "<group>"; };
 		AA11122315DB8F17003DDAC6 /* MZTableXXViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTableXXViewController.m; sourceTree = "<group>"; };
 		AA11122415DB8F17003DDAC6 /* MZTableXXViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZTableXXViewController.xib; sourceTree = "<group>"; };
@@ -116,6 +126,11 @@
 		AA225494168C38FF00B540C2 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		AA294429168D6B3000D5ECF6 /* MZAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZAlertView.h; sourceTree = "<group>"; };
 		AA29442A168D6B3000D5ECF6 /* MZAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZAlertView.m; sourceTree = "<group>"; };
+		AA294430168D894E00D5ECF6 /* GUVoicePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUVoicePlayer.h; sourceTree = "<group>"; };
+		AA294431168D894E00D5ECF6 /* GUVoicePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUVoicePlayer.m; sourceTree = "<group>"; };
+		AA294433168D89EC00D5ECF6 /* GUVoiceRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUVoiceRecorder.h; sourceTree = "<group>"; };
+		AA294434168D89EC00D5ECF6 /* GUVoiceRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUVoiceRecorder.m; sourceTree = "<group>"; };
+		AA294436168D911400D5ECF6 /* VoiceDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoiceDefine.h; sourceTree = "<group>"; };
 		AA2DEFEA16085D0D00840946 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AA5263C415AC48D7009F0297 /* MZSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZSettingsViewController.h; sourceTree = "<group>"; };
 		AA5263C515AC48D7009F0297 /* MZSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZSettingsViewController.m; sourceTree = "<group>"; };
@@ -233,6 +248,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA0C092C16D77808003B433C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA0C093216D7780C003B433C /* NetTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		AA7872FA1637D186003EF57F /* Old */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +312,7 @@
 		AAAC9BCF15A51D04008DE242 = {
 			isa = PBXGroup;
 			children = (
+				AA0C092B16D77808003B433C /* NetTest.xcodeproj */,
 				AA225494168C38FF00B540C2 /* AssetsLibrary.framework */,
 				AA225492168C2F3600B540C2 /* CoreImage.framework */,
 				AAD4D3B1167AD74C0091036E /* MyTestAll2.xcodeproj */,
@@ -358,6 +382,7 @@
 				AAAC9BE715A51D04008DE242 /* InfoPlist.strings */,
 				AAAC9BEA15A51D04008DE242 /* main.m */,
 				AAAC9BEC15A51D04008DE242 /* MyTestAll-Prefix.pch */,
+				AA294436168D911400D5ECF6 /* VoiceDefine.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -373,12 +398,16 @@
 		AAD4D3681679B72B0091036E /* voice */ = {
 			isa = PBXGroup;
 			children = (
+				AA294430168D894E00D5ECF6 /* GUVoicePlayer.h */,
+				AA294431168D894E00D5ECF6 /* GUVoicePlayer.m */,
 				AAD4D36F1679B9C50091036E /* Audio.png */,
 				AAD4D3701679B9C50091036E /* Audio@2x.png */,
 				AAD4D3711679B9C50091036E /* bg.png */,
 				AAD4D3721679B9C50091036E /* button.png */,
 				AAD4D3691679B72B0091036E /* GUVoiceRecordView.h */,
 				AAD4D36A1679B72B0091036E /* GUVoiceRecordView.m */,
+				AA294433168D89EC00D5ECF6 /* GUVoiceRecorder.h */,
+				AA294434168D89EC00D5ECF6 /* GUVoiceRecorder.m */,
 			);
 			path = voice;
 			sourceTree = "<group>";
@@ -457,7 +486,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MZ;
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = AAAC9BD415A51D04008DE242 /* Build configuration list for PBXProject "MyTestAll" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -479,6 +508,10 @@
 					ProductGroup = AAD4D3B2167AD74C0091036E /* Products */;
 					ProjectRef = AAD4D3B1167AD74C0091036E /* MyTestAll2.xcodeproj */;
 				},
+				{
+					ProductGroup = AA0C092C16D77808003B433C /* Products */;
+					ProjectRef = AA0C092B16D77808003B433C /* NetTest.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -488,6 +521,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		AA0C093216D7780C003B433C /* NetTest.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = NetTest.app;
+			remoteRef = AA0C093116D7780C003B433C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		AACD873216100EAC0046B720 /* libminizip.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -585,6 +625,8 @@
 				AAD4D35D1679B00A0091036E /* MZVoiceViewController.m in Sources */,
 				AAD4D36B1679B72B0091036E /* GUVoiceRecordView.m in Sources */,
 				AA29442B168D6B3000D5ECF6 /* MZAlertView.m in Sources */,
+				AA294432168D894E00D5ECF6 /* GUVoicePlayer.m in Sources */,
+				AA294435168D89EC00D5ECF6 /* GUVoiceRecorder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +660,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -644,6 +690,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
