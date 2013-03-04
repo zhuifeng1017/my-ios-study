@@ -67,7 +67,7 @@
 - (IBAction)actionDownloadRange:(id)sender{
     NSURL *url = [NSURL URLWithString:@"http://192.168.108.1:8080/WebXX/dl/xx.zip"];
     NSString *destPath = [kDocuments stringByAppendingPathComponent:@"xx.zip"];
-    NSString *tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"temp_xx.zip"];
+    NSString *tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"xx.zip.temp"];
     
     if ([[self.btnDownload titleForState:UIControlStateNormal] compare:@"下载"] == NSOrderedSame ) {
         _downloadRequest = [ASIHTTPRequest requestWithURL:url];
@@ -83,7 +83,9 @@
         [_downloadRequest setDownloadProgressDelegate:self];
         [_downloadRequest setTemporaryFileDownloadPath:tempPath];
         [_downloadRequest setDownloadDestinationPath:destPath];
-        [_downloadRequest setAllowCompressedResponse:YES];
+        
+        // 设置支持断点下载
+        [_downloadRequest setAllowResumeForFileDownloads:YES];  
         
         [_downloadRequest startAsynchronous]; // 异步
 
