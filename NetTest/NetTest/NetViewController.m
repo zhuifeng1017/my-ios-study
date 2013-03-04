@@ -65,9 +65,9 @@
 }
 
 - (IBAction)actionDownloadRange:(id)sender{
-    NSURL *url = [NSURL URLWithString:@"http://192.168.108.1:8080/WebXX/dl/xx.zip"];
-    NSString *destPath = [kDocuments stringByAppendingPathComponent:@"xx.zip"];
-    NSString *tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"xx.zip.temp"];
+    NSURL *url = [NSURL URLWithString:@"http://192.168.108.1:8080/WebXX/dl/test.zip"];
+    NSString *destPath = [kDocuments stringByAppendingPathComponent:@"test.zip"];
+    NSString *tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"test.zip.temp"];
     
     if ([[self.btnDownload titleForState:UIControlStateNormal] compare:@"下载"] == NSOrderedSame ) {
         _downloadRequest = [ASIHTTPRequest requestWithURL:url];
@@ -79,8 +79,8 @@
         [_downloadRequest setDelegate:self];
         
         [_downloadRequest setTimeOutSeconds:10.0];
-        [_downloadRequest setShowAccurateProgress:YES];
-        [_downloadRequest setDownloadProgressDelegate:self];
+        [_downloadRequest setShowAccurateProgress:YES];  // 显示进度
+        [_downloadRequest setDownloadProgressDelegate:self]; // 进度代理
         [_downloadRequest setTemporaryFileDownloadPath:tempPath];
         [_downloadRequest setDownloadDestinationPath:destPath];
         
@@ -210,14 +210,26 @@
     NSString *responseString = [request responseString];
     NSLog(@"%@", responseString);
     
-    // Use when fetching binary data
-    //NSData *responseData = [request responseData];
+    
+    id obj = [[request userInfo] objectForKey:kUsrInfo_DlType];
+    if (obj != nil) {
+        if ([(NSNumber*)obj intValue] == 1) { // 断点下载
+            [self.btnDownload setTitle:@"下载" forState:UIControlStateNormal];
+        }
+    }
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request{
     NSLog(@"requestFailed");
     NSError *error = [request error];
     NSLog(@"%@", error);
+    
+    id obj = [[request userInfo] objectForKey:kUsrInfo_DlType];
+    if (obj != nil) {
+        if ([(NSNumber*)obj intValue] == 1) { // 断点下载
+            [self.btnDownload setTitle:@"下载" forState:UIControlStateNormal];
+        }
+    }
 }
 
 - (void)request:(ASIHTTPRequest *)request didReceiveResponseHeaders:(NSDictionary *)responseHeaders{
@@ -232,11 +244,13 @@
 #pragma mark -- ASIProgressDelegate method
 
 - (void)request:(ASIHTTPRequest *)request didReceiveBytes:(long long)bytes{
-    NSLog(@"didReceiveBytes: %lld", bytes);
+    //NSLog(@"didReceiveBytes: %lld", bytes);
+    [self.lbl setText:[NSString stringWithFormat:@"%lld", bytes]];
 }
 
 - (void)setProgress:(float)newProgress{
-     NSLog(@"newProgress: %f", newProgress);
+     //NSLog(@"newProgress: %f", newProgress);
+    [self.progressView setProgress:newProgress];
 }
 
 - (void)dealloc {

@@ -27,5 +27,6 @@
 - (IBAction)actionOperation:(id)sender;
 
 @property (retain, nonatomic) IBOutlet UIButton *btnDownload;
-
+@property (retain, nonatomic) IBOutlet UIProgressView *progressView;
+@property (retain, nonatomic) IBOutlet UILabel *lbl;
 @end
