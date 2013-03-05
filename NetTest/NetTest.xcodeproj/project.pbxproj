@@ -18,7 +18,6 @@
 		AA0C091F16D77807003B433C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0C091E16D77807003B433C /* Default-568h@2x.png */; };
 		AA0C092216D77808003B433C /* NetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0C092116D77808003B433C /* NetViewController.m */; };
 		AA0C092516D77808003B433C /* NetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA0C092316D77808003B433C /* NetViewController.xib */; };
-		AA0E3ADD16E07BF00089853F /* NetMyOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0E3ADC16E07BF00089853F /* NetMyOperation.m */; };
 		AA19A5FE16DDAE8A00C111C6 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = AA19A5E816DDAE8A00C111C6 /* ASIAuthenticationDialog.m */; };
 		AA19A5FF16DDAE8A00C111C6 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = AA19A5EB16DDAE8A00C111C6 /* ASIDataCompressor.m */; };
 		AA19A60016DDAE8A00C111C6 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = AA19A5ED16DDAE8A00C111C6 /* ASIDataDecompressor.m */; };
@@ -32,6 +31,9 @@
 		AA19A60A16DDAEE100C111C6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA19A60916DDAEE100C111C6 /* SystemConfiguration.framework */; };
 		AA19A60C16DDAF0500C111C6 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA19A60B16DDAF0500C111C6 /* libz.1.2.5.dylib */; };
 		AA19A60E16DDAF1700C111C6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA19A60D16DDAF1700C111C6 /* MobileCoreServices.framework */; };
+		AA233F2716E47C550082DC3A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA233F2616E47C550082DC3A /* CoreLocation.framework */; };
+		AA233F2916E47C5E0082DC3A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA233F2816E47C5E0082DC3A /* QuartzCore.framework */; };
+		AAF13F7316E5A2FA00528203 /* NetMyOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF13F7216E5A2FA00528203 /* NetMyOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +54,6 @@
 		AA0C092116D77808003B433C /* NetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetViewController.m; sourceTree = "<group>"; };
 		AA0C092416D77808003B433C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/NetViewController.xib; sourceTree = "<group>"; };
 		AA0E3ADB16E07BF00089853F /* NetMyOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetMyOperation.h; sourceTree = "<group>"; };
-		AA0E3ADC16E07BF00089853F /* NetMyOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetMyOperation.m; sourceTree = "<group>"; };
 		AA19A5E716DDAE8A00C111C6 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		AA19A5E816DDAE8A00C111C6 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		AA19A5E916DDAE8A00C111C6 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -79,6 +80,9 @@
 		AA19A60916DDAEE100C111C6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AA19A60B16DDAF0500C111C6 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		AA19A60D16DDAF1700C111C6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		AA233F2616E47C550082DC3A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		AA233F2816E47C5E0082DC3A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AAF13F7216E5A2FA00528203 /* NetMyOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetMyOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA233F2916E47C5E0082DC3A /* QuartzCore.framework in Frameworks */,
+				AA233F2716E47C550082DC3A /* CoreLocation.framework in Frameworks */,
 				AA19A60E16DDAF1700C111C6 /* MobileCoreServices.framework in Frameworks */,
 				AA19A60C16DDAF0500C111C6 /* libz.1.2.5.dylib in Frameworks */,
 				AA0C090D16D77807003B433C /* CoreGraphics.framework in Frameworks */,
@@ -102,6 +108,8 @@
 		AA0C08FC16D77807003B433C = {
 			isa = PBXGroup;
 			children = (
+				AA233F2816E47C5E0082DC3A /* QuartzCore.framework */,
+				AA233F2616E47C550082DC3A /* CoreLocation.framework */,
 				AA19A60D16DDAF1700C111C6 /* MobileCoreServices.framework */,
 				AA19A60B16DDAF0500C111C6 /* libz.1.2.5.dylib */,
 				AA19A60916DDAEE100C111C6 /* SystemConfiguration.framework */,
@@ -140,7 +148,7 @@
 				AA0C092116D77808003B433C /* NetViewController.m */,
 				AA0C092316D77808003B433C /* NetViewController.xib */,
 				AA0E3ADB16E07BF00089853F /* NetMyOperation.h */,
-				AA0E3ADC16E07BF00089853F /* NetMyOperation.m */,
+				AAF13F7216E5A2FA00528203 /* NetMyOperation.m */,
 				AA0C090F16D77807003B433C /* Supporting Files */,
 			);
 			path = NetTest;
@@ -276,7 +284,7 @@
 				AA19A60416DDAE8A00C111C6 /* ASIInputStream.m in Sources */,
 				AA19A60516DDAE8A00C111C6 /* ASINetworkQueue.m in Sources */,
 				AA19A60616DDAE8A00C111C6 /* Reachability.m in Sources */,
-				AA0E3ADD16E07BF00089853F /* NetMyOperation.m in Sources */,
+				AAF13F7316E5A2FA00528203 /* NetMyOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,9 +367,12 @@
 		AA0C092916D77808003B433C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetTest/NetTest-Prefix.pch";
 				INFOPLIST_FILE = "NetTest/NetTest-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -370,9 +381,12 @@
 		AA0C092A16D77808003B433C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetTest/NetTest-Prefix.pch";
 				INFOPLIST_FILE = "NetTest/NetTest-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>NetTest_Simu.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>AA0C090416D77807003B433C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AA233F0216E478650082DC3A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

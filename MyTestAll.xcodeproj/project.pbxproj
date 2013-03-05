@@ -110,6 +110,13 @@
 			remoteGlobalIDString = AAD4D38A167AD74C0091036E;
 			remoteInfo = MyTestAll2;
 		};
+		AAF13F4D16E59ECE00528203 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA0C092B16D77808003B433C /* NetTest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AA233F2416E478650082DC3A;
+			remoteInfo = NetTest_Simu;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -252,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				AA0C093216D7780C003B433C /* NetTest.app */,
+				AAF13F4E16E59ECE00528203 /* NetTest_Simu.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -540,6 +548,13 @@
 			fileType = wrapper.application;
 			path = MyTestAll2.app;
 			remoteRef = AAD4D3B5167AD74F0091036E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AAF13F4E16E59ECE00528203 /* NetTest_Simu.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = NetTest_Simu.app;
+			remoteRef = AAF13F4D16E59ECE00528203 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

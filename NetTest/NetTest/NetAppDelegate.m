@@ -7,8 +7,8 @@
 //
 
 #import "NetAppDelegate.h"
-
 #import "NetViewController.h"
+//#import "BMKMapManager.h"
 
 @implementation NetAppDelegate
 
@@ -21,6 +21,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+//    // 要使用百度地图，请先启动BaiduMapManager
+//	_mapManager = [[BMKMapManager alloc]init];
+//    // 如果要关注网络及授权验证事件，请设定generalDelegate参数
+//	BOOL ret = [_mapManager start:@"660A785B4C16FC6BC545D5E1FA3794AFCDF597E2" generalDelegate:nil];
+//	if (!ret) {
+//		NSLog(@"manager start failed!");
+//	}
+    
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     self.tabBarViewController = [[UITabBarController alloc] init];
     
@@ -28,8 +37,8 @@
     NetViewController *controller1 = [[[NetViewController alloc] initWithNibName:@"NetViewController" bundle:nil] autorelease];
     controller1.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"下载" image:[UIImage imageNamed:@"second.png"] tag:0];
     
-    NetViewController *controller2 = [[[NetViewController alloc] initWithNibName:@"NetViewController" bundle:nil] autorelease];
-    controller2.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"队列" image:[UIImage imageNamed:@"second.png"] tag:2];
+    NetViewController *controller2 = [[[NetViewController alloc] init] autorelease];
+    controller2.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"地图" image:[UIImage imageNamed:@"second.png"] tag:2];
     
     self.tabBarViewController.viewControllers = [NSArray arrayWithObjects:controller1, controller2, nil];
     self.window.rootViewController = self.tabBarViewController;

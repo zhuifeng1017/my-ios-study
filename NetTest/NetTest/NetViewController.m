@@ -97,7 +97,12 @@
 }
 
 - (IBAction)actionDownloadRangeCancel:(id)sender{
-    
+    if (_downloadRequest && [[self.btnDownload titleForState:UIControlStateNormal] compare:@"暂停"] == NSOrderedSame ){
+        [_downloadRequest clearDelegatesAndCancel];
+        [self.btnDownload setTitle:@"下载" forState:UIControlStateNormal];
+     
+        // 删除临时文件
+    }
 }
 
 - (IBAction)actionOperation:(id)sender{

@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @class NetViewController;
+@class BMKMapManager;
 
 @interface NetAppDelegate : UIResponder <UIApplicationDelegate>
+{
+    BMKMapManager* _mapManager;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
