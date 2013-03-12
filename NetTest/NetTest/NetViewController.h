@@ -24,6 +24,8 @@
 - (IBAction)actionDownloadRange:(id)sender;
 - (IBAction)actionDownloadRangeCancel:(id)sender;
 
+- (IBAction)actionSocket:(id)sender;
+
 - (IBAction)actionOperation:(id)sender;
 
 @property (retain, nonatomic) IBOutlet UIButton *btnDownload;

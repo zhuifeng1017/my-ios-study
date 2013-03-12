@@ -10,6 +10,9 @@
 #import "ASIHTTPRequest.h"
 #import "NetMyOperation.h"
 
+#include "Communicator.h"
+#include "ErrorCode.h"
+
 #define kDocuments [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]
 #define kCatches [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches"]
 #define kUsrInfo_DlType @"dl_type"
@@ -262,6 +265,37 @@
     [_queue release];
     [_btnDownload release];
     [super dealloc];
+}
+
+- (IBAction)actionSocket:(id)sender{
+    Communicator comm;
+    int ret = comm.Connect("192.168.108.1", 8080);
+    if (ret != SUCCESS) {
+        if (ret == CONNNECT_TIMEOUT)
+            NSLog(@"connect timeout!");
+        else
+            NSLog(@"connect error!");
+        return;
+    }
+    
+    char *cgi = (char*)"GET /WebXX/ HTTP/1.0\r\n\r\n";
+    ret = comm.Send(cgi, strlen(cgi));
+    if (ret != SUCCESS) {
+        NSLog(@"send error!");
+        comm.DisConnect();
+        return;
+    }
+    
+    char buffer[102400];
+    unsigned recvSize = 0;
+    ret = comm.Recv(buffer, 102400, &recvSize);
+    if (ret != SUCCESS) {
+        NSLog(@"recv error!");
+        comm.DisConnect();
+        return;
+    }
+    comm.DisConnect();
+    NSLog(@"%s", buffer);
 }
 
 @end
