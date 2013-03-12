@@ -1,0 +1,16 @@
+#ifndef ERRORCODE_H_
+#define ERRORCODE_H_
+
+#define SUCCESS 0
+#define ACCNET_SUCCESS 0
+
+#define SOCKET_ERROR -1
+#define ACCNET_SOCKET_ERROR -1
+#define CONNNECT_TIMEOUT -100
+#define ACCNET_RECV_TIMEOUT -200
+#define ACCNET_COMMUNICATOR_ERROR -500
+
+
+
+
+#endif /*ERRORCODE_H_*/
