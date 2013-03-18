@@ -8,6 +8,8 @@
 
 #import "NetAppDelegate.h"
 #import "NetViewController.h"
+#import "NetRunLoopViewController.h"
+#import "NetAsynSocketViewController.h"
 //#import "BMKMapManager.h"
 
 @implementation NetAppDelegate
@@ -37,8 +39,8 @@
     NetViewController *controller1 = [[[NetViewController alloc] initWithNibName:@"NetViewController" bundle:nil] autorelease];
     controller1.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"下载" image:[UIImage imageNamed:@"second.png"] tag:0];
     
-    NetViewController *controller2 = [[[NetViewController alloc] init] autorelease];
-    controller2.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"地图" image:[UIImage imageNamed:@"second.png"] tag:2];
+    NetAsynSocketViewController *controller2 = [[[NetAsynSocketViewController alloc] init] autorelease];
+    controller2.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Asyn" image:[UIImage imageNamed:@"second.png"] tag:2];
     
     self.tabBarViewController.viewControllers = [NSArray arrayWithObjects:controller1, controller2, nil];
     self.window.rootViewController = self.tabBarViewController;

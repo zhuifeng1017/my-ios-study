@@ -103,6 +103,8 @@
     [_processAlertView show];
     
     _threadRunning = YES;
+    
+    // 一下两种创建线程的方法效果是一样的，没什么区别
 #if 0
     [NSThread detachNewThreadSelector:@selector(threadEntity:) toTarget:self withObject:nil];
 #else

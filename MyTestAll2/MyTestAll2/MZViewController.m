@@ -39,6 +39,7 @@
         _thrProducerRunning = YES;
         [_thrProducer start];
     }
+    
 }
 
 - (IBAction)actionThreadStop:(id)sender {
