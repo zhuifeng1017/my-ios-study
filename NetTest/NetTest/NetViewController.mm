@@ -112,11 +112,11 @@
     if (_queue == nil) {
         _queue = [[NSOperationQueue alloc] init];
     }
-//    [_queue setMaxConcurrentOperationCount:2];
+    [_queue setMaxConcurrentOperationCount:1];
     
     int ID = 0;
-    int nCount = 5;
-#if 0
+    int nCount = 10;
+#if 1
     while (nCount--) {
         NetMyOperation *oper = [[[NetMyOperation alloc] init] autorelease];
         oper.operationId = ID++;

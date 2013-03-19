@@ -12,10 +12,12 @@
 
 @interface NetAsynSocketViewController : UIViewController
 {
-    AsyncSocket *_socket;
-    BOOL _isConnecting;
+    AsyncSocket *_socket;    
+    UIAlertView *_processAlertView;
 }
 
 
 - (IBAction) actionHttpGet:(id)sender;
+- (IBAction) actionConnect:(id)sender;
+
 @end

@@ -63,8 +63,44 @@
 }
 
 - (IBAction)actionAlert:(id)sender{
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"AAA" delegate:nil cancelButtonTitle:@"YES" otherButtonTitles:nil];
-    [alertView show];
+    //UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"AAA" delegate:nil cancelButtonTitle:@"YES" otherButtonTitles:nil];
+    //[alertView show];
+    
+    [self showWait];
+    
+    // delay0.3s, 让alertView有时间先显示出来。
+    [self performSelector:@selector(testCalc) withObject:nil afterDelay:0.3];
+    
+}
+
+- (void) showWait{
+    if (_processAlertView == nil) {
+        _processAlertView = [[UIAlertView alloc]
+                             initWithTitle:@"正在连接..."
+                             message:nil
+                             delegate:nil
+                             cancelButtonTitle:nil
+                             otherButtonTitles:nil];
+        UIActivityIndicatorView *Activity=[[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(130, 65, 20, 20)];
+        [Activity startAnimating];
+        [_processAlertView addSubview:Activity];
+    }
+    [_processAlertView show];
+}
+
+- (void) hiddWait{
+    if (_processAlertView != nil) {
+        [_processAlertView dismissWithClickedButtonIndex:0 animated:YES];
+        [_processAlertView release];
+        _processAlertView = nil;
+    }
+}
+
+- (void) testCalc{
+    for ( int i=0; i < 1000; i++) {
+        NSLog(@"%d::", i*999);
+    }
+    [self hiddWait];
 }
 
 - (IBAction)actionThread:(id)sender{

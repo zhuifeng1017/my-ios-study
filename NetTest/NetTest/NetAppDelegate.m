@@ -42,7 +42,11 @@
     NetAsynSocketViewController *controller2 = [[[NetAsynSocketViewController alloc] init] autorelease];
     controller2.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Asyn" image:[UIImage imageNamed:@"second.png"] tag:2];
     
-    self.tabBarViewController.viewControllers = [NSArray arrayWithObjects:controller1, controller2, nil];
+    NetRunLoopViewController *controller3 = [[[NetRunLoopViewController alloc] init] autorelease];
+    controller3.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Runloop" image:[UIImage imageNamed:@"second.png"] tag:2];
+    
+    self.tabBarViewController.viewControllers = [NSArray arrayWithObjects:controller1, controller2,controller3,nil];
+    
     self.window.rootViewController = self.tabBarViewController;
     
     [self.window makeKeyAndVisible];

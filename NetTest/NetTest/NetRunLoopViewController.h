@@ -13,6 +13,8 @@
     
     NSMutableData* _data;
     unsigned _bytesRead;
+    
+    UIAlertView *_processAlertView;
 }
 
 - (IBAction)actionRunLoop:(id)sender;
