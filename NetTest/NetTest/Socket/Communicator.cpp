@@ -44,7 +44,17 @@ int Communicator::Connect(const char *address, unsigned short port)
 	sockAddr.sin_family	= AF_INET;
 	sockAddr.sin_addr.s_addr = inet_addr(address);
 	sockAddr.sin_port = htons(port);
-
+    
+    if (sockAddr.sin_addr.s_addr == INADDR_NONE)
+    {
+        hostent *host = ::gethostbyname(address);
+        if (host == NULL)
+        {
+            return SOCKET_ERROR;
+        }
+        sockAddr.sin_addr.s_addr = ((in_addr*)host->h_addr)->s_addr;
+    }
+    
 	//unsigned long ul = 1;
 	//ioctlsocket(_sk, FIONBIO, &ul);
 	//connect(_sk, (SOCKADDR *)&sockAddr, sizeof(SOCKADDR));
@@ -78,7 +88,7 @@ int Communicator::Connect(const char *address, unsigned short port)
 	return SUCCESS;
 }
 
-int Communicator::Send(const char *buffer, unsigned bufferSize)
+int Communicator::SendData(const char *buffer, unsigned bufferSize)
 {
     int ret = send(_sk, buffer, bufferSize, 0);
     if (ret != bufferSize)
@@ -87,9 +97,78 @@ int Communicator::Send(const char *buffer, unsigned bufferSize)
 	return SUCCESS;
 }
 
-int Communicator::Recv(char *buffer, unsigned bufferSize, unsigned *recvSize)
+int Communicator::RecvData(unsigned char* buffer, unsigned bufferLength, unsigned& dateLength)
 {
+    // 先接收头，再接收数据
+    t_net_header header;
+    int nHeaderSize = sizeof(t_net_header);
+    int nHasRecvLen = 0;
+    while (nHasRecvLen < nHeaderSize) {
+        fd_set fdset;
+		timeval tmv;
+		FD_ZERO(&fdset);
+		FD_SET(_sk, &fdset);
+		tmv.tv_sec = 3; // 设定超时时间
+		tmv.tv_usec = 0;
+        
+        int nRet = select(_sk+1, &fdset, 0, 0, &tmv);
+		if (nRet == 0)
+			return ACCNET_RECV_TIMEOUT;
+		else if(nRet < 0)
+			return ACCNET_SOCKET_ERROR;
+        
+        int nRecvLen = recv(_sk, &header+nHasRecvLen, nHeaderSize-nHasRecvLen, 0);
+		if (nRecvLen <= 0)
+			return ACCNET_SOCKET_ERROR;
+        
+        nHasRecvLen += nRecvLen;
+    }
+    
+    // 校验
+    if (header.head4[0] != NET_Header_ID) {
+        return MYGOU_DATA_ERROR;
+    }
 
+    // 接收数据
+    int nDataLen = header.dataLen + 8; // 最后有8个字节的crc
+    nHasRecvLen = 0;
+    while (nHasRecvLen < nDataLen) {
+        fd_set fdset;
+		timeval tmv;
+		FD_ZERO(&fdset);
+		FD_SET(_sk, &fdset);
+		tmv.tv_sec = 3; // 设定超时时间
+		tmv.tv_usec = 0;
+        
+        int nRet = select(_sk+1, &fdset, 0, 0, &tmv);
+		if (nRet == 0)
+			return ACCNET_RECV_TIMEOUT;
+		else if(nRet < 0)
+			return ACCNET_SOCKET_ERROR;
+        
+        int nRecvLen = recv(_sk, &buffer+nHasRecvLen, nDataLen-nHasRecvLen, 0);
+		if (nRecvLen <= 0)
+			return ACCNET_SOCKET_ERROR;
+        
+        nDataLen += nRecvLen;
+    }
+    dateLength = nDataLen;
+    return SUCCESS;
+}
+
+int Communicator::DisConnect()
+{
+    if (_sk != INVALID_SOCKET)
+	{
+		close(_sk);
+		_sk = INVALID_SOCKET;
+	}
+	return ACCNET_SUCCESS;
+}
+
+int Communicator::RecvHttpData(char *buffer, unsigned bufferSize, unsigned *recvSize)
+{
+    
     // 1. 接收HTTP包头
 	const unsigned httpHead = 4096;
 	char httpheadBuff[httpHead] = {0};
@@ -136,7 +215,7 @@ int Communicator::Recv(char *buffer, unsigned bufferSize, unsigned *recvSize)
             // 求数据长度
 			char contentLen[64] = {0};
 			memcpy(contentLen, start, end - start);
-			dataLen = atoi(contentLen);	
+			dataLen = atoi(contentLen);
             printf("数据长度 %d\n", dataLen);
             
 			recvDataLen = recvHeadLen - (int)(headEnd - httpheadBuff); // 计算已接收的数据长度
@@ -166,7 +245,7 @@ int Communicator::Recv(char *buffer, unsigned bufferSize, unsigned *recvSize)
     // 打印头信息
     httpheadBuff[recvHeadLen - recvDataLen] = '\0';
     printf("%s\n", httpheadBuff);
-
+    
 	if (!recvHttpheadOK)
 		return ACCNET_COMMUNICATOR_ERROR;
     
@@ -192,21 +271,12 @@ int Communicator::Recv(char *buffer, unsigned bufferSize, unsigned *recvSize)
 		if (ret <= 0)
 			return ACCNET_SOCKET_ERROR;
         
-		recvDataLen += ret; 
+		recvDataLen += ret;
 	}
 	buffer[recvDataLen] = '\0';
 	*recvSize = recvDataLen;
 	return ACCNET_SUCCESS;
 }
 
-int Communicator::DisConnect()
-{
-    if (_sk != INVALID_SOCKET)
-	{
-		close(_sk);
-		_sk = INVALID_SOCKET;
-	}
-	return ACCNET_SUCCESS;
-}
 
 

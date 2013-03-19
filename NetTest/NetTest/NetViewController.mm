@@ -269,7 +269,7 @@
 
 - (IBAction)actionSocket:(id)sender{
     Communicator comm;
-    int ret = comm.Connect("192.168.108.1", 8080);
+    int ret = comm.Connect("www.baidu.com", 80);
     if (ret != SUCCESS) {
         if (ret == CONNNECT_TIMEOUT)
             NSLog(@"connect timeout!");
@@ -278,8 +278,8 @@
         return;
     }
     
-    char *cgi = (char*)"GET /WebXX/ HTTP/1.0\r\n\r\n";
-    ret = comm.Send(cgi, strlen(cgi));
+    char *cgi = (char*)"GET / HTTP/1.0\r\n\r\n";
+    ret = comm.SendData(cgi, strlen(cgi));
     if (ret != SUCCESS) {
         NSLog(@"send error!");
         comm.DisConnect();
@@ -288,7 +288,7 @@
     
     char buffer[102400];
     unsigned recvSize = 0;
-    ret = comm.Recv(buffer, 102400, &recvSize);
+    ret = comm.RecvHttpData(buffer, 102400, &recvSize);
     if (ret != SUCCESS) {
         NSLog(@"recv error!");
         comm.DisConnect();
