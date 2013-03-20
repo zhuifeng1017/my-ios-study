@@ -3,9 +3,12 @@
 
 #define SUCCESS 0
 #define ACCNET_SUCCESS 0
+#define RS_OK 0
 
+#define INVALID_SOCKET (~0)
 #define SOCKET_ERROR -1
 #define ACCNET_SOCKET_ERROR -1
+#define RS_SOCKET_ERROR -1
 
 
 #define CONNNECT_TIMEOUT -100

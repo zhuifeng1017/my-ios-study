@@ -1,7 +1,6 @@
 #ifndef COMMUNICATOR_H_
 #define COMMUNICATOR_H_
 
-#define INVALID_SOCKET (~0)
 
 #define NET_Header_ID (0x7F)
 #define NET_MAX_PACKET_SIZE (8192)
