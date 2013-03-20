@@ -13,6 +13,7 @@
 #define ACCNET_COMMUNICATOR_ERROR -500
 
 #define MYGOU_DATA_ERROR -1000
+#define MYGOU_RSP_ERROR -1001  // 服务器返回错误
 
 
 

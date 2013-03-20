@@ -10,6 +10,7 @@
 #import "NetViewController.h"
 #import "NetRunLoopViewController.h"
 #import "NetAsynSocketViewController.h"
+#import "NetMyGoUViewController.h"
 //#import "BMKMapManager.h"
 
 @implementation NetAppDelegate
@@ -43,9 +44,12 @@
     controller2.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Asyn" image:[UIImage imageNamed:@"second.png"] tag:2];
     
     NetRunLoopViewController *controller3 = [[[NetRunLoopViewController alloc] init] autorelease];
-    controller3.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Runloop" image:[UIImage imageNamed:@"second.png"] tag:2];
+    controller3.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Runloop" image:[UIImage imageNamed:@"second.png"] tag:3];
     
-    self.tabBarViewController.viewControllers = [NSArray arrayWithObjects:controller1, controller2,controller3,nil];
+    NetMyGoUViewController *controller4 = [[[NetMyGoUViewController alloc] init] autorelease];
+    controller4.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"MyGoU" image:[UIImage imageNamed:@"second.png"] tag:4];
+
+    self.tabBarViewController.viewControllers = [NSArray arrayWithObjects:controller1, controller2,controller3,controller4,nil];
     
     self.window.rootViewController = self.tabBarViewController;
     

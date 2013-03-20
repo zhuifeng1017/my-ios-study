@@ -22,6 +22,10 @@
    #include <fcntl.h>
 #endif
 
+#define __LITTLE_ENDIAN 1
+#define __BIG_ENDIAN 0
+#define __BYTE_ORDER __LITTLE_ENDIAN
+
 Communicator::Communicator():_sk(INVALID_SOCKET)
 {
 	
@@ -97,7 +101,7 @@ int Communicator::SendData(const char *buffer, unsigned bufferSize)
 	return SUCCESS;
 }
 
-int Communicator::RecvData(unsigned char* buffer, unsigned bufferLength, unsigned& dateLength)
+int Communicator::RecvData(unsigned char* buffer, unsigned bufferLength, unsigned& dataLength)
 {
     // 先接收头，再接收数据
     t_net_header header;
@@ -129,6 +133,9 @@ int Communicator::RecvData(unsigned char* buffer, unsigned bufferLength, unsigne
         return MYGOU_DATA_ERROR;
     }
 
+    // 转化为小端
+    header.dataLen = ntohl(header.dataLen);
+    
     // 接收数据
     int nDataLen = header.dataLen + 8; // 最后有8个字节的crc
     nHasRecvLen = 0;
@@ -146,13 +153,14 @@ int Communicator::RecvData(unsigned char* buffer, unsigned bufferLength, unsigne
 		else if(nRet < 0)
 			return ACCNET_SOCKET_ERROR;
         
-        int nRecvLen = recv(_sk, &buffer+nHasRecvLen, nDataLen-nHasRecvLen, 0);
+        int nRecvLen = recv(_sk, buffer+nHasRecvLen, nDataLen-nHasRecvLen, 0);
 		if (nRecvLen <= 0)
 			return ACCNET_SOCKET_ERROR;
         
-        nDataLen += nRecvLen;
+        nHasRecvLen += nRecvLen;
     }
-    dateLength = nDataLen;
+    
+    dataLength = nDataLen;
     return SUCCESS;
 }
 
@@ -276,6 +284,30 @@ int Communicator::RecvHttpData(char *buffer, unsigned bufferSize, unsigned *recv
 	buffer[recvDataLen] = '\0';
 	*recvSize = recvDataLen;
 	return ACCNET_SUCCESS;
+}
+
+unsigned long long ntohll(unsigned long long val)
+{
+    if (__BYTE_ORDER == __LITTLE_ENDIAN)
+    {
+        return (((unsigned long long )htonl((int)((val << 32) >> 32))) << 32) | (unsigned int)htonl((int)(val >> 32));
+    }
+    else if (__BYTE_ORDER == __BIG_ENDIAN)
+    {
+        return val;
+    }
+}
+
+unsigned long long htonll(unsigned long long val)
+{
+    if (__BYTE_ORDER == __LITTLE_ENDIAN)
+    {
+        return (((unsigned long long )htonl((int)((val << 32) >> 32))) << 32) | (unsigned int)htonl((int)(val >> 32));
+    }
+    else if (__BYTE_ORDER == __BIG_ENDIAN)
+    {
+        return val;
+    }
 }
 
 
