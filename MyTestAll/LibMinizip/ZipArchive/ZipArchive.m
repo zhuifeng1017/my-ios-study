@@ -207,10 +207,13 @@
 		filename[fileInfo.size_filename] = '\0';
 		
 		// check if it contains directory
-		NSString * strPath = [NSString  stringWithUTF8String:filename];
-        //NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
-        //NSString * strPath = [NSString  stringWithCString:filename encoding:enc];
-        
+#if 1
+        NSString * strPath = [NSString  stringWithUTF8String:filename];
+#else // 用GB编码解析
+        NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+        NSString * strPath = [NSString  stringWithCString:filename encoding:enc];
+#endif
+		
 		BOOL isDirectory = NO;
 		if( filename[fileInfo.size_filename-1]=='/' || filename[fileInfo.size_filename-1]=='\\')
 			isDirectory = YES;
