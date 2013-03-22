@@ -11,4 +11,6 @@
 
 int testXX(void);
 
+int testXX2(void);
+
 #endif

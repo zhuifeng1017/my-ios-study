@@ -9,7 +9,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+
+#include <sys/time.h>
 #include <pthread.h>
+#include <errno.h>
 #include "TestXX.h"
 
 #include <queue>
@@ -28,13 +31,13 @@ void put(int n){
     pthread_cond_signal(g_pCond);
     
     pthread_mutex_unlock(g_pMutex);
-    usleep(5000);
 }
 
 void* productorXX(void *){
-    int n = 1000;
+    int n = 6;
     while (n--) {
         put(n);
+        sleep(5);
     }
     
     put(-1);
@@ -49,7 +52,25 @@ void* consumerXX(void *){
         pthread_mutex_lock(g_pMutex);
         
         while (g_pQue->empty()) {
-            pthread_cond_wait(g_pCond, g_pMutex);
+            //pthread_cond_wait(g_pCond, g_pMutex);
+            // 设置超时
+            int rc = 0;
+            struct timespec abstime;
+            struct timeval tv;
+            gettimeofday(&tv, NULL);
+            abstime.tv_sec  = tv.tv_sec + 2; // 5s超时
+            abstime.tv_nsec = 0;
+            
+            rc = pthread_cond_timedwait(g_pCond, g_pMutex, &abstime);
+            if (rc == 0) {
+                printf("有信号了！\n");
+            }else if (rc == ETIMEDOUT){ // 超时
+                printf("超时了 \n");
+            }else{ // error
+                printf("error error ..... \n");
+                pthread_mutex_unlock(g_pMutex);
+                return NULL;
+            }
         }
         
         if (!g_pQue->empty()) {
@@ -57,10 +78,10 @@ void* consumerXX(void *){
             g_pQue->pop();
             printf("get :%d\n", nItem);
             if (nItem == -1) {
+                pthread_mutex_unlock(g_pMutex);
                 break;
             }
         }
-        
         pthread_mutex_unlock(g_pMutex);
     }
     return NULL;
@@ -85,8 +106,9 @@ int testXX2(void)
     pthread_join(pID[0], NULL);
     pthread_join(pID[1], NULL);
     
-    printf("queue size %d \n", g_pQue->size());
     
+    printf("queue size %d \n", (int)g_pQue->size());
+    delete g_pQue;
     return 0;
 }
 
