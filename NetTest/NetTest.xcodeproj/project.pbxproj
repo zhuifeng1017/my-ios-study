@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA05261E16F811F5008A2C67 /* NetMyGoUViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA05261C16F811F5008A2C67 /* NetMyGoUViewController.mm */; };
+		AA05261F16F811F5008A2C67 /* NetMyGoUViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA05261D16F811F5008A2C67 /* NetMyGoUViewController.xib */; };
+		AA05262216F815E8008A2C67 /* md5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA05262016F815E8008A2C67 /* md5.cpp */; };
+		AA05262416F82854008A2C67 /* Crc.cc in Sources */ = {isa = PBXBuildFile; fileRef = AA05262316F82853008A2C67 /* Crc.cc */; };
+		AA09DCFC16F2F7DF004B3F38 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = AA09DCFB16F2F7DF004B3F38 /* AsyncSocket.m */; };
+		AA09DD0016F2F81B004B3F38 /* NetAsynSocketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA09DCFE16F2F81B004B3F38 /* NetAsynSocketViewController.m */; };
+		AA09DD0116F2F81B004B3F38 /* NetAsynSocketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA09DCFF16F2F81B004B3F38 /* NetAsynSocketViewController.xib */; };
 		AA0C090916D77807003B433C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0C090816D77807003B433C /* UIKit.framework */; };
 		AA0C090B16D77807003B433C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0C090A16D77807003B433C /* Foundation.framework */; };
 		AA0C090D16D77807003B433C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0C090C16D77807003B433C /* CoreGraphics.framework */; };
@@ -16,8 +23,17 @@
 		AA0C091B16D77807003B433C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0C091A16D77807003B433C /* Default.png */; };
 		AA0C091D16D77807003B433C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0C091C16D77807003B433C /* Default@2x.png */; };
 		AA0C091F16D77807003B433C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0C091E16D77807003B433C /* Default-568h@2x.png */; };
-		AA0C092216D77808003B433C /* NetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0C092116D77808003B433C /* NetViewController.m */; };
+		AA0C092216D77808003B433C /* NetViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA0C092116D77808003B433C /* NetViewController.mm */; };
 		AA0C092516D77808003B433C /* NetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA0C092316D77808003B433C /* NetViewController.xib */; };
+		AA12B39716F951EA00559E29 /* NetMyGoUClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA12B39616F951EA00559E29 /* NetMyGoUClient.mm */; };
+		AA12B39A16F98A3900559E29 /* AsyncCommunicator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA12B39816F98A3900559E29 /* AsyncCommunicator.cpp */; };
+		AA12B39E16F9924700559E29 /* EchoServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA12B39C16F9924700559E29 /* EchoServer.cpp */; };
+		AA12B3A116F9A1F800559E29 /* EchoClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA12B39F16F9A1F800559E29 /* EchoClient.cpp */; };
+		AA12B3A416F9AB4F00559E29 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA12B3A216F9AB4F00559E29 /* Main.cpp */; };
+		AA12B3A516F9AB4F00559E29 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = AA12B3A316F9AB4F00559E29 /* Makefile */; };
+		AA12B3AB16F9C0AD00559E29 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = AA12B3AA16F9C0AD00559E29 /* Makefile */; };
+		AA12B3AF16F9C6C900559E29 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA12B3AC16F9C6C900559E29 /* Main.cpp */; };
+		AA12B3B016F9C6C900559E29 /* Mutex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA12B3AE16F9C6C900559E29 /* Mutex.cpp */; };
 		AA19A5FE16DDAE8A00C111C6 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = AA19A5E816DDAE8A00C111C6 /* ASIAuthenticationDialog.m */; };
 		AA19A5FF16DDAE8A00C111C6 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = AA19A5EB16DDAE8A00C111C6 /* ASIDataCompressor.m */; };
 		AA19A60016DDAE8A00C111C6 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = AA19A5ED16DDAE8A00C111C6 /* ASIDataDecompressor.m */; };
@@ -33,10 +49,28 @@
 		AA19A60E16DDAF1700C111C6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA19A60D16DDAF1700C111C6 /* MobileCoreServices.framework */; };
 		AA233F2716E47C550082DC3A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA233F2616E47C550082DC3A /* CoreLocation.framework */; };
 		AA233F2916E47C5E0082DC3A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA233F2816E47C5E0082DC3A /* QuartzCore.framework */; };
+		AA3A1C9B16F1B82B00933F62 /* NetRunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3A1C9916F1B82B00933F62 /* NetRunLoopViewController.m */; };
+		AA3A1C9C16F1B82B00933F62 /* NetRunLoopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA3A1C9A16F1B82B00933F62 /* NetRunLoopViewController.xib */; };
+		AA52C06416EED5AE00F24015 /* Communicator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA52C06116EED5AE00F24015 /* Communicator.cpp */; };
+		AA65729616FC377C008F68F2 /* Event.cc in Sources */ = {isa = PBXBuildFile; fileRef = AA65729516FC377C008F68F2 /* Event.cc */; };
+		AA65729916FC3F37008F68F2 /* MainCondWait.cc in Sources */ = {isa = PBXBuildFile; fileRef = AA65729816FC3F37008F68F2 /* MainCondWait.cc */; };
+		AA65729C16FC45D6008F68F2 /* MainCondWait2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA65729B16FC45D6008F68F2 /* MainCondWait2.cpp */; };
 		AAF13F7316E5A2FA00528203 /* NetMyOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF13F7216E5A2FA00528203 /* NetMyOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA05261B16F811F5008A2C67 /* NetMyGoUViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetMyGoUViewController.h; sourceTree = "<group>"; };
+		AA05261C16F811F5008A2C67 /* NetMyGoUViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NetMyGoUViewController.mm; sourceTree = "<group>"; };
+		AA05261D16F811F5008A2C67 /* NetMyGoUViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetMyGoUViewController.xib; sourceTree = "<group>"; };
+		AA05262016F815E8008A2C67 /* md5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = md5.cpp; sourceTree = "<group>"; };
+		AA05262116F815E8008A2C67 /* md5.h */ = {isa = PBXFileReference; fileEncoding = 2147483673; lastKnownFileType = sourcecode.c.h; path = md5.h; sourceTree = "<group>"; };
+		AA05262316F82853008A2C67 /* Crc.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Crc.cc; sourceTree = "<group>"; };
+		AA05262516F8288D008A2C67 /* Crc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Crc.h; sourceTree = "<group>"; };
+		AA09DCFA16F2F7DF004B3F38 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		AA09DCFB16F2F7DF004B3F38 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		AA09DCFD16F2F81B004B3F38 /* NetAsynSocketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetAsynSocketViewController.h; sourceTree = "<group>"; };
+		AA09DCFE16F2F81B004B3F38 /* NetAsynSocketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetAsynSocketViewController.m; sourceTree = "<group>"; };
+		AA09DCFF16F2F81B004B3F38 /* NetAsynSocketViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetAsynSocketViewController.xib; sourceTree = "<group>"; };
 		AA0C090516D77807003B433C /* NetTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0C090816D77807003B433C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AA0C090A16D77807003B433C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -51,9 +85,23 @@
 		AA0C091C16D77807003B433C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		AA0C091E16D77807003B433C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		AA0C092016D77807003B433C /* NetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetViewController.h; sourceTree = "<group>"; };
-		AA0C092116D77808003B433C /* NetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetViewController.m; sourceTree = "<group>"; };
+		AA0C092116D77808003B433C /* NetViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NetViewController.mm; sourceTree = "<group>"; };
 		AA0C092416D77808003B433C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/NetViewController.xib; sourceTree = "<group>"; };
 		AA0E3ADB16E07BF00089853F /* NetMyOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetMyOperation.h; sourceTree = "<group>"; };
+		AA12B39516F951EA00559E29 /* NetMyGoUClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetMyGoUClient.h; sourceTree = "<group>"; };
+		AA12B39616F951EA00559E29 /* NetMyGoUClient.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NetMyGoUClient.mm; sourceTree = "<group>"; };
+		AA12B39816F98A3900559E29 /* AsyncCommunicator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AsyncCommunicator.cpp; sourceTree = "<group>"; };
+		AA12B39916F98A3900559E29 /* AsyncCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncCommunicator.h; sourceTree = "<group>"; };
+		AA12B39C16F9924700559E29 /* EchoServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EchoServer.cpp; sourceTree = "<group>"; };
+		AA12B39D16F9924700559E29 /* EchoServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EchoServer.h; sourceTree = "<group>"; };
+		AA12B39F16F9A1F800559E29 /* EchoClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EchoClient.cpp; sourceTree = "<group>"; };
+		AA12B3A016F9A1F800559E29 /* EchoClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EchoClient.h; sourceTree = "<group>"; };
+		AA12B3A216F9AB4F00559E29 /* Main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Main.cpp; sourceTree = "<group>"; };
+		AA12B3A316F9AB4F00559E29 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		AA12B3AA16F9C0AD00559E29 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		AA12B3AC16F9C6C900559E29 /* Main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Main.cpp; sourceTree = "<group>"; };
+		AA12B3AD16F9C6C900559E29 /* Mutex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mutex.h; sourceTree = "<group>"; };
+		AA12B3AE16F9C6C900559E29 /* Mutex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mutex.cpp; sourceTree = "<group>"; };
 		AA19A5E716DDAE8A00C111C6 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		AA19A5E816DDAE8A00C111C6 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		AA19A5E916DDAE8A00C111C6 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -82,6 +130,17 @@
 		AA19A60D16DDAF1700C111C6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		AA233F2616E47C550082DC3A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		AA233F2816E47C5E0082DC3A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AA3A1C9816F1B82B00933F62 /* NetRunLoopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRunLoopViewController.h; sourceTree = "<group>"; };
+		AA3A1C9916F1B82B00933F62 /* NetRunLoopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRunLoopViewController.m; sourceTree = "<group>"; };
+		AA3A1C9A16F1B82B00933F62 /* NetRunLoopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetRunLoopViewController.xib; sourceTree = "<group>"; };
+		AA52C06116EED5AE00F24015 /* Communicator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Communicator.cpp; sourceTree = "<group>"; };
+		AA52C06216EED5AE00F24015 /* Communicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Communicator.h; sourceTree = "<group>"; };
+		AA52C06316EED5AE00F24015 /* ErrorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorCode.h; sourceTree = "<group>"; };
+		AA65729516FC377C008F68F2 /* Event.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Event.cc; sourceTree = "<group>"; };
+		AA65729716FC37FD008F68F2 /* Event.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		AA65729816FC3F37008F68F2 /* MainCondWait.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainCondWait.cc; sourceTree = "<group>"; };
+		AA65729A16FC3FBD008F68F2 /* TestXX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestXX.h; sourceTree = "<group>"; };
+		AA65729B16FC45D6008F68F2 /* MainCondWait2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainCondWait2.cpp; sourceTree = "<group>"; };
 		AAF13F7216E5A2FA00528203 /* NetMyOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetMyOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +164,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA09DCF916F2F7DF004B3F38 /* AsynSocket */ = {
+			isa = PBXGroup;
+			children = (
+				AA09DCFA16F2F7DF004B3F38 /* AsyncSocket.h */,
+				AA09DCFB16F2F7DF004B3F38 /* AsyncSocket.m */,
+			);
+			path = AsynSocket;
+			sourceTree = "<group>";
+		};
 		AA0C08FC16D77807003B433C = {
 			isa = PBXGroup;
 			children = (
@@ -141,14 +209,27 @@
 		AA0C090E16D77807003B433C /* NetTest */ = {
 			isa = PBXGroup;
 			children = (
+				AA12B3A616F9B98D00559E29 /* Thread */,
+				AA12B39B16F9923100559E29 /* Server */,
+				AA09DCF916F2F7DF004B3F38 /* AsynSocket */,
+				AA52C06016EED5AE00F24015 /* Socket */,
 				AA19A5E616DDAE8A00C111C6 /* ASI */,
 				AA0C091716D77807003B433C /* NetAppDelegate.h */,
 				AA0C091816D77807003B433C /* NetAppDelegate.m */,
 				AA0C092016D77807003B433C /* NetViewController.h */,
-				AA0C092116D77808003B433C /* NetViewController.m */,
+				AA0C092116D77808003B433C /* NetViewController.mm */,
 				AA0C092316D77808003B433C /* NetViewController.xib */,
 				AA0E3ADB16E07BF00089853F /* NetMyOperation.h */,
 				AAF13F7216E5A2FA00528203 /* NetMyOperation.m */,
+				AA3A1C9816F1B82B00933F62 /* NetRunLoopViewController.h */,
+				AA3A1C9916F1B82B00933F62 /* NetRunLoopViewController.m */,
+				AA3A1C9A16F1B82B00933F62 /* NetRunLoopViewController.xib */,
+				AA09DCFD16F2F81B004B3F38 /* NetAsynSocketViewController.h */,
+				AA09DCFE16F2F81B004B3F38 /* NetAsynSocketViewController.m */,
+				AA09DCFF16F2F81B004B3F38 /* NetAsynSocketViewController.xib */,
+				AA05261B16F811F5008A2C67 /* NetMyGoUViewController.h */,
+				AA05261C16F811F5008A2C67 /* NetMyGoUViewController.mm */,
+				AA05261D16F811F5008A2C67 /* NetMyGoUViewController.xib */,
 				AA0C090F16D77807003B433C /* Supporting Files */,
 			);
 			path = NetTest;
@@ -166,6 +247,35 @@
 				AA0C091E16D77807003B433C /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA12B39B16F9923100559E29 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				AA12B3A216F9AB4F00559E29 /* Main.cpp */,
+				AA12B3A316F9AB4F00559E29 /* Makefile */,
+				AA12B39C16F9924700559E29 /* EchoServer.cpp */,
+				AA12B39D16F9924700559E29 /* EchoServer.h */,
+				AA12B39F16F9A1F800559E29 /* EchoClient.cpp */,
+				AA12B3A016F9A1F800559E29 /* EchoClient.h */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		AA12B3A616F9B98D00559E29 /* Thread */ = {
+			isa = PBXGroup;
+			children = (
+				AA12B3AC16F9C6C900559E29 /* Main.cpp */,
+				AA12B3AD16F9C6C900559E29 /* Mutex.h */,
+				AA12B3AE16F9C6C900559E29 /* Mutex.cpp */,
+				AA12B3AA16F9C0AD00559E29 /* Makefile */,
+				AA65729516FC377C008F68F2 /* Event.cc */,
+				AA65729716FC37FD008F68F2 /* Event.h */,
+				AA65729816FC3F37008F68F2 /* MainCondWait.cc */,
+				AA65729B16FC45D6008F68F2 /* MainCondWait2.cpp */,
+				AA65729A16FC3FBD008F68F2 /* TestXX.h */,
+			);
+			path = Thread;
 			sourceTree = "<group>";
 		};
 		AA19A5E616DDAE8A00C111C6 /* ASI */ = {
@@ -203,6 +313,24 @@
 				AA19A5FD16DDAE8A00C111C6 /* Reachability.m */,
 			);
 			path = Reachability;
+			sourceTree = "<group>";
+		};
+		AA52C06016EED5AE00F24015 /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				AA05262016F815E8008A2C67 /* md5.cpp */,
+				AA05262116F815E8008A2C67 /* md5.h */,
+				AA52C06116EED5AE00F24015 /* Communicator.cpp */,
+				AA52C06216EED5AE00F24015 /* Communicator.h */,
+				AA12B39816F98A3900559E29 /* AsyncCommunicator.cpp */,
+				AA12B39916F98A3900559E29 /* AsyncCommunicator.h */,
+				AA52C06316EED5AE00F24015 /* ErrorCode.h */,
+				AA05262316F82853008A2C67 /* Crc.cc */,
+				AA05262516F8288D008A2C67 /* Crc.h */,
+				AA12B39516F951EA00559E29 /* NetMyGoUClient.h */,
+				AA12B39616F951EA00559E29 /* NetMyGoUClient.mm */,
+			);
+			path = Socket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +390,9 @@
 				AA0C091D16D77807003B433C /* Default@2x.png in Resources */,
 				AA0C091F16D77807003B433C /* Default-568h@2x.png in Resources */,
 				AA0C092516D77808003B433C /* NetViewController.xib in Resources */,
+				AA3A1C9C16F1B82B00933F62 /* NetRunLoopViewController.xib in Resources */,
+				AA09DD0116F2F81B004B3F38 /* NetAsynSocketViewController.xib in Resources */,
+				AA05261F16F811F5008A2C67 /* NetMyGoUViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,7 +405,7 @@
 			files = (
 				AA0C091516D77807003B433C /* main.m in Sources */,
 				AA0C091916D77807003B433C /* NetAppDelegate.m in Sources */,
-				AA0C092216D77808003B433C /* NetViewController.m in Sources */,
+				AA0C092216D77808003B433C /* NetViewController.mm in Sources */,
 				AA19A5FE16DDAE8A00C111C6 /* ASIAuthenticationDialog.m in Sources */,
 				AA19A5FF16DDAE8A00C111C6 /* ASIDataCompressor.m in Sources */,
 				AA19A60016DDAE8A00C111C6 /* ASIDataDecompressor.m in Sources */,
@@ -285,6 +416,25 @@
 				AA19A60516DDAE8A00C111C6 /* ASINetworkQueue.m in Sources */,
 				AA19A60616DDAE8A00C111C6 /* Reachability.m in Sources */,
 				AAF13F7316E5A2FA00528203 /* NetMyOperation.m in Sources */,
+				AA52C06416EED5AE00F24015 /* Communicator.cpp in Sources */,
+				AA3A1C9B16F1B82B00933F62 /* NetRunLoopViewController.m in Sources */,
+				AA09DCFC16F2F7DF004B3F38 /* AsyncSocket.m in Sources */,
+				AA09DD0016F2F81B004B3F38 /* NetAsynSocketViewController.m in Sources */,
+				AA05261E16F811F5008A2C67 /* NetMyGoUViewController.mm in Sources */,
+				AA05262216F815E8008A2C67 /* md5.cpp in Sources */,
+				AA05262416F82854008A2C67 /* Crc.cc in Sources */,
+				AA12B39716F951EA00559E29 /* NetMyGoUClient.mm in Sources */,
+				AA12B39A16F98A3900559E29 /* AsyncCommunicator.cpp in Sources */,
+				AA12B39E16F9924700559E29 /* EchoServer.cpp in Sources */,
+				AA12B3A116F9A1F800559E29 /* EchoClient.cpp in Sources */,
+				AA12B3A416F9AB4F00559E29 /* Main.cpp in Sources */,
+				AA12B3A516F9AB4F00559E29 /* Makefile in Sources */,
+				AA12B3AB16F9C0AD00559E29 /* Makefile in Sources */,
+				AA12B3AF16F9C6C900559E29 /* Main.cpp in Sources */,
+				AA12B3B016F9C6C900559E29 /* Mutex.cpp in Sources */,
+				AA65729616FC377C008F68F2 /* Event.cc in Sources */,
+				AA65729916FC3F37008F68F2 /* MainCondWait.cc in Sources */,
+				AA65729C16FC45D6008F68F2 /* MainCondWait2.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

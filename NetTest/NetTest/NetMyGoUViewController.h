@@ -11,8 +11,15 @@
 @interface NetMyGoUViewController : UIViewController
 {
     UIAlertView *_processAlertView;
+
+    NSString *_ipAddr;
+    unsigned short _port;
+    unsigned long long _token;
 }
 
 -(IBAction)actionLogin:(id)sender;
 
+-(IBAction)actionAlive:(id)sender;
+
+-(IBAction)actionTestXX:(id)sender;
 @end

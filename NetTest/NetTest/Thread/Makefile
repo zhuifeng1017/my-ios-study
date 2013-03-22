@@ -11,9 +11,11 @@ AR_FLAGS = rs
 CC = g++
 CC_FLAGS = -g -Wall -I $(DIR_INCLUDE) -L $(DIR_LIB) 
 
-OBJ_LIB = Mutex.o
-OBJ_LIB_SRC = $(DIR_SRC)/Mutex.cpp
-OBJ_LIB_HDR = $(DIR_SRC)/Mutex.h
+OBJ_LIB = Mutex.o Event.o
+OBJ_LIB_SRC = $(DIR_SRC)/Mutex.cpp \
+              $(DIR_SRC)/Event.cc
+OBJ_LIB_HDR = $(DIR_SRC)/Mutex.h \
+              $(DIR_SRC)/Event.h
               
 
 PROGRAM = $(DIR_BIN)/threadTT

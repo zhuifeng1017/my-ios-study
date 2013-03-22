@@ -8,6 +8,7 @@
 #include <string>
 
 #include "Mutex.h"
+#include "Event.h"
 
 using namespace std;
 
@@ -24,7 +25,7 @@ void* thread(void *pVoid)
 	return pVoid;
 }
 
-
+#if 0
 int main(int argc, char** argv)
 {
     Threads::Mutex mut;
@@ -49,3 +50,7 @@ int main(int argc, char** argv)
     printf("app is exited");
 	return 0;
 }
+
+// 测试
+
+#endif

@@ -14,6 +14,7 @@
 #include "ErrorCode.h"
 #include "Communicator.h"
 
+#include "TestXX.h"
 
 @interface NetMyGoUViewController ()
 
@@ -166,6 +167,75 @@
     NSLog(@"port: %d", nPort);
     
     [self hiddWait];
+    
+    //
+    
+    _ipAddr = [[NSString stringWithFormat:@"%d.%d.%d.%d",ntohs(ipAddr[0]), ntohs(ipAddr[1]), ntohs(ipAddr[2]), ntohs(ipAddr[3])] retain];
+    _port = nPort;
+    _token = token;
+}
+
+
+-(IBAction)actionAlive:(id)sender{
+    [self showWait];
+    [self performSelector:@selector(alive) withObject:nil afterDelay:0.3];
+}
+
+- (void) alive{
+    Communicator comm;
+    int nRet = comm.Connect(_ipAddr.UTF8String, _port);
+    if (nRet != SUCCESS) {
+        NSLog(@"连接失败：ret: %d", nRet);
+        comm.DisConnect();
+        [self hiddWait];
+        return;
+    }
+    
+    t_net_header header;
+    memset(&header, 0, sizeof(header));
+    header.head4[0] = NET_Header_ID;
+    header.head4[1] = 0x01;
+    header.head4[2] = 0x00;
+    header.head4[3] = 0x01;
+    
+    //header.dataLen = htonl(1);
+    
+    NSMutableData *mData = [[NSMutableData alloc] init];
+    [mData appendBytes:&header.head4 length:4];
+    char cDataValue = 0x01;
+    char cDataLen = 0x01;
+    [mData appendBytes:&cDataLen length:1];
+    [mData appendBytes:&cDataValue length:1];
+    
+    // 发送数据
+    nRet = comm.SendData((char*)[mData bytes], [mData length]);
+    if (nRet != SUCCESS) {
+        NSLog(@"发送失败：ret: %d", nRet);
+        comm.DisConnect();
+        [self hiddWait];
+        return;
+    }
+    
+    unsigned char buffer[NET_MAX_PACKET_SIZE];
+    unsigned int dataLength = 0;
+    nRet = comm.RecvData(buffer, NET_MAX_PACKET_SIZE, dataLength);
+    if (nRet != SUCCESS) {
+        NSLog(@"接收失败：ret: %d", nRet);
+        comm.DisConnect();
+        [self hiddWait];
+        return;
+    }
+    
+    comm.DisConnect();
+    NSLog(@"接收成功：ret: %d", nRet);
+    NSLog(@"%p", buffer);
+    
+    // 解析返回包
+    if (buffer[0] != 0) { // 状态码
+        NSLog(@"服务器返回error %d", buffer[0]);
+    }
+    
+    [self hiddWait];
 }
 
 - (void) showWait{
@@ -189,5 +259,9 @@
         [_processAlertView release];
         _processAlertView = nil;
     }
+}
+
+-(IBAction)actionTestXX:(id)sender{
+    testXX2();
 }
 @end
