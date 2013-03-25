@@ -46,7 +46,10 @@
 -(IBAction)actionLogin:(id)sender{
     // 登陆
     [self showWait];
-    [self performSelector:@selector(login) withObject:nil afterDelay:0.3];
+    //[self performSelector:@selector(login) withObject:nil afterDelay:0.3];
+    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.3]];
+    [self login];
+    [self hiddWait];
 }
 
 - (void) login
@@ -56,7 +59,6 @@
     if (nRet != SUCCESS) {
         NSLog(@"连接失败：ret: %d", nRet);
         comm.DisConnect();
-        [self hiddWait];
         return;
     }
     
@@ -109,7 +111,6 @@
     if (nRet != SUCCESS) {
         NSLog(@"发送失败：ret: %d", nRet);
         comm.DisConnect();
-        [self hiddWait];
         return;
     }
     
@@ -119,7 +120,6 @@
     if (nRet != SUCCESS) {
         NSLog(@"接收失败：ret: %d", nRet);
         comm.DisConnect();
-        [self hiddWait];
         return;
     }
     
@@ -165,10 +165,6 @@
     memcpy(&nPort, &buffer[nPtr], 4);
     nPort = ntohl(nPort);
     NSLog(@"port: %d", nPort);
-    
-    [self hiddWait];
-    
-    //
     
     _ipAddr = [[NSString stringWithFormat:@"%d.%d.%d.%d",ntohs(ipAddr[0]), ntohs(ipAddr[1]), ntohs(ipAddr[2]), ntohs(ipAddr[3])] retain];
     _port = nPort;
