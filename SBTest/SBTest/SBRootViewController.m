@@ -7,6 +7,7 @@
 //
 
 #import "SBRootViewController.h"
+#import "SBViewController2.h"
 
 @interface SBRootViewController ()
 
@@ -48,6 +49,12 @@
 // 重载这个方法，可以实现在页面间传递参数
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NSLog(@"prepareForSegue %@:", segue.identifier);
+}
+
+- (IBAction)action3:(id)sender{
+    SBViewController2 *controller = [[SBViewController2 alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
+    [controller release];
 }
 
 @end

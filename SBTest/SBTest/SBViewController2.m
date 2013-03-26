@@ -1,18 +1,18 @@
 //
-//  SBViewController1.m
+//  SBViewController2.m
 //  SBTest
 //
 //  Created by uistrong on 13-3-26.
 //  Copyright (c) 2013年 uistrong. All rights reserved.
 //
 
-#import "SBViewController1.h"
+#import "SBViewController2.h"
 
-@interface SBViewController1 ()
+@interface SBViewController2 ()
 
 @end
 
-@implementation SBViewController1
+@implementation SBViewController2
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
+    self.title = @"这是使用xib";
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,11 +36,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)actionClose:(id)sender{
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
-
--(void) dealloc{
+- (void) dealloc{
+    NSLog(@"SBViewController2 dealloc");
     [super dealloc];
 }
 
