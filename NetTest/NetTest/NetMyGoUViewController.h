@@ -21,5 +21,7 @@
 
 -(IBAction)actionAlive:(id)sender;
 
+-(IBAction)actionUserInfo:(id)sender;
+
 -(IBAction)actionTestXX:(id)sender;
 @end

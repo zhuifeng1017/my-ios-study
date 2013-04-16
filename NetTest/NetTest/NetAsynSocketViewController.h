@@ -7,17 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NetBaseAsynSocketViewController.h"
 
 @class AsyncSocket;
 
-@interface NetAsynSocketViewController : UIViewController
+
+@interface NetAsynSocketViewController : NetBaseAsynSocketViewController
 {
     AsyncSocket *_socket;    
     UIAlertView *_processAlertView;
 }
 
-
 - (IBAction) actionHttpGet:(id)sender;
 - (IBAction) actionConnect:(id)sender;
+
+
 
 @end

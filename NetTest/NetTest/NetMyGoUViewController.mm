@@ -147,10 +147,10 @@
     
     nPtr += stateInfoLen;
     //登录令牌  8字节
-    unsigned long long token;
-    memcpy(&token, &buffer[nPtr], 8);
-    token = ntohll(token);
-    NSLog(@"token %llx", token);
+
+    memcpy(&_token, &buffer[nPtr], 8);
+    _token = ntohll(_token);
+    NSLog(@"token %llx", _token);
     
     nPtr += 8;
     // 服务器ip 8字节
@@ -168,70 +168,47 @@
     
     _ipAddr = [[NSString stringWithFormat:@"%d.%d.%d.%d",ntohs(ipAddr[0]), ntohs(ipAddr[1]), ntohs(ipAddr[2]), ntohs(ipAddr[3])] retain];
     _port = nPort;
-    _token = token;
 }
 
 
 -(IBAction)actionAlive:(id)sender{
     [self showWait];
-    [self performSelector:@selector(alive) withObject:nil afterDelay:0.3];
+    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.3]];
+    [self alive];
+    [self hiddWait];
 }
 
+// 不需要token
 - (void) alive{
     Communicator comm;
     int nRet = comm.Connect(_ipAddr.UTF8String, _port);
     if (nRet != SUCCESS) {
         NSLog(@"连接失败：ret: %d", nRet);
         comm.DisConnect();
-        [self hiddWait];
         return;
     }
     
-    t_net_header header;
-    memset(&header, 0, sizeof(header));
-    header.head4[0] = NET_Header_ID;
-    header.head4[1] = 0x01;
-    header.head4[2] = 0x00;
-    header.head4[3] = 0x01;
-    
-    //header.dataLen = htonl(1);
-    
-    NSMutableData *mData = [[NSMutableData alloc] init];
-    [mData appendBytes:&header.head4 length:4];
-    char cDataValue = 0x01;
-    char cDataLen = 0x01;
-    [mData appendBytes:&cDataLen length:1];
-    [mData appendBytes:&cDataValue length:1];
-    
+    char mData[1] = {0x01};
     // 发送数据
-    nRet = comm.SendData((char*)[mData bytes], [mData length]);
+    nRet = comm.SendData(mData, 1);
     if (nRet != SUCCESS) {
         NSLog(@"发送失败：ret: %d", nRet);
         comm.DisConnect();
-        [self hiddWait];
         return;
     }
     
-    unsigned char buffer[NET_MAX_PACKET_SIZE];
+    unsigned char buffer[1];
     unsigned int dataLength = 0;
-    nRet = comm.RecvData(buffer, NET_MAX_PACKET_SIZE, dataLength);
+    nRet = comm.RecvAliveData(buffer, 1, dataLength);
     if (nRet != SUCCESS) {
         NSLog(@"接收失败：ret: %d", nRet);
         comm.DisConnect();
-        [self hiddWait];
         return;
     }
     
     comm.DisConnect();
     NSLog(@"接收成功：ret: %d", nRet);
-    NSLog(@"%p", buffer);
-    
-    // 解析返回包
-    if (buffer[0] != 0) { // 状态码
-        NSLog(@"服务器返回error %d", buffer[0]);
-    }
-    
-    [self hiddWait];
+    NSLog(@"心跳返回包: %d", (int)buffer[0]);
 }
 
 - (void) showWait{
@@ -260,4 +237,130 @@
 -(IBAction)actionTestXX:(id)sender{
     testXX2();
 }
+
+- (void) getUserInfo{
+    Communicator comm;
+    int nRet = comm.Connect(_ipAddr.UTF8String, _port);
+    if (nRet != SUCCESS) {
+        NSLog(@"连接失败：ret: %d", nRet);
+        comm.DisConnect();
+        return;
+    }
+    
+    t_net_header header;
+    memset(&header, 0, sizeof(header));
+    header.head4[0] = NET_Header_ID;
+    header.head4[1] = 0x01;
+    header.head4[2] = 0x10;
+    header.head4[3] = 0x02;
+    header.dataLen = htonl(8);
+    
+    NSMutableData *mData = [[NSMutableData alloc] init];
+    [mData appendBytes:&header length:sizeof(header)]; // append header
+    
+// 1. 登陆令牌
+    long long llNetToken = htonll(_token);// 转为大端
+    [mData appendBytes:&llNetToken length:8];
+    
+// 2.CRC校验码
+    long llCrc = crc32(0, (char*)[mData bytes], (int)[mData length]);
+    llCrc = htonl(llCrc); // 转为大端
+    int nSpace = 0;
+    [mData appendBytes:&nSpace length:4];
+    [mData appendBytes:&llCrc length:4];
+    
+    // 发送数据
+    nRet = comm.SendData((char*)[mData bytes], [mData length]);
+    if (nRet != SUCCESS) {
+        NSLog(@"发送失败：ret: %d", nRet);
+        comm.DisConnect();
+        return;
+    }
+    
+    unsigned char buffer[NET_MAX_PACKET_SIZE];
+    unsigned int dataLength = 0;
+    nRet = comm.RecvData(buffer, NET_MAX_PACKET_SIZE, dataLength);
+    if (nRet != SUCCESS) {
+        NSLog(@"接收失败：ret: %d", nRet);
+        comm.DisConnect();
+        return;
+    }
+    
+    // 关闭连接
+    comm.DisConnect();
+    
+    NSLog(@"接收成功：ret: %d", nRet);
+    NSLog(@"%p", buffer);
+    
+    // 解析返回包
+    if (buffer[0] != 0) { // 状态码
+        NSLog(@"服务器返回error %d", buffer[0]);
+    }
+    
+    // 状态信息
+    short stateInfoLen;
+    memcpy(&stateInfoLen, &buffer[1], sizeof(short));
+    stateInfoLen = ntohs(stateInfoLen);
+    
+    int nPtr = 1 + sizeof(short);
+    if (stateInfoLen) {
+        char stateInfo[512];
+        memcpy(stateInfo, &buffer[nPtr], stateInfoLen);
+        stateInfo[stateInfoLen] = '\0';
+        NSLog(@"state: %s", stateInfo);
+    }
+    nPtr += stateInfoLen;
+ // 用户编号
+    nPtr += 8;
+ // 姓名
+    short nNameLen;
+    memcpy(&nNameLen, &buffer[nPtr], sizeof(short));
+    nPtr += sizeof(short);
+    nNameLen = ntohs(nNameLen);
+    if (nNameLen) {
+        char szName[64];
+        memcpy(szName, &buffer[nPtr], nNameLen);
+        szName[nNameLen] = '\0';
+        NSString * strName = [NSString stringWithUTF8String:szName];
+        NSLog(@"name: %@", strName);
+    }
+    
+    /*
+    数据格式：
+    序号	名  称	数据类型	长  度	备注
+    1	状态码	BYTE	1
+    2	状态信息	LSTRING	可变
+    3	用户编号	LONG	8
+    4	姓名	LSTRING	可变
+    5	性别	BYTE	1	  0x00保密
+    0x01男
+    0x02女
+    6	生日	LONG	8
+    7	邮箱	LSTRING	可变
+    8	所在地	LSTRING	可变
+    9	手机号	LSTRING	可变
+    10	导航仪型号	LSTRING	可变
+    11	车型	LSTRING	可变
+    12	新浪绑定token	LSTRING	可变
+    13	新浪绑定sina_uid	LSTRING	可变
+    14	新浪有效期	LSTRING	可变
+    15	腾讯绑定token	LSTRING	可变
+    16	腾讯有效期	LSTRING	可变
+    17	腾讯openid	LSTRING	可变	
+    18	腾讯openkey	LSTRING	可变	
+    19	读取系统消息时间	LONG	8
+    */
+    
+
+}
+
+-(IBAction)actionUserInfo:(id)sender
+{
+    [self showWait];
+    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.3]];
+    [self getUserInfo];
+    [self hiddWait];
+}
+
+
 @end
