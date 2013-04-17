@@ -50,10 +50,28 @@ int EchoClient::ReadWriteThreadEntity(){
     }
     
     char buffer[65580];
-// 模拟数据头
+    int nHeaderLen = 0;
+
+#define USE_MARK 0
+#define USE_LENGTH 1
+    
+// 模拟数据头 \r\n标记符
+#if USE_MARK
     char szHeader[32] = "这是数据头\r\n";
-    int nHeaderLen = strlen(szHeader);
+    nHeaderLen = strlen(szHeader);
     memcpy(buffer, szHeader, nHeaderLen);
+#endif
+    
+// 模拟协议头
+#if USE_LENGTH
+    struct t_header{
+        int ID;
+        int length;
+    };
+    nHeaderLen = sizeof(struct t_header);
+    t_header tempHeader = {0, 0};
+    memcpy(buffer, &tempHeader, nHeaderLen);
+#endif
     
     fd_set fdset;
     timeval tmv;
@@ -67,8 +85,10 @@ int EchoClient::ReadWriteThreadEntity(){
         int nRet = select(_sk+1, &fdset, 0, 0, &tmv);
 		if (nRet == 0) // 超时
         {
+#if USE_MARK
             printf("用户10s没发数据了,给他推送一个消息\n");
-            char msg[64] = "这是推送消息\r\n消息1";
+            
+            char msg[64] = "这是消息头\r\n消息1";
             int nMsgLen = strlen(msg);
             int nSendMsgLen = send(_sk, msg, nMsgLen, 0);
             if (nSendMsgLen != nMsgLen) {
@@ -77,7 +97,7 @@ int EchoClient::ReadWriteThreadEntity(){
                 _sk = NULL;
                 return -1;
             }
-            
+#endif
             continue;
         }else if(nRet < 0){
             close(_sk);
@@ -100,7 +120,14 @@ int EchoClient::ReadWriteThreadEntity(){
         }
         
         buffer[recvLen+nHeaderLen]='\0';
-        printf("%s\n", buffer);
+        printf("%s\n", buffer+nHeaderLen); // 打印接收到的数据
+        
+#if USE_LENGTH        
+        // 填充头部
+        t_header *pHeader = (t_header*)buffer;
+        pHeader->ID = 0;
+        pHeader->length = recvLen;
+#endif
         
         int nSendLen = send(_sk, buffer, recvLen+nHeaderLen, 0);
         if (nSendLen != recvLen+nHeaderLen) {
