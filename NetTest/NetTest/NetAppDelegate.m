@@ -12,7 +12,7 @@
 #import "NetAsynSocketViewController.h"
 #import "NetGCDAsynSocketViewController.h"
 #import "NetMyGoUViewController.h"
-//#import "BMKMapManager.h"
+
 
 @implementation NetAppDelegate
 
@@ -41,7 +41,8 @@
     NetViewController *controller1 = [[[NetViewController alloc] initWithNibName:@"NetViewController" bundle:nil] autorelease];
     controller1.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"下载" image:[UIImage imageNamed:@"second.png"] tag:0];
     
-    NetGCDAsynSocketViewController *controller2 = [[[NetGCDAsynSocketViewController alloc] initWithNibName:@"NetBaseAsynSocketViewController" bundle:nil] autorelease];
+    //NetGCDAsynSocketViewController
+    NetBaseAsynSocketViewController *controller2 = [[[NetGCDAsynSocketViewController alloc] initWithNibName:@"NetBaseAsynSocketViewController" bundle:nil] autorelease];
     controller2.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Asyn" image:[UIImage imageNamed:@"second.png"] tag:2];
     
     NetRunLoopViewController *controller3 = [[[NetRunLoopViewController alloc] init] autorelease];

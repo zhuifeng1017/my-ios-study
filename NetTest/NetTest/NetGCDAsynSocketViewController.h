@@ -13,8 +13,9 @@
 @interface NetGCDAsynSocketViewController : NetBaseAsynSocketViewController
 {
     GCDAsyncSocket *gcdSocket;
+    NSTimer *_timer;
 }
-- (IBAction) actionHttpGet:(id)sender;
+- (IBAction) actionSend:(id)sender;
 - (IBAction) actionConnect:(id)sender;
 
 @end

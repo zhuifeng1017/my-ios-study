@@ -35,4 +35,25 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) showWait{
+    if (_processAlertView == nil) {
+        _processAlertView = [[UIAlertView alloc]
+                             initWithTitle:@"正在连接..."
+                             message:nil
+                             delegate:nil
+                             cancelButtonTitle:nil
+                             otherButtonTitles:nil];
+        UIActivityIndicatorView *Activity=[[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(130, 65, 20, 20)];
+        [Activity startAnimating];
+        [_processAlertView addSubview:Activity];
+    }
+    [_processAlertView show];
+}
+
+- (void) hiddWait{
+    if (_processAlertView != nil) {
+        [_processAlertView dismissWithClickedButtonIndex:0 animated:YES];
+    }
+}
+
 @end

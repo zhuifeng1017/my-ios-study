@@ -37,39 +37,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) showWait{
-    if (_processAlertView == nil) {
-        _processAlertView = [[UIAlertView alloc]
-                             initWithTitle:@"正在连接..."
-                             message:nil
-                             delegate:nil
-                             cancelButtonTitle:nil
-                             otherButtonTitles:nil];
-        UIActivityIndicatorView *Activity=[[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(130, 65, 20, 20)];
-        [Activity startAnimating];
-        [_processAlertView addSubview:Activity];
-    }
-    [_processAlertView show];
-}
-
-- (void) hiddWait{
-    if (_processAlertView != nil) {
-        [_processAlertView dismissWithClickedButtonIndex:0 animated:YES];
-    }
-}
-
-
-- (IBAction) actionHttpGet:(id)sender{
-    // 发送数据
+- (IBAction) actionSend:(id)sender{
     if (_socket) {
+        static int s_tag = 1;
+        NSString *msg = @"how are you?";
+        NSData *data = [[NSData alloc] initWithBytes:msg.UTF8String length:strlen(msg.UTF8String)];
         
-        NSData *httpMark = [NSData dataWithBytes:"\r\n\r\n" length:4];
-        [_socket readDataToData:httpMark withTimeout:10.0 tag:0];
-        
-        char *strRequest = "GET / HTTP/1.0\r\n\r\n";
-        NSData *data = [[NSData alloc] initWithBytes:strRequest length:strlen(strRequest)];
-        
-        [_socket writeData:data withTimeout:3.0 tag:0];
+        int tag = s_tag++;
+        [_socket writeData:data withTimeout:6.0 tag:tag];
+        [_socket readDataWithTimeout:6.0 tag:tag];
     }
 }
 
@@ -77,8 +53,17 @@
     _socket = [[AsyncSocket alloc] initWithDelegate:self];
     [_socket setRunLoopModes:[NSArray arrayWithObject:NSRunLoopCommonModes]];
     
-    NSError *err;
-    [_socket connectToHost:@"www.facebook.com" onPort:80 withTimeout:6.0 error:&err];
+    NSString *HOST = @"192.168.1.101";
+    
+    NSError *error = nil;
+    if (![_socket connectToHost:HOST onPort:8888 withTimeout:3.0 error:&error])
+	{
+		NSLog(@"Unable to connect to due to invalid configuration: %@", error);
+	}else
+	{
+		NSLog(@"Connecting to %@", HOST);
+	}
+    
     [self showWait];
 }
 
@@ -86,18 +71,25 @@
 #pragma mark -- AsyncSocketDelegate method
 
 - (void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port{
-    NSLog(@"didConnectToHost success");
     dispatch_async(dispatch_get_main_queue(), ^{
         [self hiddWait];
     });
+    NSLog(@"Connect %@ : %d Success", host, port);
+    
+    [_socket readDataWithTimeout:-1 tag:0];
 }
 
 - (void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag{
     NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"tag : %d", (int)tag);
-    NSLog(@"%@", str);
-    [str release];
-    [_socket readDataWithTimeout:10.0 tag:1];
+    if (tag == 0) { // 连接成功后第一次接收服务器数据
+        NSLog(@"tag : %d ,%@", (int)tag, str);
+        [str release];
+        [_socket readDataWithTimeout:-1 tag:0];
+        
+    }else{
+        NSLog(@"tag : %d ,%@", (int)tag, str);
+        [str release];
+    }
 }
 
 - (void)onSocket:(AsyncSocket *)sock didReadPartialDataOfLength:(NSUInteger)partialLength tag:(long)tag{
@@ -119,7 +111,16 @@
 }
 
 - (void)onSocket:(AsyncSocket *)sock didWriteDataWithTag:(long)tag{
-    NSLog(@"didWriteDataWithTag %d", (int)tag);
+    //NSLog(@"didWriteDataWithTag %d", (int)tag);
+}
+
+- (NSTimeInterval)onSocket:(AsyncSocket *)sock
+  shouldTimeoutReadWithTag:(long)tag
+                   elapsed:(NSTimeInterval)elapsed
+                 bytesDone:(NSUInteger)length{
+    
+    NSLog(@"shouldTimeoutReadWithTag %d, elapsed %d", (int)tag, (int)elapsed);
+    return  0;
 }
 
 

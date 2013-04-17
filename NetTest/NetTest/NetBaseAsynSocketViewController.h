@@ -9,8 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface NetBaseAsynSocketViewController : UIViewController
-
-- (IBAction) actionHttpGet:(id)sender;
+{
+    UIAlertView *_processAlertView;
+}
+- (IBAction) actionSend:(id)sender;
 - (IBAction) actionConnect:(id)sender;
+
+- (void) showWait;
+- (void) hiddWait;
 
 @end

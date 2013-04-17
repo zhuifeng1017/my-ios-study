@@ -15,10 +15,10 @@
 @interface NetAsynSocketViewController : NetBaseAsynSocketViewController
 {
     AsyncSocket *_socket;    
-    UIAlertView *_processAlertView;
+    
 }
 
-- (IBAction) actionHttpGet:(id)sender;
+- (IBAction) actionSend:(id)sender;
 - (IBAction) actionConnect:(id)sender;
 
 
