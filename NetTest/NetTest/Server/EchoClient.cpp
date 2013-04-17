@@ -85,19 +85,27 @@ int EchoClient::ReadWriteThreadEntity(){
         int nRet = select(_sk+1, &fdset, 0, 0, &tmv);
 		if (nRet == 0) // 超时
         {
-#if USE_MARK
+
             printf("用户10s没发数据了,给他推送一个消息\n");
             
-            char msg[64] = "这是消息头\r\n消息1";
+            char msg[16] = "消息1";
             int nMsgLen = strlen(msg);
-            int nSendMsgLen = send(_sk, msg, nMsgLen, 0);
-            if (nSendMsgLen != nMsgLen) {
+            memcpy(buffer+nHeaderLen, msg, nMsgLen);
+#if USE_LENGTH
+            // 填充头部
+            t_header *pHeader = (t_header*)buffer;
+            pHeader->ID = 1;
+            pHeader->length = nMsgLen;
+#endif
+
+            int nSendMsgLen = send(_sk, buffer, nMsgLen+nHeaderLen, 0);
+            if (nSendMsgLen != nMsgLen+nHeaderLen) {
                 printf("推送消息发生错误\n");
                 close(_sk);
                 _sk = NULL;
                 return -1;
             }
-#endif
+
             continue;
         }else if(nRet < 0){
             close(_sk);

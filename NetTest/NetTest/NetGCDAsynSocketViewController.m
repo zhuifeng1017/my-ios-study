@@ -72,7 +72,7 @@
 - (void) onConnected{
     [self hiddWait];
     if (_timer == nil) {
-        _timer = [NSTimer timerWithTimeInterval:5.0 target:self selector:@selector(keepAlive) userInfo:nil repeats:YES];
+        _timer = [NSTimer timerWithTimeInterval:30.0 target:self selector:@selector(keepAlive) userInfo:nil repeats:YES];
         [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSDefaultRunLoopMode];
     }
 }
