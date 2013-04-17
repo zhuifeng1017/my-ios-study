@@ -72,7 +72,7 @@
 - (void) onConnected{
     [self hiddWait];
     if (_timer == nil) {
-        _timer = [NSTimer timerWithTimeInterval:10.0 target:self selector:@selector(keepAlive) userInfo:nil repeats:YES];
+        _timer = [NSTimer timerWithTimeInterval:5.0 target:self selector:@selector(keepAlive) userInfo:nil repeats:YES];
         [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSDefaultRunLoopMode];
     }
 }
@@ -115,28 +115,68 @@
 
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
 {
-    NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    struct t_header{
+        int ID;
+        int length;
+    };
+ 
+#define USE_MARK_MM 0
+    
     if (tag == 0) { // 连接成功后，接收服务端数据
+        NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSLog(@"tag : %d ,%@", (int)tag, str);
         [str release];
         
         //循环等待接收: 先接收头，再接收数据
+        // 或者: 每接收一次后，由上层解析解决粘包问题。
+        
+#if USE_MARK_MM // 按标记符接收
         NSData *markData = [NSData dataWithBytes:"\r\n" length:strlen("\r\n")];
         [gcdSocket readDataToData:markData withTimeout:-1 tag:1];
+        
+#else // 按长度接收
+        
+        int nHeaderSize = sizeof(struct t_header);
+        [gcdSocket readDataToLength:nHeaderSize withTimeout:-1 tag:1];
+#endif
+        
     }else if (tag == 1){ // 头
+#if USE_MARK_MM        
+        NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSLog(@"tag : %d ,%@", (int)tag, str);
         [str release];
         
         // 判断是否有数据需要接收
         // 接收数据，超时时间指定为10s
         [gcdSocket readDataWithTimeout:10 tag:2];
-    }else { // 数据
+#else
+        // 打印头
+        const struct t_header *pHeader = (const struct t_header*)[data bytes];
+        NSLog(@"header info - ID:%d, length:%d", pHeader->ID, pHeader->length);
+        if (pHeader->length) {
+            [gcdSocket readDataToLength:pHeader->length withTimeout:10 tag:2];
+        }else{ // 没有数据，则直接进入下一次循环接收
+            int nHeaderSize = sizeof(struct t_header);
+            [gcdSocket readDataToLength:nHeaderSize withTimeout:-1 tag:1];
+        }
+#endif
+
+
+    }else if (tag == 2){ // 数据
+        // 打印数据部分
+        NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSLog(@"tag : %d ,%@", (int)tag, str);
         [str release];
         
-        // 一个交互完成后，循环等待接收:先接收头，再接收数据
+        // 一个交互完成后，则直接进入下一次循环接收
+#if USE_MARK_MM // 按标记符接收
         NSData *markData = [NSData dataWithBytes:"\r\n" length:strlen("\r\n")];
         [gcdSocket readDataToData:markData withTimeout:-1 tag:1];
+#else // 按长度接收
+        int nHeaderSize = sizeof(struct t_header);
+        [gcdSocket readDataToLength:nHeaderSize withTimeout:-1 tag:1];
+#endif
+        
     }
 }
 
