@@ -395,7 +395,7 @@ enum GCDAsyncSocketConfig
 	if ((self = [super init]))
 	{
 		preBufferSize = numBytes;
-		preBuffer = malloc(preBufferSize);
+		preBuffer = (uint8_t *)malloc(preBufferSize);
 		
 		readPointer = preBuffer;
 		writePointer = preBuffer;
@@ -418,7 +418,7 @@ enum GCDAsyncSocketConfig
 		size_t additionalBytes = numBytes - availableSpace;
 		
 		size_t newPreBufferSize = preBufferSize + additionalBytes;
-		uint8_t *newPreBuffer = realloc(preBuffer, newPreBufferSize);
+		uint8_t *newPreBuffer = (uint8_t *)realloc(preBuffer, newPreBufferSize);
 		
 		size_t readPointerOffset = readPointer - preBuffer;
 		size_t writePointerOffset = writePointer - preBuffer;
@@ -929,7 +929,7 @@ enum GCDAsyncSocketConfig
 	// The implementation of this method is very similar to the above method.
 	// See the above method for a discussion of the algorithm used here.
 	
-	uint8_t *buff = [buffer mutableBytes];
+	uint8_t *buff = (uint8_t *)[buffer mutableBytes];
 	NSUInteger buffLength = bytesDone + numBytes;
 	
 	const void *termBuff = [term bytes];
@@ -7374,7 +7374,7 @@ static void CFWriteStreamCallback (CFWriteStreamRef stream, CFStreamEventType ty
 {
 	if ([address length] >= sizeof(struct sockaddr))
 	{
-		const struct sockaddr *sockaddrX = [address bytes];
+		const struct sockaddr *sockaddrX = (const struct sockaddr *)[address bytes];
 		
 		if (sockaddrX->sa_family == AF_INET)
 		{

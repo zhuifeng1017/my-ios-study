@@ -21,6 +21,41 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    double lon = (double)12140856 /100000;
+    double lat = (double)3114761 /100000;
+    NSLog(@"%f, %f", lon, lat);
+    
+#if 1   //测试时间
+    time_t timep;
+    struct tm *p;
+    time(&timep); /*当前time_t类型UTC时间*/
+    NSLog(@"time: %ld",(long)timep);
+    
+    p = gmtime(&timep); /*得到tm结构的UTC时间*/
+    
+    timep = mktime(p); /*转换，这里会有时区的转换*/
+    NSLog(@"time()->gmtime()->mktime(): %ld, timegm: %ld", (long)timep, (long)timegm(p));
+    return 0;
+#endif
+    
+    
+#if 1 // 测试时间
+    NSDate* sourceDate = [NSDate date];
+    
+    NSTimeZone* sourceTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+    NSTimeZone* destinationTimeZone = [NSTimeZone systemTimeZone];
+    
+    NSInteger sourceGMTOffset = [sourceTimeZone secondsFromGMTForDate:sourceDate];
+    NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:sourceDate];
+    
+    NSTimeInterval interval = destinationGMTOffset - sourceGMTOffset;
+    
+    NSDate* destinationDate = [[[NSDate alloc] initWithTimeInterval:interval sinceDate:sourceDate] autorelease];
+    
+    NSLog(@"%@, %d, %f", destinationDate, sourceGMTOffset, interval);
+#endif
+    
+    
     MZPerson *person = [[MZPerson alloc] init];
     NSString *strName = @"abc";
     person.name = strName;
@@ -34,6 +69,7 @@
 
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

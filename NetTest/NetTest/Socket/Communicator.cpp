@@ -164,6 +164,28 @@ int Communicator::RecvData(unsigned char* buffer, unsigned bufferLength, unsigne
     return SUCCESS;
 }
 
+int Communicator::RecvAliveData(unsigned char* buffer, unsigned bufferLength, unsigned& dataLength){
+    fd_set fdset;
+    timeval tmv;
+    FD_ZERO(&fdset);
+    FD_SET(_sk, &fdset);
+    tmv.tv_sec = 3; // 设定超时时间
+    tmv.tv_usec = 0;
+    
+    int nRet = select(_sk+1, &fdset, 0, 0, &tmv);
+    if (nRet == 0)
+        return ACCNET_RECV_TIMEOUT;
+    else if(nRet < 0)
+        return ACCNET_SOCKET_ERROR;
+    
+    int nRecvLen = recv(_sk, buffer, 1, 0);
+    if (nRecvLen <= 0)
+        return ACCNET_SOCKET_ERROR;
+    
+    dataLength = 1;
+    return SUCCESS;
+}
+
 int Communicator::DisConnect()
 {
     if (_sk != INVALID_SOCKET)

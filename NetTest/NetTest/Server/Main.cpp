@@ -3,9 +3,9 @@
 #include <stdlib.h>
 #include "EchoServer.h"
 
-#define EchoServer 0
+//#define EchoServer 1
 
-#if EchoServer
+#if 0
 
 int main(int argc, char** argv){
     EchoServer server;
@@ -14,7 +14,6 @@ int main(int argc, char** argv){
     printf("exited");
     return 0;
 }
-
 
 #endif
 

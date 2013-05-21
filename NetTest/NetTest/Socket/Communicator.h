@@ -21,6 +21,7 @@ public:
 	int Connect(const char *address, unsigned short port);
 	int SendData(const char *buffer, unsigned bufferSize);
     int RecvData(unsigned char* buffer, unsigned bufferLength, unsigned& dataLength);
+    int RecvAliveData(unsigned char* buffer, unsigned bufferLength, unsigned& dataLength);
 	int DisConnect();
     
     int RecvHttpData(char *buffer, unsigned bufferSize, unsigned *recvSize);

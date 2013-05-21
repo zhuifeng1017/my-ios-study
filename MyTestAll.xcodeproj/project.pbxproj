@@ -96,6 +96,20 @@
 			remoteGlobalIDString = AA0C090516D77807003B433C;
 			remoteInfo = NetTest;
 		};
+		AA3B05F617016D0C0032E569 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA3B05F217016D0B0032E569 /* SBTest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AA3B05CC17016D0B0032E569;
+			remoteInfo = SBTest;
+		};
+		AA43A6301744C2AD00491136 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA43A62C1744C2AC00491136 /* JSONTest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AA43A6061744C2AC00491136;
+			remoteInfo = JSONTest;
+		};
 		AACD873116100EAC0046B720 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AACD872216100E4B0046B720 /* LibMinizip.xcodeproj */;
@@ -109,13 +123,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = AAD4D38A167AD74C0091036E;
 			remoteInfo = MyTestAll2;
-		};
-		AAF13F4D16E59ECE00528203 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AA0C092B16D77808003B433C /* NetTest.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AA233F2416E478650082DC3A;
-			remoteInfo = NetTest_Simu;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -139,6 +146,8 @@
 		AA294434168D89EC00D5ECF6 /* GUVoiceRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUVoiceRecorder.m; sourceTree = "<group>"; };
 		AA294436168D911400D5ECF6 /* VoiceDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoiceDefine.h; sourceTree = "<group>"; };
 		AA2DEFEA16085D0D00840946 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AA3B05F217016D0B0032E569 /* SBTest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SBTest.xcodeproj; path = SBTest/SBTest.xcodeproj; sourceTree = "<group>"; };
+		AA43A62C1744C2AC00491136 /* JSONTest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JSONTest.xcodeproj; path = JSONTest/JSONTest.xcodeproj; sourceTree = "<group>"; };
 		AA5263C415AC48D7009F0297 /* MZSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZSettingsViewController.h; sourceTree = "<group>"; };
 		AA5263C515AC48D7009F0297 /* MZSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZSettingsViewController.m; sourceTree = "<group>"; };
 		AA5263C615AC48D7009F0297 /* MZSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZSettingsViewController.xib; sourceTree = "<group>"; };
@@ -259,7 +268,22 @@
 			isa = PBXGroup;
 			children = (
 				AA0C093216D7780C003B433C /* NetTest.app */,
-				AAF13F4E16E59ECE00528203 /* NetTest_Simu.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA3B05F317016D0B0032E569 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA3B05F717016D0C0032E569 /* SBTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA43A62D1744C2AC00491136 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA43A6311744C2AD00491136 /* JSONTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -320,6 +344,8 @@
 		AAAC9BCF15A51D04008DE242 = {
 			isa = PBXGroup;
 			children = (
+				AA43A62C1744C2AC00491136 /* JSONTest.xcodeproj */,
+				AA3B05F217016D0B0032E569 /* SBTest.xcodeproj */,
 				AA0C092B16D77808003B433C /* NetTest.xcodeproj */,
 				AA225494168C38FF00B540C2 /* AssetsLibrary.framework */,
 				AA225492168C2F3600B540C2 /* CoreImage.framework */,
@@ -509,6 +535,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = AA43A62D1744C2AC00491136 /* Products */;
+					ProjectRef = AA43A62C1744C2AC00491136 /* JSONTest.xcodeproj */;
+				},
+				{
 					ProductGroup = AACD872E16100EAC0046B720 /* Products */;
 					ProjectRef = AACD872216100E4B0046B720 /* LibMinizip.xcodeproj */;
 				},
@@ -519,6 +549,10 @@
 				{
 					ProductGroup = AA0C092C16D77808003B433C /* Products */;
 					ProjectRef = AA0C092B16D77808003B433C /* NetTest.xcodeproj */;
+				},
+				{
+					ProductGroup = AA3B05F317016D0B0032E569 /* Products */;
+					ProjectRef = AA3B05F217016D0B0032E569 /* SBTest.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -536,6 +570,20 @@
 			remoteRef = AA0C093116D7780C003B433C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		AA3B05F717016D0C0032E569 /* SBTest.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = SBTest.app;
+			remoteRef = AA3B05F617016D0C0032E569 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA43A6311744C2AD00491136 /* JSONTest.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = JSONTest.app;
+			remoteRef = AA43A6301744C2AD00491136 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		AACD873216100EAC0046B720 /* libminizip.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -548,13 +596,6 @@
 			fileType = wrapper.application;
 			path = MyTestAll2.app;
 			remoteRef = AAD4D3B5167AD74F0091036E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		AAF13F4E16E59ECE00528203 /* NetTest_Simu.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = NetTest_Simu.app;
-			remoteRef = AAF13F4D16E59ECE00528203 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

@@ -141,20 +141,20 @@
 #endif
         
     }else if (tag == 1){ // 头
+        
 #if USE_MARK_MM        
         NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSLog(@"tag : %d ,%@", (int)tag, str);
         [str release];
-        
         // 判断是否有数据需要接收
         // 接收数据，超时时间指定为10s
-        [gcdSocket readDataWithTimeout:10 tag:2];
+        [gcdSocket readDataWithTimeout:10 tag:2]; 
 #else
         // 打印头
         const struct t_header *pHeader = (const struct t_header*)[data bytes];
         NSLog(@"header info - ID:%d, length:%d", pHeader->ID, pHeader->length);
         if (pHeader->length) {
-            [gcdSocket readDataToLength:pHeader->length withTimeout:10 tag:2];
+            [gcdSocket readDataToLength:pHeader->length withTimeout:10 tag:2]; // 如果这一步超时了怎么办？ 断开连接重连？？？
         }else{ // 没有数据，则直接进入下一次循环接收
             int nHeaderSize = sizeof(struct t_header);
             [gcdSocket readDataToLength:nHeaderSize withTimeout:-1 tag:1];

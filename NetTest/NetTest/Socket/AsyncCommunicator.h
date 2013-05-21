@@ -10,16 +10,13 @@
 #define __NetTest__AsyncCommunicator__
 
 // 异步通讯类
-
 class AsyncCommunicator{
 public:
     AsyncCommunicator();
     ~AsyncCommunicator();
     
-    
-    
 private:
-    int _sk; // socket handle
+    int _sk; // socket handle, 长连接
 
 };
 

@@ -13,7 +13,7 @@
 		AA05262416F82854008A2C67 /* Crc.cc in Sources */ = {isa = PBXBuildFile; fileRef = AA05262316F82853008A2C67 /* Crc.cc */; };
 		AA09DCFC16F2F7DF004B3F38 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = AA09DCFB16F2F7DF004B3F38 /* AsyncSocket.m */; };
 		AA09DD0016F2F81B004B3F38 /* NetAsynSocketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA09DCFE16F2F81B004B3F38 /* NetAsynSocketViewController.m */; };
-		AA09DD0116F2F81B004B3F38 /* NetAsynSocketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA09DCFF16F2F81B004B3F38 /* NetAsynSocketViewController.xib */; };
+		AA09DD0116F2F81B004B3F38 /* NetBaseAsynSocketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA09DCFF16F2F81B004B3F38 /* NetBaseAsynSocketViewController.xib */; };
 		AA0C090916D77807003B433C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0C090816D77807003B433C /* UIKit.framework */; };
 		AA0C090B16D77807003B433C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0C090A16D77807003B433C /* Foundation.framework */; };
 		AA0C090D16D77807003B433C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0C090C16D77807003B433C /* CoreGraphics.framework */; };
@@ -56,6 +56,10 @@
 		AA65729916FC3F37008F68F2 /* MainCondWait.cc in Sources */ = {isa = PBXBuildFile; fileRef = AA65729816FC3F37008F68F2 /* MainCondWait.cc */; };
 		AA65729C16FC45D6008F68F2 /* MainCondWait2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA65729B16FC45D6008F68F2 /* MainCondWait2.cpp */; };
 		AAF13F7316E5A2FA00528203 /* NetMyOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF13F7216E5A2FA00528203 /* NetMyOperation.m */; };
+		AAF5F465171CF7F500BF98F8 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF5F464171CF7F500BF98F8 /* GCDAsyncSocket.m */; };
+		AAF5F467171CF8B200BF98F8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF5F466171CF8B200BF98F8 /* Security.framework */; };
+		AAF5F46A171CFE1E00BF98F8 /* NetBaseAsynSocketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF5F469171CFE1D00BF98F8 /* NetBaseAsynSocketViewController.m */; };
+		AAF5F46D171CFF2A00BF98F8 /* NetGCDAsynSocketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF5F46C171CFF2900BF98F8 /* NetGCDAsynSocketViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,7 +74,7 @@
 		AA09DCFB16F2F7DF004B3F38 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
 		AA09DCFD16F2F81B004B3F38 /* NetAsynSocketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetAsynSocketViewController.h; sourceTree = "<group>"; };
 		AA09DCFE16F2F81B004B3F38 /* NetAsynSocketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetAsynSocketViewController.m; sourceTree = "<group>"; };
-		AA09DCFF16F2F81B004B3F38 /* NetAsynSocketViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetAsynSocketViewController.xib; sourceTree = "<group>"; };
+		AA09DCFF16F2F81B004B3F38 /* NetBaseAsynSocketViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetBaseAsynSocketViewController.xib; sourceTree = "<group>"; };
 		AA0C090516D77807003B433C /* NetTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0C090816D77807003B433C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AA0C090A16D77807003B433C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -142,6 +146,13 @@
 		AA65729A16FC3FBD008F68F2 /* TestXX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestXX.h; sourceTree = "<group>"; };
 		AA65729B16FC45D6008F68F2 /* MainCondWait2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainCondWait2.cpp; sourceTree = "<group>"; };
 		AAF13F7216E5A2FA00528203 /* NetMyOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetMyOperation.m; sourceTree = "<group>"; };
+		AAF5F463171CF7F500BF98F8 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		AAF5F464171CF7F500BF98F8 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		AAF5F466171CF8B200BF98F8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		AAF5F468171CFE1D00BF98F8 /* NetBaseAsynSocketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetBaseAsynSocketViewController.h; sourceTree = "<group>"; };
+		AAF5F469171CFE1D00BF98F8 /* NetBaseAsynSocketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetBaseAsynSocketViewController.m; sourceTree = "<group>"; };
+		AAF5F46B171CFF2900BF98F8 /* NetGCDAsynSocketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetGCDAsynSocketViewController.h; sourceTree = "<group>"; };
+		AAF5F46C171CFF2900BF98F8 /* NetGCDAsynSocketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetGCDAsynSocketViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAF5F467171CF8B200BF98F8 /* Security.framework in Frameworks */,
 				AA233F2916E47C5E0082DC3A /* QuartzCore.framework in Frameworks */,
 				AA233F2716E47C550082DC3A /* CoreLocation.framework in Frameworks */,
 				AA19A60E16DDAF1700C111C6 /* MobileCoreServices.framework in Frameworks */,
@@ -167,6 +179,8 @@
 		AA09DCF916F2F7DF004B3F38 /* AsynSocket */ = {
 			isa = PBXGroup;
 			children = (
+				AAF5F463171CF7F500BF98F8 /* GCDAsyncSocket.h */,
+				AAF5F464171CF7F500BF98F8 /* GCDAsyncSocket.m */,
 				AA09DCFA16F2F7DF004B3F38 /* AsyncSocket.h */,
 				AA09DCFB16F2F7DF004B3F38 /* AsyncSocket.m */,
 			);
@@ -176,6 +190,7 @@
 		AA0C08FC16D77807003B433C = {
 			isa = PBXGroup;
 			children = (
+				AAF5F466171CF8B200BF98F8 /* Security.framework */,
 				AA233F2816E47C5E0082DC3A /* QuartzCore.framework */,
 				AA233F2616E47C550082DC3A /* CoreLocation.framework */,
 				AA19A60D16DDAF1700C111C6 /* MobileCoreServices.framework */,
@@ -226,7 +241,11 @@
 				AA3A1C9A16F1B82B00933F62 /* NetRunLoopViewController.xib */,
 				AA09DCFD16F2F81B004B3F38 /* NetAsynSocketViewController.h */,
 				AA09DCFE16F2F81B004B3F38 /* NetAsynSocketViewController.m */,
-				AA09DCFF16F2F81B004B3F38 /* NetAsynSocketViewController.xib */,
+				AAF5F46B171CFF2900BF98F8 /* NetGCDAsynSocketViewController.h */,
+				AAF5F46C171CFF2900BF98F8 /* NetGCDAsynSocketViewController.m */,
+				AA09DCFF16F2F81B004B3F38 /* NetBaseAsynSocketViewController.xib */,
+				AAF5F468171CFE1D00BF98F8 /* NetBaseAsynSocketViewController.h */,
+				AAF5F469171CFE1D00BF98F8 /* NetBaseAsynSocketViewController.m */,
 				AA05261B16F811F5008A2C67 /* NetMyGoUViewController.h */,
 				AA05261C16F811F5008A2C67 /* NetMyGoUViewController.mm */,
 				AA05261D16F811F5008A2C67 /* NetMyGoUViewController.xib */,
@@ -391,7 +410,7 @@
 				AA0C091F16D77807003B433C /* Default-568h@2x.png in Resources */,
 				AA0C092516D77808003B433C /* NetViewController.xib in Resources */,
 				AA3A1C9C16F1B82B00933F62 /* NetRunLoopViewController.xib in Resources */,
-				AA09DD0116F2F81B004B3F38 /* NetAsynSocketViewController.xib in Resources */,
+				AA09DD0116F2F81B004B3F38 /* NetBaseAsynSocketViewController.xib in Resources */,
 				AA05261F16F811F5008A2C67 /* NetMyGoUViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +454,9 @@
 				AA65729616FC377C008F68F2 /* Event.cc in Sources */,
 				AA65729916FC3F37008F68F2 /* MainCondWait.cc in Sources */,
 				AA65729C16FC45D6008F68F2 /* MainCondWait2.cpp in Sources */,
+				AAF5F465171CF7F500BF98F8 /* GCDAsyncSocket.m in Sources */,
+				AAF5F46A171CFE1E00BF98F8 /* NetBaseAsynSocketViewController.m in Sources */,
+				AAF5F46D171CFF2A00BF98F8 /* NetGCDAsynSocketViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,6 +19,8 @@
 		AA3B05E917016D0B0032E569 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3B05E717016D0B0032E569 /* MainStoryboard.storyboard */; };
 		AA3B05FB170171810032E569 /* SBRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3B05F9170171810032E569 /* SBRootViewController.m */; };
 		AA3B05FF1701772E0032E569 /* SBViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3B05FE1701772E0032E569 /* SBViewController1.m */; };
+		AA3B0603170187910032E569 /* SBViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3B0601170187900032E569 /* SBViewController2.m */; };
+		AA3B0604170187910032E569 /* SBViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA3B0602170187900032E569 /* SBViewController2.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,9 @@
 		AA3B05F9170171810032E569 /* SBRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBRootViewController.m; sourceTree = "<group>"; };
 		AA3B05FD1701772E0032E569 /* SBViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBViewController1.h; sourceTree = "<group>"; };
 		AA3B05FE1701772E0032E569 /* SBViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBViewController1.m; sourceTree = "<group>"; };
+		AA3B0600170187900032E569 /* SBViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBViewController2.h; sourceTree = "<group>"; };
+		AA3B0601170187900032E569 /* SBViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBViewController2.m; sourceTree = "<group>"; };
+		AA3B0602170187900032E569 /* SBViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SBViewController2.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +99,9 @@
 				AA3B05F9170171810032E569 /* SBRootViewController.m */,
 				AA3B05FD1701772E0032E569 /* SBViewController1.h */,
 				AA3B05FE1701772E0032E569 /* SBViewController1.m */,
+				AA3B0600170187900032E569 /* SBViewController2.h */,
+				AA3B0601170187900032E569 /* SBViewController2.m */,
+				AA3B0602170187900032E569 /* SBViewController2.xib */,
 			);
 			path = SBTest;
 			sourceTree = "<group>";
@@ -169,6 +177,7 @@
 				AA3B05E417016D0B0032E569 /* Default@2x.png in Resources */,
 				AA3B05E617016D0B0032E569 /* Default-568h@2x.png in Resources */,
 				AA3B05E917016D0B0032E569 /* MainStoryboard.storyboard in Resources */,
+				AA3B0604170187910032E569 /* SBViewController2.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +192,7 @@
 				AA3B05E017016D0B0032E569 /* SBAppDelegate.m in Sources */,
 				AA3B05FB170171810032E569 /* SBRootViewController.m in Sources */,
 				AA3B05FF1701772E0032E569 /* SBViewController1.m in Sources */,
+				AA3B0603170187910032E569 /* SBViewController2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
