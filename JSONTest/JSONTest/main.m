@@ -58,6 +58,21 @@ int main(int argc, char **argv)
         //  test();
         //    test_twitter_public_timeline();
         test_repeated_array();
+        
+        NSLog(@"---------------------------------------");
+        
+        test_twitter_public_timeline();
+        
+        NSError *theError = NULL;
+        
+        NSString *jsonFile = [[NSBundle mainBundle] pathForResource:@"twitter_public_timeline_tidied" ofType:@"json"];
+        NSData *inputData = [NSData dataWithContentsOfFile:jsonFile];
+        
+        NSArray *arr = [[CJSONDeserializer deserializer] deserializeAsArray:inputData error:&theError];
+        for (NSDictionary *dic in arr) {
+            NSLog(@"dic:%@", dic);
+        }
+        
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([JSONAppDelegate class]));
         
 	}
@@ -109,16 +124,19 @@ static void test_repeated_array(void)
 static void test_twitter_public_timeline(void)
 {
     NSError *theError = NULL;
-    NSData *inputData = [NSData dataWithContentsOfFile:@"Test Data/atomicbird.json"];
-    NSLog(@"Input data: %ld", inputData.length);
+    
+    NSString *jsonFile = [[NSBundle mainBundle] pathForResource:@"atomicbird" ofType:@"json"];
+    NSData *inputData = [NSData dataWithContentsOfFile:jsonFile];
+    
+    NSLog(@"Input data: %ld", (unsigned long)inputData.length);
     id json = [[CJSONDeserializer deserializer] deserialize:inputData error:&theError];
     NSLog(@"JSON Object: %@ %p (Error: %@)", [json class], json, theError);
     NSData *jsonData = [[CJSONSerializer serializer] serializeObject:json error:&theError];
     NSLog(@"%@", jsonData);
     
-    NSLog(@"JSON data: %ld  (Error: %@)", jsonData.length, theError);
+    NSLog(@"JSON data: %ld  (Error: %@)", (unsigned long)jsonData.length, theError);
     NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    NSLog(@"JSON string: %ld", jsonString.length);
+    NSLog(@"JSON string: %ld", (unsigned long)jsonString.length);
     NSLog(@"> %@", jsonString);
 }
 

@@ -27,6 +27,9 @@
 		AA43A6531744C33800491136 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = AA43A6471744C33800491136 /* CJSONDeserializer.m */; };
 		AA43A6541744C33800491136 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = AA43A6491744C33800491136 /* CJSONScanner.m */; };
 		AA43A6551744C33800491136 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = AA43A64B1744C33800491136 /* CJSONSerializer.m */; };
+		AA51A7D8174B5E810086E798 /* atomicbird.json in Resources */ = {isa = PBXBuildFile; fileRef = AA51A7D5174B5E810086E798 /* atomicbird.json */; };
+		AA51A7D9174B5E810086E798 /* twitter_public_timeline.json in Resources */ = {isa = PBXBuildFile; fileRef = AA51A7D6174B5E810086E798 /* twitter_public_timeline.json */; };
+		AA51A7DA174B5E810086E798 /* twitter_public_timeline_tidied.json in Resources */ = {isa = PBXBuildFile; fileRef = AA51A7D7174B5E810086E798 /* twitter_public_timeline_tidied.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +68,9 @@
 		AA43A64A1744C33800491136 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
 		AA43A64B1744C33800491136 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
 		AA43A64C1744C33800491136 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
+		AA51A7D5174B5E810086E798 /* atomicbird.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = atomicbird.json; sourceTree = "<group>"; };
+		AA51A7D6174B5E810086E798 /* twitter_public_timeline.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = twitter_public_timeline.json; sourceTree = "<group>"; };
+		AA51A7D7174B5E810086E798 /* twitter_public_timeline_tidied.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = twitter_public_timeline_tidied.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,7 @@
 		AA43A6101744C2AC00491136 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AA51A7D4174B5E810086E798 /* Test Data */,
 				AA43A6111744C2AC00491136 /* JSONTest-Info.plist */,
 				AA43A6121744C2AC00491136 /* InfoPlist.strings */,
 				AA43A6151744C2AC00491136 /* main.m */,
@@ -186,6 +193,16 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		AA51A7D4174B5E810086E798 /* Test Data */ = {
+			isa = PBXGroup;
+			children = (
+				AA51A7D5174B5E810086E798 /* atomicbird.json */,
+				AA51A7D6174B5E810086E798 /* twitter_public_timeline.json */,
+				AA51A7D7174B5E810086E798 /* twitter_public_timeline_tidied.json */,
+			);
+			path = "Test Data";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -243,6 +260,9 @@
 				AA43A61E1744C2AC00491136 /* Default@2x.png in Resources */,
 				AA43A6201744C2AC00491136 /* Default-568h@2x.png in Resources */,
 				AA43A6261744C2AC00491136 /* JSONViewController.xib in Resources */,
+				AA51A7D8174B5E810086E798 /* atomicbird.json in Resources */,
+				AA51A7D9174B5E810086E798 /* twitter_public_timeline.json in Resources */,
+				AA51A7DA174B5E810086E798 /* twitter_public_timeline_tidied.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,7 +372,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JSONTest/JSONTest-Prefix.pch";
 				INFOPLIST_FILE = "JSONTest/JSONTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -363,7 +385,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JSONTest/JSONTest-Prefix.pch";
 				INFOPLIST_FILE = "JSONTest/JSONTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
