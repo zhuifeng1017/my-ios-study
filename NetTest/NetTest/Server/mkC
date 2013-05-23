@@ -1,0 +1,11 @@
+
+CC = gcc
+
+pollC : pollclient.o
+	$(CC) -o pollC pollclient.o
+
+pollclient.o : pollclient.c
+	$(CC) -c pollclient.c
+
+clean :
+	rm pollC pollclient.o
