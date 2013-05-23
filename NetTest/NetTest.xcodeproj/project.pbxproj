@@ -29,10 +29,8 @@
 		AA12B39A16F98A3900559E29 /* AsyncCommunicator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA12B39816F98A3900559E29 /* AsyncCommunicator.cpp */; };
 		AA12B39E16F9924700559E29 /* EchoServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA12B39C16F9924700559E29 /* EchoServer.cpp */; };
 		AA12B3A116F9A1F800559E29 /* EchoClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA12B39F16F9A1F800559E29 /* EchoClient.cpp */; };
-		AA12B3A416F9AB4F00559E29 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA12B3A216F9AB4F00559E29 /* Main.cpp */; };
 		AA12B3A516F9AB4F00559E29 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = AA12B3A316F9AB4F00559E29 /* Makefile */; };
 		AA12B3AB16F9C0AD00559E29 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = AA12B3AA16F9C0AD00559E29 /* Makefile */; };
-		AA12B3AF16F9C6C900559E29 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA12B3AC16F9C6C900559E29 /* Main.cpp */; };
 		AA12B3B016F9C6C900559E29 /* Mutex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA12B3AE16F9C6C900559E29 /* Mutex.cpp */; };
 		AA19A5FE16DDAE8A00C111C6 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = AA19A5E816DDAE8A00C111C6 /* ASIAuthenticationDialog.m */; };
 		AA19A5FF16DDAE8A00C111C6 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = AA19A5EB16DDAE8A00C111C6 /* ASIDataCompressor.m */; };
@@ -55,6 +53,8 @@
 		AA65729616FC377C008F68F2 /* Event.cc in Sources */ = {isa = PBXBuildFile; fileRef = AA65729516FC377C008F68F2 /* Event.cc */; };
 		AA65729916FC3F37008F68F2 /* MainCondWait.cc in Sources */ = {isa = PBXBuildFile; fileRef = AA65729816FC3F37008F68F2 /* MainCondWait.cc */; };
 		AA65729C16FC45D6008F68F2 /* MainCondWait2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA65729B16FC45D6008F68F2 /* MainCondWait2.cpp */; };
+		AAED09AE174E045F00E486F2 /* mkC in Resources */ = {isa = PBXBuildFile; fileRef = AAED09AD174E045E00E486F2 /* mkC */; };
+		AAED09B2174E07FD00E486F2 /* mkS in Resources */ = {isa = PBXBuildFile; fileRef = AAED09B1174E07FD00E486F2 /* mkS */; };
 		AAF13F7316E5A2FA00528203 /* NetMyOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF13F7216E5A2FA00528203 /* NetMyOperation.m */; };
 		AAF5F465171CF7F500BF98F8 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF5F464171CF7F500BF98F8 /* GCDAsyncSocket.m */; };
 		AAF5F467171CF8B200BF98F8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF5F466171CF8B200BF98F8 /* Security.framework */; };
@@ -145,6 +145,10 @@
 		AA65729816FC3F37008F68F2 /* MainCondWait.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainCondWait.cc; sourceTree = "<group>"; };
 		AA65729A16FC3FBD008F68F2 /* TestXX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestXX.h; sourceTree = "<group>"; };
 		AA65729B16FC45D6008F68F2 /* MainCondWait2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainCondWait2.cpp; sourceTree = "<group>"; };
+		AAED09AB174E00C400E486F2 /* pollclient.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pollclient.c; sourceTree = "<group>"; };
+		AAED09AD174E045E00E486F2 /* mkC */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mkC; sourceTree = "<group>"; };
+		AAED09AF174E077500E486F2 /* pollserver.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pollserver.c; sourceTree = "<group>"; };
+		AAED09B1174E07FD00E486F2 /* mkS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mkS; sourceTree = "<group>"; };
 		AAF13F7216E5A2FA00528203 /* NetMyOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetMyOperation.m; sourceTree = "<group>"; };
 		AAF5F463171CF7F500BF98F8 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 		AAF5F464171CF7F500BF98F8 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
@@ -277,6 +281,10 @@
 				AA12B39D16F9924700559E29 /* EchoServer.h */,
 				AA12B39F16F9A1F800559E29 /* EchoClient.cpp */,
 				AA12B3A016F9A1F800559E29 /* EchoClient.h */,
+				AAED09AB174E00C400E486F2 /* pollclient.c */,
+				AAED09AF174E077500E486F2 /* pollserver.c */,
+				AAED09AD174E045E00E486F2 /* mkC */,
+				AAED09B1174E07FD00E486F2 /* mkS */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -412,6 +420,8 @@
 				AA3A1C9C16F1B82B00933F62 /* NetRunLoopViewController.xib in Resources */,
 				AA09DD0116F2F81B004B3F38 /* NetBaseAsynSocketViewController.xib in Resources */,
 				AA05261F16F811F5008A2C67 /* NetMyGoUViewController.xib in Resources */,
+				AAED09AE174E045F00E486F2 /* mkC in Resources */,
+				AAED09B2174E07FD00E486F2 /* mkS in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,10 +456,8 @@
 				AA12B39A16F98A3900559E29 /* AsyncCommunicator.cpp in Sources */,
 				AA12B39E16F9924700559E29 /* EchoServer.cpp in Sources */,
 				AA12B3A116F9A1F800559E29 /* EchoClient.cpp in Sources */,
-				AA12B3A416F9AB4F00559E29 /* Main.cpp in Sources */,
 				AA12B3A516F9AB4F00559E29 /* Makefile in Sources */,
 				AA12B3AB16F9C0AD00559E29 /* Makefile in Sources */,
-				AA12B3AF16F9C6C900559E29 /* Main.cpp in Sources */,
 				AA12B3B016F9C6C900559E29 /* Mutex.cpp in Sources */,
 				AA65729616FC377C008F68F2 /* Event.cc in Sources */,
 				AA65729916FC3F37008F68F2 /* MainCondWait.cc in Sources */,
@@ -539,13 +547,19 @@
 		AA0C092916D77808003B433C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 敏 赵 (SM498QMP97)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 敏 赵 (SM498QMP97)";
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetTest/NetTest-Prefix.pch";
 				INFOPLIST_FILE = "NetTest/NetTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4029C58A-AC39-4E65-BFDC-5BE4233B252C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B9A57AE2-B4A3-4923-9759-C0BADD7DB4B4";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -553,13 +567,17 @@
 		AA0C092A16D77808003B433C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 敏 赵 (SM498QMP97)";
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetTest/NetTest-Prefix.pch";
 				INFOPLIST_FILE = "NetTest/NetTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4029C58A-AC39-4E65-BFDC-5BE4233B252C";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
