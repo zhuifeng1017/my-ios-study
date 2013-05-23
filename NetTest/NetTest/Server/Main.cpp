@@ -5,7 +5,7 @@
 
 //#define EchoServer 1
 
-#if 0
+#if 1
 
 int main(int argc, char** argv){
     EchoServer server;
