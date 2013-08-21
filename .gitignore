@@ -1,2 +1,8 @@
 *.xcbkptlist
 *.o
+
+.DS_Store
+
+NetTest/NetTest/Server/pollC
+
+NetTest/NetTest/Server/pollS
