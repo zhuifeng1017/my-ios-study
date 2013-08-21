@@ -6,3 +6,5 @@
 NetTest/NetTest/Server/pollC
 
 NetTest/NetTest/Server/pollS
+
+*.xcuserstate

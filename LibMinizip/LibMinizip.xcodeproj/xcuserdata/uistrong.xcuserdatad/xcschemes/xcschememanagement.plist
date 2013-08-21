@@ -4,15 +4,20 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>MyTestAll2.xcscheme</key>
+		<key>LibMinizipd.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>AAD4D389167AD74C0091036E</key>
+		<key>AA28389E15B53C2100F2FD45</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AA3F98FF17C47CA3007842E6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

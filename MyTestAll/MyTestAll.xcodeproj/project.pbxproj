@@ -24,7 +24,6 @@
 		AA7872FE1637D480003EF57F /* MZTestMiniZipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7872FC1637D480003EF57F /* MZTestMiniZipViewController.m */; };
 		AA7872FF1637D480003EF57F /* MZTestMiniZipViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA7872FD1637D480003EF57F /* MZTestMiniZipViewController.xib */; };
 		AA7873041637DEA7003EF57F /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7873031637DEA7003EF57F /* libz.1.2.5.dylib */; };
-		AA7873091637DF23003EF57F /* libminizip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AACD873216100EAC0046B720 /* libminizip.a */; };
 		AA8974771665FDE300D82A0C /* MZNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8974751665FDE300D82A0C /* MZNewsViewController.m */; };
 		AA8974781665FDE300D82A0C /* MZNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA8974761665FDE300D82A0C /* MZNewsViewController.xib */; };
 		AA897522166619D100D82A0C /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = AA897520166619D100D82A0C /* second.png */; };
@@ -85,23 +84,6 @@
 		AAF33C1016002813001F9895 /* 10032.bmp in Resources */ = {isa = PBXBuildFile; fileRef = AAF33C0F16002813001F9895 /* 10032.bmp */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		AACD873116100EAC0046B720 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AACD872216100E4B0046B720 /* LibMinizip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AA28389F15B53C2100F2FD45;
-			remoteInfo = LibMinizip;
-		};
-		AAD4D3B5167AD74F0091036E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AAD4D3B1167AD74C0091036E /* MyTestAll2.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AAD4D38A167AD74C0091036E;
-			remoteInfo = MyTestAll2;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		AA11122215DB8F17003DDAC6 /* MZTableXXViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTableXXViewController.h; sourceTree = "<group>"; };
 		AA11122315DB8F17003DDAC6 /* MZTableXXViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTableXXViewController.m; sourceTree = "<group>"; };
@@ -157,7 +139,6 @@
 		AAAFD5B117C35FCC0033CFDA /* QuietAssertMacros.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QuietAssertMacros.c; sourceTree = "<group>"; };
 		AABB365D15AD4D2100E04C93 /* MZSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZSettingCell.h; sourceTree = "<group>"; };
 		AABB365E15AD4D2100E04C93 /* MZSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZSettingCell.m; sourceTree = "<group>"; };
-		AACD872216100E4B0046B720 /* LibMinizip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LibMinizip.xcodeproj; path = MyTestAll/LibMinizip/LibMinizip.xcodeproj; sourceTree = "<group>"; };
 		AAD4D35A1679B00A0091036E /* MZVoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZVoiceViewController.h; sourceTree = "<group>"; };
 		AAD4D35B1679B00A0091036E /* MZVoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZVoiceViewController.m; sourceTree = "<group>"; };
 		AAD4D35C1679B00A0091036E /* MZVoiceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZVoiceViewController.xib; sourceTree = "<group>"; };
@@ -168,7 +149,6 @@
 		AAD4D3701679B9C50091036E /* Audio@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Audio@2x.png"; sourceTree = "<group>"; };
 		AAD4D3711679B9C50091036E /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		AAD4D3721679B9C50091036E /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
-		AAD4D3B1167AD74C0091036E /* MyTestAll2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MyTestAll2.xcodeproj; path = MyTestAll2/MyTestAll2.xcodeproj; sourceTree = "<group>"; };
 		AAD7F2EC1623C661003215A6 /* MZLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZLineView.h; sourceTree = "<group>"; };
 		AAD7F2ED1623C661003215A6 /* MZLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZLineView.m; sourceTree = "<group>"; };
 		AAD90CD415FF126B00AE7704 /* 000.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 000.wav; sourceTree = "<group>"; };
@@ -216,7 +196,6 @@
 			files = (
 				AAD4D36E1679B8B60091036E /* AVFoundation.framework in Frameworks */,
 				AA147C6B166D98A900983C7B /* CoreText.framework in Frameworks */,
-				AA7873091637DF23003EF57F /* libminizip.a in Frameworks */,
 				AA7873041637DEA7003EF57F /* libz.1.2.5.dylib in Frameworks */,
 				AAED83DA161595C900F43609 /* CoreLocation.framework in Frameworks */,
 				AA2DEFEB16085D0D00840946 /* QuartzCore.framework in Frameworks */,
@@ -285,9 +264,7 @@
 		AAAC9BCF15A51D04008DE242 = {
 			isa = PBXGroup;
 			children = (
-				AAD4D3B1167AD74C0091036E /* MyTestAll2.xcodeproj */,
 				AAD4D36D1679B8B60091036E /* AVFoundation.framework */,
-				AACD872216100E4B0046B720 /* LibMinizip.xcodeproj */,
 				AAAC9BE415A51D04008DE242 /* MyTestAll */,
 				AAAC9BDD15A51D04008DE242 /* Frameworks */,
 				AAAC9BDB15A51D04008DE242 /* Products */,
@@ -357,14 +334,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		AACD872E16100EAC0046B720 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				AACD873216100EAC0046B720 /* libminizip.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		AAD4D3681679B72B0091036E /* voice */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,14 +345,6 @@
 				AAD4D36A1679B72B0091036E /* GUVoiceRecordView.m */,
 			);
 			path = voice;
-			sourceTree = "<group>";
-		};
-		AAD4D3B2167AD74C0091036E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				AAD4D3B6167AD74F0091036E /* MyTestAll2.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		AAE32E6015FF06BE00C44BDD /* resource */ = {
@@ -465,39 +426,12 @@
 			mainGroup = AAAC9BCF15A51D04008DE242;
 			productRefGroup = AAAC9BDB15A51D04008DE242 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = AACD872E16100EAC0046B720 /* Products */;
-					ProjectRef = AACD872216100E4B0046B720 /* LibMinizip.xcodeproj */;
-				},
-				{
-					ProductGroup = AAD4D3B2167AD74C0091036E /* Products */;
-					ProjectRef = AAD4D3B1167AD74C0091036E /* MyTestAll2.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				AAAC9BD915A51D04008DE242 /* MyTestAll */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		AACD873216100EAC0046B720 /* libminizip.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libminizip.a;
-			remoteRef = AACD873116100EAC0046B720 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		AAD4D3B6167AD74F0091036E /* MyTestAll2.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = MyTestAll2.app;
-			remoteRef = AAD4D3B5167AD74F0091036E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		AAAC9BD815A51D04008DE242 /* Resources */ = {

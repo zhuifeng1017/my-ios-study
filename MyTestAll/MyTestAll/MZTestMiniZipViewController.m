@@ -7,7 +7,7 @@
 //
 
 #import "MZTestMiniZipViewController.h"
-#import "LibMinizip/ZipArchive/ZipArchive.h"
+#import "../../LibMinizip/ZipArchive/ZipArchive.h"
 
 @interface MZTestMiniZipViewController ()
 
@@ -60,14 +60,17 @@
 }
 
 - (IBAction)doTestMinizip:(id)sender {
+#if 0
     NSLog(@"%@", NSHomeDirectory());
     ZipArchive *archive = [[ZipArchive alloc] init];
     [archive CreateZipFile2:@"/Users/uistrong/trip.zip"];
     [archive addFileToZip:@"/Users/uistrong/1.trip" newname:@"1.trip"];
     [archive CloseZipFile2];
+#endif
     
-
+    
 #if 0
+
     const char *filePath = "/Users/uistrong/h.zip";
     BOOL bRet = [archive UnzipOpenFile:[NSString stringWithUTF8String:filePath]];
     NSLog(@"zip open ret %d", bRet);

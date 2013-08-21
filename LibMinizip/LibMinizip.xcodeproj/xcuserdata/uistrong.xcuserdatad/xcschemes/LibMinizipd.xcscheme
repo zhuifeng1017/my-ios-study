@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0450"
+   LastUpgradeVersion = "0460"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AAD4D389167AD74C0091036E"
-               BuildableName = "MyTestAll2.app"
-               BlueprintName = "MyTestAll2"
-               ReferencedContainer = "container:MyTestAll2.xcodeproj">
+               BlueprintIdentifier = "AA3F98FF17C47CA3007842E6"
+               BuildableName = "libLibMinizipd.a"
+               BlueprintName = "LibMinizipd"
+               ReferencedContainer = "container:LibMinizip.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,15 +29,6 @@
       buildConfiguration = "Debug">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AAD4D389167AD74C0091036E"
-            BuildableName = "MyTestAll2.app"
-            BlueprintName = "MyTestAll2"
-            ReferencedContainer = "container:MyTestAll2.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -48,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AAD4D389167AD74C0091036E"
-            BuildableName = "MyTestAll2.app"
-            BlueprintName = "MyTestAll2"
-            ReferencedContainer = "container:MyTestAll2.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -66,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AAD4D389167AD74C0091036E"
-            BuildableName = "MyTestAll2.app"
-            BlueprintName = "MyTestAll2"
-            ReferencedContainer = "container:MyTestAll2.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
