@@ -174,22 +174,23 @@ int main(int argc, char **argv)
             if (clipoll[i].fd >= 0 && clipoll[i].revents & (POLLIN | POLLERR))
             {
                 nfound--;
-                if((bytesread = read(clipoll[i].fd, buf, sizeof(buf) - 1)) < 0)
+                if((bytesread = read(clipoll[i].fd, buf, sizeof(buf) - 1)) < 0)  // read data
                 {
                     perror("read");
                     poll_free(i);
                     continue;
                 }
-                if(bytesread == 0)
+                if(bytesread == 0)  // 客户已关闭连接
                 {
                     fprintf(stderr, "server: end of file on %d\r\n", clipoll[i].fd);
                     poll_free(i);
                     continue;
                 }
+                
                 buf[bytesread] = 0;
                 printf("%s:%d bytes from %d :%s\n", argv[0], bytesread,
                        clipoll[i].fd, buf);
-                if (write(clipoll[i].fd, buf, bytesread) != bytesread)
+                if (write(clipoll[i].fd, buf, bytesread) != bytesread)  // write data
                 {
                     perror("echo");
                     poll_free(i);

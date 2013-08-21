@@ -16,6 +16,8 @@
 
 #include "TestXX.h"
 
+#import "SVProgressHUD.h"
+
 @interface NetMyGoUViewController ()
 
 @end
@@ -356,10 +358,68 @@
 
 -(IBAction)actionUserInfo:(id)sender
 {
+    return;
     [self showWait];
     [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.3]];
     [self getUserInfo];
     [self hiddWait];
+}
+
+-(IBAction)actionHUD:(id)sender{
+    //[SVProgressHUD showSuccessWithStatus:@"Success"];    
+    NSTimer *timer1 = [NSTimer timerWithTimeInterval:3.0 target:self selector:@selector(invokeTimer:) userInfo:nil repeats:YES];
+    NSTimer *timer2 = [NSTimer timerWithTimeInterval:5.0 target:self selector:@selector(invokeTimer2:) userInfo:nil repeats:YES];
+    
+    NSTimer *timer3 = [NSTimer timerWithTimeInterval:10.0 target:self selector:@selector(invokeTimer3:) userInfo:nil repeats:YES];
+    
+    //[[NSRunLoop currentRunLoop] addTimer:timer1 forMode:NSDefaultRunLoopMode];
+    //[[NSRunLoop currentRunLoop] addTimer:timer2 forMode:NSDefaultRunLoopMode];
+    
+    [[NSRunLoop currentRunLoop] addTimer:timer3 forMode:NSDefaultRunLoopMode];
+    
+
+}
+
+- (void) invokeTimer:(id) arg{
+    /*
+     enum {
+     SVProgressHUDMaskTypeNone = 1, // allow user interactions while HUD is displayed
+     SVProgressHUDMaskTypeClear, // don't allow
+     SVProgressHUDMaskTypeBlack, // don't allow and dim the UI in the back of the HUD
+     SVProgressHUDMaskTypeGradient=4 // don't allow and dim the UI with a a-la-alert-view bg gradient
+     };
+     */
+    static int idx = SVProgressHUDMaskTypeNone;
+    
+    int en = idx++%5;
+    if (en==0) {
+        en = 1;
+    }
+    NSLog(@"en:%d", en);
+    [SVProgressHUD showWithMaskType:en];
+}
+
+- (void) invokeTimer2:(id) arg{
+    [SVProgressHUD dismissWithSuccess:@"完成!"];
+}
+
+- (void) invokeTimer3:(id) arg{
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_4_0
+    // Clear out the old notification before scheduling a new one.
+    if ([[[UIApplication sharedApplication] scheduledLocalNotifications] count] > 0)
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    
+    // Create a new notification
+    UILocalNotification *notification = [[[UILocalNotification alloc] init] autorelease];
+    if (notification) {
+		[notification setFireDate:[NSDate date]];
+		[notification setTimeZone:[NSTimeZone defaultTimeZone]];
+		[notification setRepeatInterval:(NSCalendarUnit)0];
+		[notification setSoundName:UILocalNotificationDefaultSoundName];
+		[notification setAlertBody:@"Boom!\r\n\r NETTEST is finished!"];
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    }
+#endif
 }
 
 

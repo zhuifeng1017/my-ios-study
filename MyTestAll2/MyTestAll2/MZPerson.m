@@ -10,6 +10,11 @@
 
 @implementation MZPerson
 
+- (id)copyWithZone:(NSZone *)zone{
+    MZPerson *newPerson = [[[self class] alloc] init];
+    newPerson.name = [_name copyWithZone:zone];
+    return newPerson;
+}
 
 - (id) init{
     self = [super init];
@@ -34,4 +39,5 @@
     [_name release];
     [super dealloc];
 }
+
 @end

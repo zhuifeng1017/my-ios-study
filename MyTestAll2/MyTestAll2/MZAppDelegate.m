@@ -19,27 +19,55 @@
     [super dealloc];
 }
 
+- (time_t) gmTime{
+    time_t timep;
+    time(&timep);
+    struct tm *pTime = gmtime(&timep);
+    timep = mktime(pTime);
+    return (time_t)timep;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+#if 1
+    char str[] = {'a','b', 0x0};
+    NSString *objStr = [NSString stringWithUTF8String:str];
+    NSArray *arr = [NSArray arrayWithObject:objStr]; // remember: NSArray hold elements only reference, not copy!!!
+    objStr = @"asd"; // this operate cause the objStr point a new object!!!
+    NSLog(@"arr[0]: %@,  objStr: %@, %d", arr[0], objStr, [objStr retainCount]);
+    
+//
+    MZPerson *person = [[MZPerson alloc] init];
+    person.name = @"xx";
+    NSArray *arr2 = [NSArray arrayWithObject:person] ;
+    [(MZPerson*)arr2[0] setName:@"zz"];
+    NSLog(@"arr[0]: %@,  name: %@", [(MZPerson*)arr2[0] name], person.name);
+    [person release];
+    
+#endif
+    
+
+
     double lon = (double)12140856 /100000;
     double lat = (double)3114761 /100000;
     NSLog(@"%f, %f", lon, lat);
     
-#if 1   //测试时间
+#if 0   //测试时间
     time_t timep;
     struct tm *p;
     time(&timep); /*当前time_t类型UTC时间*/
-    NSLog(@"time: %ld",(long)timep);
+    NSLog(@"time(&timep): %ld, gmTime : %lld",(long)timep, [self gmTime]);
     
     p = gmtime(&timep); /*得到tm结构的UTC时间*/
     
     timep = mktime(p); /*转换，这里会有时区的转换*/
     NSLog(@"time()->gmtime()->mktime(): %ld, timegm: %ld", (long)timep, (long)timegm(p));
+    
     return 0;
 #endif
     
     
-#if 1 // 测试时间
+#if 0 // 测试时间
     NSDate* sourceDate = [NSDate date];
     
     NSTimeZone* sourceTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
@@ -56,9 +84,9 @@
 #endif
     
     
-    MZPerson *person = [[MZPerson alloc] init];
-    NSString *strName = @"abc";
-    person.name = strName;
+//    MZPerson *person = [[MZPerson alloc] init];
+//    NSString *strName = @"abc";
+//    person.name = strName;
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.

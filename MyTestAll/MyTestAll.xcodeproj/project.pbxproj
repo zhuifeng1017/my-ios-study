@@ -13,6 +13,7 @@
 		AA147C6E166D993C00983C7B /* CTView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA147C6D166D993C00983C7B /* CTView.m */; };
 		AA147C71166D9D6F00983C7B /* MarkupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA147C70166D9D6F00983C7B /* MarkupParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AA2DEFEB16085D0D00840946 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2DEFEA16085D0D00840946 /* QuartzCore.framework */; };
+		AA4CE46117C360AE009CA694 /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = AAAFD5AF17C35F480033CFDA /* fishhook.c */; };
 		AA5263C715AC48D7009F0297 /* MZSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5263C515AC48D7009F0297 /* MZSettingsViewController.m */; };
 		AA5263C815AC48D7009F0297 /* MZSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA5263C615AC48D7009F0297 /* MZSettingsViewController.xib */; };
 		AA5263DD15AC5DA7009F0297 /* MZSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA5263DC15AC5DA7009F0297 /* MZSettingCell.xib */; };
@@ -40,6 +41,7 @@
 		AAAC9BF515A51D04008DE242 /* MZViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAAC9BF315A51D04008DE242 /* MZViewController.xib */; };
 		AAAC9BFE15A51D82008DE242 /* MZ01TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAC9BFC15A51D82008DE242 /* MZ01TableViewController.m */; };
 		AAAC9BFF15A51D82008DE242 /* MZ01TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAAC9BFD15A51D82008DE242 /* MZ01TableViewController.xib */; };
+		AAAFD5B217C35FCC0033CFDA /* QuietAssertMacros.c in Sources */ = {isa = PBXBuildFile; fileRef = AAAFD5B117C35FCC0033CFDA /* QuietAssertMacros.c */; };
 		AABB365F15AD4D2100E04C93 /* MZSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AABB365E15AD4D2100E04C93 /* MZSettingCell.m */; };
 		AAD4D35D1679B00A0091036E /* MZVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD4D35B1679B00A0091036E /* MZVoiceViewController.m */; };
 		AAD4D35E1679B00A0091036E /* MZVoiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAD4D35C1679B00A0091036E /* MZVoiceViewController.xib */; };
@@ -150,6 +152,9 @@
 		AAAC9BFB15A51D82008DE242 /* MZ01TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZ01TableViewController.h; sourceTree = "<group>"; };
 		AAAC9BFC15A51D82008DE242 /* MZ01TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZ01TableViewController.m; sourceTree = "<group>"; };
 		AAAC9BFD15A51D82008DE242 /* MZ01TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZ01TableViewController.xib; sourceTree = "<group>"; };
+		AAAFD5AF17C35F480033CFDA /* fishhook.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fishhook.c; sourceTree = SOURCE_ROOT; };
+		AAAFD5B017C35F480033CFDA /* fishhook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = SOURCE_ROOT; };
+		AAAFD5B117C35FCC0033CFDA /* QuietAssertMacros.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QuietAssertMacros.c; sourceTree = "<group>"; };
 		AABB365D15AD4D2100E04C93 /* MZSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZSettingCell.h; sourceTree = "<group>"; };
 		AABB365E15AD4D2100E04C93 /* MZSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZSettingCell.m; sourceTree = "<group>"; };
 		AACD872216100E4B0046B720 /* LibMinizip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LibMinizip.xcodeproj; path = MyTestAll/LibMinizip/LibMinizip.xcodeproj; sourceTree = "<group>"; };
@@ -314,11 +319,10 @@
 		AAAC9BE415A51D04008DE242 /* MyTestAll */ = {
 			isa = PBXGroup;
 			children = (
+				AAAFD5AF17C35F480033CFDA /* fishhook.c */,
+				AAAFD5B017C35F480033CFDA /* fishhook.h */,
+				AAAFD5B117C35FCC0033CFDA /* QuietAssertMacros.c */,
 				AAD4D3681679B72B0091036E /* voice */,
-				AAD4D3621679B4880091036E /* New Group3 */,
-				AAD4D3611679B4680091036E /* New Group2 */,
-				AAD4D3601679B4620091036E /* New Group1 */,
-				AAD4D35F1679B4510091036E /* New Group */,
 				AAA0A95A1649009F00D96AA5 /* Moudle */,
 				AA7872FA1637D186003EF57F /* Old */,
 				AAE32E6015FF06BE00C44BDD /* resource */,
@@ -359,34 +363,6 @@
 				AACD873216100EAC0046B720 /* libminizip.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		AAD4D35F1679B4510091036E /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group";
-			sourceTree = "<group>";
-		};
-		AAD4D3601679B4620091036E /* New Group1 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group1";
-			sourceTree = "<group>";
-		};
-		AAD4D3611679B4680091036E /* New Group2 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group2";
-			sourceTree = "<group>";
-		};
-		AAD4D3621679B4880091036E /* New Group3 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group3";
 			sourceTree = "<group>";
 		};
 		AAD4D3681679B72B0091036E /* voice */ = {
@@ -580,6 +556,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA4CE46117C360AE009CA694 /* fishhook.c in Sources */,
+				AAAFD5B217C35FCC0033CFDA /* QuietAssertMacros.c in Sources */,
 				AAAC9BEB15A51D04008DE242 /* main.m in Sources */,
 				AAAC9BEF15A51D04008DE242 /* MZAppDelegate.m in Sources */,
 				AAAC9BF215A51D04008DE242 /* MZViewController.m in Sources */,

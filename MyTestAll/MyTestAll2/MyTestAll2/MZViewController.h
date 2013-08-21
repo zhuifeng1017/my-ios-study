@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MZViewController : UIViewController
+@interface MZViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property (retain, nonatomic) IBOutlet UITableView *myTableview;
 
 @end

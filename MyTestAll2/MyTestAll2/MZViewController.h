@@ -7,12 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface MZViewController : UIViewController
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMessageComposeViewController.h>
+@interface MZViewController : UIViewController <MFMessageComposeViewControllerDelegate>
 {
     NSThread *_thrProducer;
     BOOL _thrProducerRunning;
 }
 - (IBAction)actionThread:(id)sender;
 - (IBAction) actionThreadStop:(id)sender;
+
+- (IBAction) actionSMS:(id)sender;
+
+//@property (retain, nonatomic) IBOutlet UIImageView *imgView;
+@property (retain, nonatomic) IBOutlet UIButton *btn;
+@property (retain, nonatomic) IBOutlet UIButton *btnSMS;
+
+
+
+- (IBAction)actionTest:(id)sender;
+
 @end

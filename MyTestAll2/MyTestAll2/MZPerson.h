@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MZPerson : NSObject
+@interface MZPerson : NSObject <NSCopying>
 {
     NSString *_name;
 }

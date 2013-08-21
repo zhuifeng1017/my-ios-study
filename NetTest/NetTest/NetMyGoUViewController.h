@@ -24,4 +24,6 @@
 -(IBAction)actionUserInfo:(id)sender;
 
 -(IBAction)actionTestXX:(id)sender;
+
+-(IBAction)actionHUD:(id)sender;
 @end

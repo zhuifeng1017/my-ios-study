@@ -71,6 +71,8 @@
 - (void)viewDidUnload
 {
     [self setBtnTest:nil];
+    [self setImgView:nil];
+    [self setBtn:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 
@@ -222,5 +224,10 @@
         NSLog(@"call testNotify");
     }
     
+}
+- (void)dealloc {
+    [_imgView release];
+    [_btn release];
+    [super dealloc];
 }
 @end

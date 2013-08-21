@@ -53,6 +53,8 @@
 		AA65729616FC377C008F68F2 /* Event.cc in Sources */ = {isa = PBXBuildFile; fileRef = AA65729516FC377C008F68F2 /* Event.cc */; };
 		AA65729916FC3F37008F68F2 /* MainCondWait.cc in Sources */ = {isa = PBXBuildFile; fileRef = AA65729816FC3F37008F68F2 /* MainCondWait.cc */; };
 		AA65729C16FC45D6008F68F2 /* MainCondWait2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA65729B16FC45D6008F68F2 /* MainCondWait2.cpp */; };
+		AAC327C9178524BE00455C80 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AAC327C6178524BE00455C80 /* SVProgressHUD.bundle */; };
+		AAC327CA178524BE00455C80 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC327C8178524BE00455C80 /* SVProgressHUD.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		AAED09AE174E045F00E486F2 /* mkC in Resources */ = {isa = PBXBuildFile; fileRef = AAED09AD174E045E00E486F2 /* mkC */; };
 		AAED09B2174E07FD00E486F2 /* mkS in Resources */ = {isa = PBXBuildFile; fileRef = AAED09B1174E07FD00E486F2 /* mkS */; };
 		AAF13F7316E5A2FA00528203 /* NetMyOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF13F7216E5A2FA00528203 /* NetMyOperation.m */; };
@@ -145,6 +147,9 @@
 		AA65729816FC3F37008F68F2 /* MainCondWait.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainCondWait.cc; sourceTree = "<group>"; };
 		AA65729A16FC3FBD008F68F2 /* TestXX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestXX.h; sourceTree = "<group>"; };
 		AA65729B16FC45D6008F68F2 /* MainCondWait2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainCondWait2.cpp; sourceTree = "<group>"; };
+		AAC327C6178524BE00455C80 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		AAC327C7178524BE00455C80 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		AAC327C8178524BE00455C80 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		AAED09AB174E00C400E486F2 /* pollclient.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pollclient.c; sourceTree = "<group>"; };
 		AAED09AD174E045E00E486F2 /* mkC */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mkC; sourceTree = "<group>"; };
 		AAED09AF174E077500E486F2 /* pollserver.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pollserver.c; sourceTree = "<group>"; };
@@ -228,6 +233,7 @@
 		AA0C090E16D77807003B433C /* NetTest */ = {
 			isa = PBXGroup;
 			children = (
+				AAC327C5178524BE00455C80 /* SVProgress */,
 				AA12B3A616F9B98D00559E29 /* Thread */,
 				AA12B39B16F9923100559E29 /* Server */,
 				AA09DCF916F2F7DF004B3F38 /* AsynSocket */,
@@ -360,6 +366,16 @@
 			path = Socket;
 			sourceTree = "<group>";
 		};
+		AAC327C5178524BE00455C80 /* SVProgress */ = {
+			isa = PBXGroup;
+			children = (
+				AAC327C6178524BE00455C80 /* SVProgressHUD.bundle */,
+				AAC327C7178524BE00455C80 /* SVProgressHUD.h */,
+				AAC327C8178524BE00455C80 /* SVProgressHUD.m */,
+			);
+			path = SVProgress;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -422,6 +438,7 @@
 				AA05261F16F811F5008A2C67 /* NetMyGoUViewController.xib in Resources */,
 				AAED09AE174E045F00E486F2 /* mkC in Resources */,
 				AAED09B2174E07FD00E486F2 /* mkS in Resources */,
+				AAC327C9178524BE00455C80 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +482,7 @@
 				AAF5F465171CF7F500BF98F8 /* GCDAsyncSocket.m in Sources */,
 				AAF5F46A171CFE1E00BF98F8 /* NetBaseAsynSocketViewController.m in Sources */,
 				AAF5F46D171CFF2A00BF98F8 /* NetGCDAsynSocketViewController.m in Sources */,
+				AAC327CA178524BE00455C80 /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,8 +576,8 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4029C58A-AC39-4E65-BFDC-5BE4233B252C";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B9A57AE2-B4A3-4923-9759-C0BADD7DB4B4";
+				PROVISIONING_PROFILE = "47297B22-1CF0-48E4-9F9D-8537E07566FD";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "47297B22-1CF0-48E4-9F9D-8537E07566FD";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -577,7 +595,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4029C58A-AC39-4E65-BFDC-5BE4233B252C";
+				PROVISIONING_PROFILE = "47297B22-1CF0-48E4-9F9D-8537E07566FD";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

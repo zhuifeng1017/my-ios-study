@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA061CA11771A3AF0085F484 /* textinput@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA061CA01771A3AF0085F484 /* textinput@2x.png */; };
+		AA0AC79D1772F63400940607 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0AC79C1772F63400940607 /* MessageUI.framework */; };
+		AA66CBDA179930E200B66749 /* MZTT001ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA66CBD717992EE100B66749 /* MZTT001ViewController.m */; };
+		AA66CBDD179930F900B66749 /* MZTT001ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA66CBD817992EE100B66749 /* MZTT001ViewController.xib */; };
+		AA66CBE11799365500B66749 /* MZTT002ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA66CBDF1799365500B66749 /* MZTT002ViewController.m */; };
+		AA66CBE21799365500B66749 /* MZTT002ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA66CBE01799365500B66749 /* MZTT002ViewController.xib */; };
+		AA66CBE417994AD300B66749 /* navbak@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA66CBE317994AD300B66749 /* navbak@2x.png */; };
 		AAD4D38F167AD74C0091036E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD4D38E167AD74C0091036E /* UIKit.framework */; };
 		AAD4D391167AD74C0091036E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD4D390167AD74C0091036E /* Foundation.framework */; };
 		AAD4D393167AD74C0091036E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD4D392167AD74C0091036E /* CoreGraphics.framework */; };
@@ -22,6 +29,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA061CA01771A3AF0085F484 /* textinput@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "textinput@2x.png"; sourceTree = "<group>"; };
+		AA0AC79C1772F63400940607 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		AA66CBD617992EE100B66749 /* MZTT001ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZTT001ViewController.h; sourceTree = "<group>"; };
+		AA66CBD717992EE100B66749 /* MZTT001ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MZTT001ViewController.m; sourceTree = "<group>"; };
+		AA66CBD817992EE100B66749 /* MZTT001ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MZTT001ViewController.xib; sourceTree = "<group>"; };
+		AA66CBDE1799365500B66749 /* MZTT002ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTT002ViewController.h; sourceTree = "<group>"; };
+		AA66CBDF1799365500B66749 /* MZTT002ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTT002ViewController.m; sourceTree = "<group>"; };
+		AA66CBE01799365500B66749 /* MZTT002ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZTT002ViewController.xib; sourceTree = "<group>"; };
+		AA66CBE317994AD300B66749 /* navbak@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbak@2x.png"; sourceTree = "<group>"; };
 		AAD4D38A167AD74C0091036E /* MyTestAll2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTestAll2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAD4D38E167AD74C0091036E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AAD4D390167AD74C0091036E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -47,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA0AC79D1772F63400940607 /* MessageUI.framework in Frameworks */,
 				AAD4D38F167AD74C0091036E /* UIKit.framework in Frameworks */,
 				AAD4D391167AD74C0091036E /* Foundation.framework in Frameworks */,
 				AAD4D393167AD74C0091036E /* CoreGraphics.framework in Frameworks */,
@@ -59,6 +76,7 @@
 		AAD4D37F167AD74B0091036E = {
 			isa = PBXGroup;
 			children = (
+				AA0AC79C1772F63400940607 /* MessageUI.framework */,
 				AAD4D394167AD74C0091036E /* MyTestAll2 */,
 				AAD4D38D167AD74C0091036E /* Frameworks */,
 				AAD4D38B167AD74C0091036E /* Products */,
@@ -86,11 +104,19 @@
 		AAD4D394167AD74C0091036E /* MyTestAll2 */ = {
 			isa = PBXGroup;
 			children = (
+				AA66CBE317994AD300B66749 /* navbak@2x.png */,
+				AA061CA01771A3AF0085F484 /* textinput@2x.png */,
 				AAD4D39D167AD74C0091036E /* MZAppDelegate.h */,
 				AAD4D39E167AD74C0091036E /* MZAppDelegate.m */,
 				AAD4D3A6167AD74C0091036E /* MZViewController.h */,
 				AAD4D3A7167AD74C0091036E /* MZViewController.m */,
 				AAD4D3A9167AD74C0091036E /* MZViewController.xib */,
+				AA66CBD617992EE100B66749 /* MZTT001ViewController.h */,
+				AA66CBD717992EE100B66749 /* MZTT001ViewController.m */,
+				AA66CBD817992EE100B66749 /* MZTT001ViewController.xib */,
+				AA66CBDE1799365500B66749 /* MZTT002ViewController.h */,
+				AA66CBDF1799365500B66749 /* MZTT002ViewController.m */,
+				AA66CBE01799365500B66749 /* MZTT002ViewController.xib */,
 				AAD4D395167AD74C0091036E /* Supporting Files */,
 				AAD4D3B7167AD7D10091036E /* MZPerson.h */,
 				AAD4D3B8167AD7D10091036E /* MZPerson.m */,
@@ -164,11 +190,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA66CBDD179930F900B66749 /* MZTT001ViewController.xib in Resources */,
 				AAD4D399167AD74C0091036E /* InfoPlist.strings in Resources */,
+				AA66CBE21799365500B66749 /* MZTT002ViewController.xib in Resources */,
 				AAD4D3A1167AD74C0091036E /* Default.png in Resources */,
 				AAD4D3A3167AD74C0091036E /* Default@2x.png in Resources */,
+				AA66CBE417994AD300B66749 /* navbak@2x.png in Resources */,
 				AAD4D3A5167AD74C0091036E /* Default-568h@2x.png in Resources */,
 				AAD4D3AB167AD74C0091036E /* MZViewController.xib in Resources */,
+				AA061CA11771A3AF0085F484 /* textinput@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +209,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA66CBE11799365500B66749 /* MZTT002ViewController.m in Sources */,
+				AA66CBDA179930E200B66749 /* MZTT001ViewController.m in Sources */,
 				AAD4D39B167AD74C0091036E /* main.m in Sources */,
 				AAD4D39F167AD74C0091036E /* MZAppDelegate.m in Sources */,
 				AAD4D3A8167AD74C0091036E /* MZViewController.m in Sources */,
@@ -259,9 +291,11 @@
 		AAD4D3AF167AD74C0091036E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyTestAll2/MyTestAll2-Prefix.pch";
 				INFOPLIST_FILE = "MyTestAll2/MyTestAll2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -270,9 +304,11 @@
 		AAD4D3B0167AD74C0091036E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyTestAll2/MyTestAll2-Prefix.pch";
 				INFOPLIST_FILE = "MyTestAll2/MyTestAll2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -297,6 +333,7 @@
 				AAD4D3B0167AD74C0091036E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

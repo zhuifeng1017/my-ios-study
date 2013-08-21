@@ -50,7 +50,7 @@
         _playState = enPlayStateStop;
         [self.btnPlay setTitle:@"Play" forState:UIControlStateNormal];
     }
-    NSString *fullPathName = [kDocuments stringByAppendingString:@"/record.caf"];
+    NSString *fullPathName = [kDocuments stringByAppendingString:@"/record.mp3"];
     GUVoiceRecordView *vr=[[GUVoiceRecordView alloc] initWithRecordFile:fullPathName];
     [self.view addSubview:vr];
 }
@@ -60,7 +60,7 @@
     if (_playState == enPlayStateStop) {
         if (audioPlayer == nil) {
             if (_recordFileFullPathName == nil) {
-                _recordFileFullPathName = [kDocuments stringByAppendingString:@"/record.caf"];
+                _recordFileFullPathName = [kDocuments stringByAppendingString:@"/record.mp3"];
             }
             NSError *error;
             NSURL *url = [NSURL fileURLWithPath:_recordFileFullPathName];
