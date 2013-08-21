@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'LibMinizip' target in the 'LibMinizip' project
+// Prefix header for all source files of the 'libminizip' target in the 'libminizip' project
 //
 
 #ifdef __OBJC__

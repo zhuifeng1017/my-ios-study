@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AA3F98FF17C47CA3007842E6"
-               BuildableName = "libLibMinizipd.a"
-               BlueprintName = "LibMinizipd"
-               ReferencedContainer = "container:LibMinizip.xcodeproj">
+               BlueprintIdentifier = "AA3F994517C487D0007842E6"
+               BuildableName = "libminizip.a"
+               BlueprintName = "libminizip"
+               ReferencedContainer = "container:libminizip.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
