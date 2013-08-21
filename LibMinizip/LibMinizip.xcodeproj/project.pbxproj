@@ -13,6 +13,9 @@
 		AA3F996617C4884C007842E6 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = AA3F995E17C4884C007842E6 /* unzip.c */; };
 		AA3F996717C4884C007842E6 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = AA3F996017C4884C007842E6 /* zip.c */; };
 		AA3F996817C4884C007842E6 /* ZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3F996317C4884C007842E6 /* ZipArchive.m */; };
+		AA3F996917C48975007842E6 /* ZipArchive.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA3F996217C4884C007842E6 /* ZipArchive.h */; };
+		AA3F996A17C48991007842E6 /* unzip.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA3F995F17C4884C007842E6 /* unzip.h */; };
+		AA3F996B17C48991007842E6 /* zip.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA3F996117C4884C007842E6 /* zip.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -22,6 +25,9 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
+				AA3F996A17C48991007842E6 /* unzip.h in CopyFiles */,
+				AA3F996B17C48991007842E6 /* zip.h in CopyFiles */,
+				AA3F996917C48975007842E6 /* ZipArchive.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +288,7 @@
 				AA3F995617C487D0007842E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
