@@ -5,39 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>991D3650-1B76-480F-99A7-C8B042E67EC0</string>
+	<string>CE3A319D-3CF3-4213-BEEE-326C944EB860</string>
 	<key>IDESourceControlProjectName</key>
 	<string>MyTestAll</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>C6BC2B47-3D6D-4C00-A33A-70ED7A74A73A</key>
-		<string>https://my-ios-study.googlecode.com/svn/trunk</string>
+		<key>50A380F3-6FBC-44E1-B882-73FFA56C09D7</key>
+		<string>https://github.com/zhuifeng1017/my-ios-study.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>MyTestAll/MyTestAll.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>C6BC2B47-3D6D-4C00-A33A-70ED7A74A73A</key>
+		<key>50A380F3-6FBC-44E1-B882-73FFA56C09D7</key>
 		<string>../../..</string>
 	</dict>
-	<key>IDESourceControlProjectRepositoryRootDictionary</key>
-	<dict>
-		<key>C6BC2B47-3D6D-4C00-A33A-70ED7A74A73A</key>
-		<string>https://my-ios-study.googlecode.com/svn</string>
-	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://my-ios-study.googlecode.com/svn/trunk/MyTestAll/MyTestAll.xcodeproj</string>
+	<string>https://github.com/zhuifeng1017/my-ios-study.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>C6BC2B47-3D6D-4C00-A33A-70ED7A74A73A</string>
+	<string>50A380F3-6FBC-44E1-B882-73FFA56C09D7</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.subversion</string>
+			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>C6BC2B47-3D6D-4C00-A33A-70ED7A74A73A</string>
+			<string>50A380F3-6FBC-44E1-B882-73FFA56C09D7</string>
 			<key>IDESourceControlWCCName</key>
 			<string>my-ios-study</string>
 		</dict>

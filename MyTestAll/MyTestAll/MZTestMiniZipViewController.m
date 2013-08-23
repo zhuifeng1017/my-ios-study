@@ -7,7 +7,7 @@
 //
 
 #import "MZTestMiniZipViewController.h"
-#import "../../LibMinizip/ZipArchive/ZipArchive.h"
+//#import "../../LibMinizip/ZipArchive/ZipArchive.h"
 
 @interface MZTestMiniZipViewController ()
 

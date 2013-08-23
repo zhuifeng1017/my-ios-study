@@ -50,7 +50,9 @@
         _playState = enPlayStateStop;
         [self.btnPlay setTitle:@"Play" forState:UIControlStateNormal];
     }
-    NSString *fullPathName = [kDocuments stringByAppendingString:@"/record.caf"];
+    
+    // kAudioFormatMPEG4AAC 对应 .m4a
+    NSString *fullPathName = [kDocuments stringByAppendingString:@"/record.pcm"];  //既可以指定.wav,也可指定为caf
     GUVoiceRecordView *vr=[[GUVoiceRecordView alloc] initWithRecordFile:fullPathName];
     [self.view addSubview:vr];
 }
@@ -60,7 +62,7 @@
     if (_playState == enPlayStateStop) {
         if (audioPlayer == nil) {
             if (_recordFileFullPathName == nil) {
-                _recordFileFullPathName = [kDocuments stringByAppendingString:@"/record.caf"];
+                _recordFileFullPathName = [kDocuments stringByAppendingString:@"/record.pcm"];
             }
             NSError *error;
             NSURL *url = [NSURL fileURLWithPath:_recordFileFullPathName];
