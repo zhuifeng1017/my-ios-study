@@ -74,7 +74,6 @@
 		AA6393C617C6033E00A933BA = {
 			isa = PBXGroup;
 			children = (
-				AA2E60FF17C70D75003FCCE6 /* libmp3lame.a */,
 				AA6393D817C6033E00A933BA /* LameTest */,
 				AA6393D117C6033E00A933BA /* Frameworks */,
 				AA6393D017C6033E00A933BA /* Products */,
@@ -92,6 +91,7 @@
 		AA6393D117C6033E00A933BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA2E60FF17C70D75003FCCE6 /* libmp3lame.a */,
 				AA6393D217C6033E00A933BA /* UIKit.framework */,
 				AA6393D417C6033E00A933BA /* Foundation.framework */,
 				AA6393D617C6033E00A933BA /* CoreGraphics.framework */,

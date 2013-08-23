@@ -190,7 +190,7 @@ WaveReadHeader(FILE *wavefile,int *channels,uint32_t *samplerate,int *samplebits
 	*channels   = waveformat.wChannels;
 	*samplerate = waveformat.dwSamplesPerSec;
 	*samplebits = waveformat.wBitsPerSample;
-	*samples    = databytes / waveformat.wBlockAlign;
+	*samples    = databytes / waveformat.wBlockAlign;   // sample num
 	
 	*datastart  = (uint32_t) ( (ptr + 4) - buffer );
 
