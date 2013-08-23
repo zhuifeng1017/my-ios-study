@@ -8,9 +8,18 @@
 
 #import "MZAppDelegate.h"
 #import "MZViewController.h"
-#import "lame.h"
+#include "lame.h"
+
+#include "wave/wavplay.h"
+#include "wave/wavfile.h"
+
 
 #define kDocuments [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]
+
+void fun1(const char *format,va_list ap){
+    printf(format, ap);
+    printf("\n");
+}
 
 @implementation MZAppDelegate
 
@@ -19,37 +28,47 @@
     
     int read, write;
     
-    NSString *cafFile = [kDocuments stringByAppendingFormat:@"/record.wav"];
+    NSString *cafFile = [kDocuments stringByAppendingFormat:@"/RecordedFile.wav"];
     NSString *mp3File = [kDocuments stringByAppendingFormat:@"/file.mp3"];
     
     FILE *pcm = fopen(cafFile.UTF8String, "rb");
-    FILE *mp3 = fopen(mp3File.UTF8String, "wb");
+    int channels;
+    uint32_t samplerate;
+    int samplebits;
+    uint32_t samples;
+    uint32_t datastart;
     
-    const int PCM_SIZE = 8192;
-    const int MP3_SIZE = 8192;
-    
-    short int pcm_buffer[PCM_SIZE*2];   // 双通道
-    unsigned char mp3_buffer[MP3_SIZE];
-    
-    lame_t lame = lame_init();
-    lame_set_in_samplerate(lame, 44100);    // 采样率
-    lame_set_VBR(lame, vbr_default);
-    lame_init_params(lame);
-    
-    fseek(pcm, 44, SEEK_CUR); // skip wav header,44 byte
-    do {
-        read = fread(pcm_buffer, 2*sizeof(short int), PCM_SIZE, pcm);   // 读取pcm数据，left channel，right channel
-        if (read == 0)  // 转换结束
-            write = lame_encode_flush(lame, mp3_buffer, MP3_SIZE);
-        else
-            write = lame_encode_buffer_interleaved(lame, pcm_buffer, read, mp3_buffer, MP3_SIZE);   // 转换
-        fwrite(mp3_buffer, write, 1, mp3);  // 写文件
-    } while (read != 0);
-    
-    lame_close(lame);
-    fclose(mp3);
-    fclose(pcm);
-    
+    if (WaveReadHeader(pcm, &channels, &samplerate, &samplebits, &samples, &datastart, &fun1) == 0) {
+        FILE *mp3 = fopen(mp3File.UTF8String, "wb");
+        
+        const int PCM_SIZE = 8192;
+        const int MP3_SIZE = 8192;
+        short int pcm_buffer[PCM_SIZE*2];   // 双通道
+        unsigned char mp3_buffer[MP3_SIZE];
+        
+        lame_t lame = lame_init();
+        lame_set_in_samplerate(lame, samplerate);
+        lame_set_VBR(lame, vbr_default);
+        lame_init_params(lame);
+        
+        fseek(pcm, datastart, SEEK_SET);
+        do {
+            read = fread(pcm_buffer, 2*sizeof(short int), PCM_SIZE, pcm);
+            if (read == 0)
+                write = lame_encode_flush(lame, mp3_buffer, MP3_SIZE);
+            else
+                write = lame_encode_buffer_interleaved(lame, pcm_buffer, read, mp3_buffer, MP3_SIZE);
+            
+            fwrite(mp3_buffer, write, 1, mp3);
+            
+        } while (read != 0);
+        
+        lame_close(lame);
+        fclose(mp3);
+        fclose(pcm);
+    }else{
+        fclose(pcm);
+    }
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.

@@ -101,7 +101,7 @@
         
         NSDictionary *settings=[NSDictionary dictionaryWithObjectsAndKeys:
                                 [NSNumber numberWithFloat:44100.0],AVSampleRateKey,
-                                [NSNumber numberWithInt:/*kAudioFormatMPEG4AAC*/kAudioFormatLinearPCM],AVFormatIDKey,
+                                [NSNumber numberWithInt:kAudioFormatLinearPCM],AVFormatIDKey,
                                 [NSNumber numberWithInt:1],AVNumberOfChannelsKey,
                                 [NSNumber numberWithInt:16],AVLinearPCMBitDepthKey,
                                 [NSNumber numberWithBool:NO],AVLinearPCMIsBigEndianKey,
