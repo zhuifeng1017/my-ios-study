@@ -1,0 +1,42 @@
+ios下如何编译lame？
+：修改lamebuilder文件， SDK_VERSION="6.1"，根据实际情况修改版本号
+ --prefix=/Users/uistrong/Documents/lame-3.99.5 根据实际情况修改路径
+ 
+ PLATFORM="armv7s"	根据实际情况修改
+ build_lame
+ 
+ 参考网址：http://www.cocoachina.com/bbs/read.php?tid=108237&page=3
+ 
+ 以下从网页中拷贝过来：
+ ------------------------ ------------------------ ------------------------ ------------------------ ------------------------
+ lame的ios 静态库创建shell    (在iOS代码库中浏览本帖)
+
+
+
+
+ lame是一个mp3文件的处理库
+
+ 这个生成静态库的脚本是网上找的
+
+
+ 生成的静态库包括armv6 armv7 模拟器 以及一个合并的库
+
+ 你需要做的是：
+ 1、http://sourceforge.net/projects/lame/files/lame/3.99/  下载lame的最新版本解压  
+ 2、将该文件lamebuilder放到目录下
+ 3、修改lamebuilder中的路径
+
+ --prefix=/Users/rinjack/Desktop/lame
+
+ 为你的lame目录路径
+ 4、在终端中 cd到 你的lame目录
+ sudo -s
+ chmod a+x lamebuilder
+ ./lamebuilder
+
+ 5、生成的文件在build目录下
+
+ http://115.com/file/e79rkzbl#lamebuilder.zip
+ 
+  ------------------------ ------------------------ ------------------------ ------------------------ ------------------------ 
+ 
