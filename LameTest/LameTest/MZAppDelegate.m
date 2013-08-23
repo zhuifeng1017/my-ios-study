@@ -39,6 +39,7 @@ void fun1(const char *format,va_list ap){
     uint32_t datastart;
     
     if (WaveReadHeader(pcm, &channels, &samplerate, &samplebits, &samples, &datastart, &fun1) == 0) {
+        NSLog(@"channels: %d, samplerate: %d, samplebits: %d, samples: %d, datastart: %d", channels, samplerate, samplebits, samples, datastart);
         FILE *mp3 = fopen(mp3File.UTF8String, "wb");
         
         const int PCM_SIZE = 8192;

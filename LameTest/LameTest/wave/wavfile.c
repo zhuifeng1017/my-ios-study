@@ -28,7 +28,7 @@ static const char rcsid[] = "$Id: wavfile.c,v 1.2 2011/06/09 00:51:02 ve3wwg Exp
 
 #include "wavplay.h"
 
-#define		BUFFERSIZE   		1024
+#define		BUFFERSIZE   		8096
 #define		PCM_WAVE_FORMAT   	1
 
 #define		TRUE			1
