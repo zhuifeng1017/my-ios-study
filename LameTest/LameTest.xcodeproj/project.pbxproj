@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AA2E610017C70D75003FCCE6 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2E60FF17C70D75003FCCE6 /* libmp3lame.a */; };
-		AA2E610917C73A73003FCCE6 /* wavfile.c in Sources */ = {isa = PBXBuildFile; fileRef = AA2E610617C73A39003FCCE6 /* wavfile.c */; };
 		AA6393D317C6033E00A933BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6393D217C6033E00A933BA /* UIKit.framework */; };
 		AA6393D517C6033E00A933BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6393D417C6033E00A933BA /* Foundation.framework */; };
 		AA6393D717C6033E00A933BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6393D617C6033E00A933BA /* CoreGraphics.framework */; };
@@ -24,9 +23,6 @@
 
 /* Begin PBXFileReference section */
 		AA2E60FF17C70D75003FCCE6 /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmp3lame.a; path = LameTest/lame/libmp3lame.a; sourceTree = "<group>"; };
-		AA2E610617C73A39003FCCE6 /* wavfile.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = wavfile.c; path = wave/wavfile.c; sourceTree = "<group>"; };
-		AA2E610817C73A39003FCCE6 /* wavfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = wavfile.h; path = wave/wavfile.h; sourceTree = "<group>"; };
-		AA2E610A17C73B5D003FCCE6 /* wavplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = wavplay.h; path = wave/wavplay.h; sourceTree = "<group>"; };
 		AA6393CF17C6033E00A933BA /* LameTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LameTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6393D217C6033E00A933BA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AA6393D417C6033E00A933BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -61,19 +57,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AA2E610517C73A2D003FCCE6 /* wave */ = {
-			isa = PBXGroup;
-			children = (
-				AA2E610A17C73B5D003FCCE6 /* wavplay.h */,
-				AA2E610617C73A39003FCCE6 /* wavfile.c */,
-				AA2E610817C73A39003FCCE6 /* wavfile.h */,
-			);
-			name = wave;
-			sourceTree = "<group>";
-		};
 		AA6393C617C6033E00A933BA = {
 			isa = PBXGroup;
 			children = (
+				AA2E60FF17C70D75003FCCE6 /* libmp3lame.a */,
 				AA6393D817C6033E00A933BA /* LameTest */,
 				AA6393D117C6033E00A933BA /* Frameworks */,
 				AA6393D017C6033E00A933BA /* Products */,
@@ -91,7 +78,6 @@
 		AA6393D117C6033E00A933BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AA2E60FF17C70D75003FCCE6 /* libmp3lame.a */,
 				AA6393D217C6033E00A933BA /* UIKit.framework */,
 				AA6393D417C6033E00A933BA /* Foundation.framework */,
 				AA6393D617C6033E00A933BA /* CoreGraphics.framework */,
@@ -102,7 +88,6 @@
 		AA6393D817C6033E00A933BA /* LameTest */ = {
 			isa = PBXGroup;
 			children = (
-				AA2E610517C73A2D003FCCE6 /* wave */,
 				AA6393F517C603F200A933BA /* lame */,
 				AA6393E117C6033E00A933BA /* MZAppDelegate.h */,
 				AA6393E217C6033E00A933BA /* MZAppDelegate.m */,
@@ -203,7 +188,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA2E610917C73A73003FCCE6 /* wavfile.c in Sources */,
 				AA6393DF17C6033E00A933BA /* main.m in Sources */,
 				AA6393E317C6033E00A933BA /* MZAppDelegate.m in Sources */,
 				AA6393EC17C6033F00A933BA /* MZViewController.m in Sources */,
@@ -293,8 +277,6 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LameTest/LameTest-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = APPLE;
-				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				INFOPLIST_FILE = "LameTest/LameTest-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -310,8 +292,6 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LameTest/LameTest-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = APPLE;
-				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				INFOPLIST_FILE = "LameTest/LameTest-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
