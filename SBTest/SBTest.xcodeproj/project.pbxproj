@@ -21,6 +21,9 @@
 		AA3B05FF1701772E0032E569 /* SBViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3B05FE1701772E0032E569 /* SBViewController1.m */; };
 		AA3B0603170187910032E569 /* SBViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3B0601170187900032E569 /* SBViewController2.m */; };
 		AA3B0604170187910032E569 /* SBViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA3B0602170187900032E569 /* SBViewController2.xib */; };
+		AA9DFE751936E2ED00D6F1C0 /* SBTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9DFE741936E2EC00D6F1C0 /* SBTabViewController.m */; };
+		AA9DFE791936F05800D6F1C0 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9DFE771936F05800D6F1C0 /* second.png */; };
+		AA9DFE7A1936F05800D6F1C0 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9DFE781936F05800D6F1C0 /* second@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,10 @@
 		AA3B0600170187900032E569 /* SBViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBViewController2.h; sourceTree = "<group>"; };
 		AA3B0601170187900032E569 /* SBViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBViewController2.m; sourceTree = "<group>"; };
 		AA3B0602170187900032E569 /* SBViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SBViewController2.xib; sourceTree = "<group>"; };
+		AA9DFE731936E2EC00D6F1C0 /* SBTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTabViewController.h; sourceTree = "<group>"; };
+		AA9DFE741936E2EC00D6F1C0 /* SBTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBTabViewController.m; sourceTree = "<group>"; };
+		AA9DFE771936F05800D6F1C0 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		AA9DFE781936F05800D6F1C0 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +98,7 @@
 		AA3B05D517016D0B0032E569 /* SBTest */ = {
 			isa = PBXGroup;
 			children = (
+				AA9DFE761936F05800D6F1C0 /* resource */,
 				AA3B05DE17016D0B0032E569 /* SBAppDelegate.h */,
 				AA3B05DF17016D0B0032E569 /* SBAppDelegate.m */,
 				AA3B05E717016D0B0032E569 /* MainStoryboard.storyboard */,
@@ -102,6 +110,8 @@
 				AA3B0600170187900032E569 /* SBViewController2.h */,
 				AA3B0601170187900032E569 /* SBViewController2.m */,
 				AA3B0602170187900032E569 /* SBViewController2.xib */,
+				AA9DFE731936E2EC00D6F1C0 /* SBTabViewController.h */,
+				AA9DFE741936E2EC00D6F1C0 /* SBTabViewController.m */,
 			);
 			path = SBTest;
 			sourceTree = "<group>";
@@ -118,6 +128,15 @@
 				AA3B05E517016D0B0032E569 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA9DFE761936F05800D6F1C0 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				AA9DFE771936F05800D6F1C0 /* second.png */,
+				AA9DFE781936F05800D6F1C0 /* second@2x.png */,
+			);
+			path = resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +197,8 @@
 				AA3B05E617016D0B0032E569 /* Default-568h@2x.png in Resources */,
 				AA3B05E917016D0B0032E569 /* MainStoryboard.storyboard in Resources */,
 				AA3B0604170187910032E569 /* SBViewController2.xib in Resources */,
+				AA9DFE791936F05800D6F1C0 /* second.png in Resources */,
+				AA9DFE7A1936F05800D6F1C0 /* second@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +214,7 @@
 				AA3B05FB170171810032E569 /* SBRootViewController.m in Sources */,
 				AA3B05FF1701772E0032E569 /* SBViewController1.m in Sources */,
 				AA3B0603170187910032E569 /* SBViewController2.m in Sources */,
+				AA9DFE751936E2ED00D6F1C0 /* SBTabViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +335,7 @@
 				AA3B05F117016D0B0032E569 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

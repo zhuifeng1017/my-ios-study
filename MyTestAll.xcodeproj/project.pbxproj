@@ -30,7 +30,6 @@
 		AA7872FE1637D480003EF57F /* MZTestMiniZipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7872FC1637D480003EF57F /* MZTestMiniZipViewController.m */; };
 		AA7872FF1637D480003EF57F /* MZTestMiniZipViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA7872FD1637D480003EF57F /* MZTestMiniZipViewController.xib */; };
 		AA7873041637DEA7003EF57F /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7873031637DEA7003EF57F /* libz.1.2.5.dylib */; };
-		AA7873091637DF23003EF57F /* libminizip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AACD873216100EAC0046B720 /* libminizip.a */; };
 		AA8974771665FDE300D82A0C /* MZNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8974751665FDE300D82A0C /* MZNewsViewController.m */; };
 		AA8974781665FDE300D82A0C /* MZNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA8974761665FDE300D82A0C /* MZNewsViewController.xib */; };
 		AA897522166619D100D82A0C /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = AA897520166619D100D82A0C /* second.png */; };
@@ -112,13 +111,6 @@
 			remoteGlobalIDString = AA43A6061744C2AC00491136;
 			remoteInfo = JSONTest;
 		};
-		AACD873116100EAC0046B720 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AACD872216100E4B0046B720 /* LibMinizip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AA28389F15B53C2100F2FD45;
-			remoteInfo = LibMinizip;
-		};
 		AAD4D3B5167AD74F0091036E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AAD4D3B1167AD74C0091036E /* MyTestAll2.xcodeproj */;
@@ -195,7 +187,6 @@
 		AAAC9BFD15A51D82008DE242 /* MZ01TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZ01TableViewController.xib; sourceTree = "<group>"; };
 		AABB365D15AD4D2100E04C93 /* MZSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZSettingCell.h; sourceTree = "<group>"; };
 		AABB365E15AD4D2100E04C93 /* MZSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZSettingCell.m; sourceTree = "<group>"; };
-		AACD872216100E4B0046B720 /* LibMinizip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LibMinizip.xcodeproj; path = MyTestAll/LibMinizip/LibMinizip.xcodeproj; sourceTree = "<group>"; };
 		AAD4D35A1679B00A0091036E /* MZVoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZVoiceViewController.h; sourceTree = "<group>"; };
 		AAD4D35B1679B00A0091036E /* MZVoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZVoiceViewController.m; sourceTree = "<group>"; };
 		AAD4D35C1679B00A0091036E /* MZVoiceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZVoiceViewController.xib; sourceTree = "<group>"; };
@@ -256,7 +247,6 @@
 				AA225493168C2F3700B540C2 /* CoreImage.framework in Frameworks */,
 				AAD4D36E1679B8B60091036E /* AVFoundation.framework in Frameworks */,
 				AA147C6B166D98A900983C7B /* CoreText.framework in Frameworks */,
-				AA7873091637DF23003EF57F /* libminizip.a in Frameworks */,
 				AA7873041637DEA7003EF57F /* libz.1.2.5.dylib in Frameworks */,
 				AAED83DA161595C900F43609 /* CoreLocation.framework in Frameworks */,
 				AA2DEFEB16085D0D00840946 /* QuartzCore.framework in Frameworks */,
@@ -366,7 +356,6 @@
 				AA225492168C2F3600B540C2 /* CoreImage.framework */,
 				AAD4D3B1167AD74C0091036E /* MyTestAll2.xcodeproj */,
 				AAD4D36D1679B8B60091036E /* AVFoundation.framework */,
-				AACD872216100E4B0046B720 /* LibMinizip.xcodeproj */,
 				AAAC9BE415A51D04008DE242 /* MyTestAll */,
 				AAAC9BDD15A51D04008DE242 /* Frameworks */,
 				AAAC9BDB15A51D04008DE242 /* Products */,
@@ -435,14 +424,6 @@
 				AA294436168D911400D5ECF6 /* VoiceDefine.h */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		AACD872E16100EAC0046B720 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				AACD873216100EAC0046B720 /* libminizip.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		AAD4D3681679B72B0091036E /* voice */ = {
@@ -555,10 +536,6 @@
 					ProjectRef = AA43A62C1744C2AC00491136 /* JSONTest.xcodeproj */;
 				},
 				{
-					ProductGroup = AACD872E16100EAC0046B720 /* Products */;
-					ProjectRef = AACD872216100E4B0046B720 /* LibMinizip.xcodeproj */;
-				},
-				{
 					ProductGroup = AAD4D3B2167AD74C0091036E /* Products */;
 					ProjectRef = AAD4D3B1167AD74C0091036E /* MyTestAll2.xcodeproj */;
 				},
@@ -598,13 +575,6 @@
 			fileType = wrapper.application;
 			path = JSONTest.app;
 			remoteRef = AA43A6301744C2AD00491136 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		AACD873216100EAC0046B720 /* libminizip.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libminizip.a;
-			remoteRef = AACD873116100EAC0046B720 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		AAD4D3B6167AD74F0091036E /* MyTestAll2.app */ = {
