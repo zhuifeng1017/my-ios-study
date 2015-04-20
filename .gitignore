@@ -4,13 +4,11 @@
 .DS_Store
 
 NetTest/NetTest/Server/pollC
-
 NetTest/NetTest/Server/pollS
 
+xcuserdata
+xcuserstate/*
 *.xcuserstate
-
-MyTestAll/MyTestAll.xcodeproj/project.xcworkspace/xcuserdata/uistrong.xcuserdatad/UserInterfaceState.xcuserstate
-
-MyTestAll/MyTestAll.xcodeproj/project.xcworkspace/xcuserdata/uistrong.xcuserdatad/UserInterfaceState.xcuserstate
-
+*.xcuserstate/*
+xcshareddata
 /LameTest/LameTest/Win32/*.ncb
