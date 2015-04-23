@@ -12,3 +12,4 @@ xcuserstate/*
 *.xcuserstate/*
 xcshareddata
 /LameTest/LameTest/Win32/*.ncb
+Pods
