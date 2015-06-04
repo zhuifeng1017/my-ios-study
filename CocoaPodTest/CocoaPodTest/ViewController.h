@@ -10,6 +10,8 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *sdImage;
+
+- (IBAction)afnBtnClick:(id)sender;
 
 @end
-

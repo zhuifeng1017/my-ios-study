@@ -29,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		10970C51885D3B1202E5D369 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		183DE44E1AF24E09001DBA6A /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		1860D7101AE8E7ED00BA6E61 /* CocoaPodTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaPodTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1860D7141AE8E7ED00BA6E61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1860D7151AE8E7ED00BA6E61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -105,6 +106,7 @@
 			children = (
 				1860D7141AE8E7ED00BA6E61 /* Info.plist */,
 				1860D7151AE8E7ED00BA6E61 /* main.m */,
+				183DE44E1AF24E09001DBA6A /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -194,6 +196,7 @@
 				TargetAttributes = {
 					1860D70F1AE8E7ED00BA6E61 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 3MX2564TD4;
 					};
 					1860D7281AE8E7ED00BA6E61 = {
 						CreatedOnToolsVersion = 6.1;
@@ -403,10 +406,19 @@
 			baseConfigurationReference = C007A3DAC02199EA918B45C6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: zong wen (Z3CKA5DD4V)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CocoaPodTest/PrefixHeader.pch;
 				INFOPLIST_FILE = CocoaPodTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -415,10 +427,19 @@
 			baseConfigurationReference = 10970C51885D3B1202E5D369 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: zong wen (Z3CKA5DD4V)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CocoaPodTest/PrefixHeader.pch;
 				INFOPLIST_FILE = CocoaPodTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
