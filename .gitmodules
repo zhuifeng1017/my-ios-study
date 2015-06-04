@@ -1,3 +1,3 @@
-[submodule "iOS-Categories"]
+[submodule "CocoaPodTest/iOS-Categories"]
 	path = CocoaPodTest/iOS-Categories
 	url = https://github.com/shaojiankui/iOS-Categories.git

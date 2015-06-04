@@ -21,11 +21,6 @@
     [self.sdImage sd_setImageWithURL:[NSURL URLWithString:@"https://www.baidu.com/img/bdlogo.png"]];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)afnBtnClick:(id)sender {
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://www.baidu.com"]];
     AFHTTPRequestOperation *oper = [[AFHTTPRequestOperation alloc] initWithRequest:request];
