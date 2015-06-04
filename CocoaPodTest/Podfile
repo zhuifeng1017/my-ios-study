@@ -1,5 +1,10 @@
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '7.0'
 pod 'AFNetworking', '~> 1.0'
+<<<<<<< HEAD
 pod 'SDWebImage', '~>3.7'
 pod 'FMDB'
+=======
+pod 'Reveal-iOS-SDK', :configurations => ['Debug']
+
+>>>>>>> origin/master

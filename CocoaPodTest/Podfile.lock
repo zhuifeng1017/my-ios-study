@@ -1,5 +1,6 @@
 PODS:
   - AFNetworking (1.3.4)
+<<<<<<< HEAD
   - FMDB (2.5):
     - FMDB/standard (= 2.5)
   - FMDB/common (2.5)
@@ -18,5 +19,16 @@ SPEC CHECKSUMS:
   AFNetworking: cf8e418e16f0c9c7e5c3150d019a3c679d015018
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
+=======
+  - Reveal-iOS-SDK (1.5.1)
+
+DEPENDENCIES:
+  - AFNetworking (~> 1.0)
+  - Reveal-iOS-SDK
+
+SPEC CHECKSUMS:
+  AFNetworking: cf8e418e16f0c9c7e5c3150d019a3c679d015018
+  Reveal-iOS-SDK: c9c55cad2729c85f6ced415f1b21857c9a2d8ef9
+>>>>>>> origin/master
 
 COCOAPODS: 0.37.0.rc.1

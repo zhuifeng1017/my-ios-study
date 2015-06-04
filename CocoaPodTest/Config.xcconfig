@@ -1,0 +1,19 @@
+//
+//  Config.xcconfig
+//  CocoaPodTest
+//
+//  Created by ZhaoMin on 15/4/23.
+//  Copyright (c) 2015年 apple. All rights reserved.
+//
+//:configuration = Debug
+//:configuration = Debug
+
+//:configuration = Release
+
+//:completeSettings = some
+//:configuration = Debug
+VALID_ARCHS = arm64 armv7 armv7s
+
+//:completeSettings = none
+
+
